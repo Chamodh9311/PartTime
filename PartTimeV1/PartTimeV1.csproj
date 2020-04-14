@@ -204,11 +204,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="SiteImages\CoverV1.png" />
-    <Content Include="SiteImages\JPEG 1-01.jpg" />
-    <Content Include="SiteImages\JPEG 1-02.jpg" />
-    <Content Include="SiteImages\JPEG 2-01.jpg" />
-    <Content Include="SiteImages\JPEG 2-02.jpg" />
     <Content Include="SiteImages\Logo.jpg" />
     <Content Include="SiteImages\P_20160911_145111_BF.jpg" />
     <Content Include="SiteImages\P_20160911_153349.jpg" />
