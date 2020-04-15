@@ -190,9 +190,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\parttime - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\parttime - ReadOnly - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\parttime - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\parttimers - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\parttimers - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\parttimers - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -204,6 +204,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SiteImages\CoverV1.jpg" />
+    <Content Include="SiteImages\JPEG1011.jpg" />
     <Content Include="SiteImages\Logo.jpg" />
     <Content Include="SiteImages\P_20160911_145111_BF.jpg" />
     <Content Include="SiteImages\P_20160911_153349.jpg" />
