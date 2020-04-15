@@ -271,6 +271,9 @@
     <Content Include="TemplateAssets\WebSite\assets\vendor\isotope-layout\isotope.pkgd.min.js" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\jquery.easing\jquery.easing.min.js" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\owl.carousel\assets\ajax-loader.gif" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\owl.carousel\assets\owl.carousel.css" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\owl.carousel\assets\owl.carousel.min.css" />
@@ -341,6 +344,12 @@
     <Content Include="TemplateAssets\WebSite\assets\vendor\jquery\jquery.min.map" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\owl.carousel\LICENSE" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\owl.carousel\README.md" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
