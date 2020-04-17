@@ -449,7 +449,7 @@ namespace PartTimeV1.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Index", "Admin");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
