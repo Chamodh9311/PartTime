@@ -9,14 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Dashboard 2</title>
+    <title>Part Time</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/daterangepicker/daterangepicker.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/dist/css/adminlte.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/select2/css/select2.min.css">
+
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -52,64 +57,7 @@
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Messages Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="~/TemplateAssets/DashBord/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="~/TemplateAssets/DashBord/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="~/TemplateAssets/DashBord/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                    </div>
-                </li>
+
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -137,11 +85,7 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-                @*<li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>*@
+
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -151,7 +95,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="~/TemplateAssets/DashBord/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                      style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">Part Time</span>
             </a>
 
             <!-- Sidebar -->
@@ -198,12 +142,11 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Advanced Form</h1>
+                                <h1>Registration  Form</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Advanced Form</li>
                                 </ol>
                             </div>
                         </div>
@@ -215,125 +158,243 @@
                     <div class="container-fluid">
                         <!-- SELECT2 EXAMPLE -->
                         <div class="card card-default">
-                            <div class="card-header">
-                                <h3 class="card-title">Select2 (Default Theme)</h3>
-
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-remove"></i></button>
-                                </div>
-                            </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Minimal</label>
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
-                                                <option>Alaska</option>
-                                                <option>California</option>
-                                                <option>Delaware</option>
-                                                <option>Tennessee</option>
-                                                <option>Texas</option>
-                                                <option>Washington</option>
-                                            </select>
+                                            <label>Short Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                         <!-- /.form-group -->
                                         <div class="form-group">
-                                            <label>Disabled</label>
-                                            <select class="form-control select2" disabled="disabled" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
-                                                <option>Alaska</option>
-                                                <option>California</option>
-                                                <option>Delaware</option>
-                                                <option>Tennessee</option>
-                                                <option>Texas</option>
-                                                <option>Washington</option>
-                                            </select>
+                                            <label>NIC</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                        <!-- /.form-group -->
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Multiple</label>
-                                            <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
-                                                <option>Alabama</option>
-                                                <option>Alaska</option>
-                                                <option>California</option>
-                                                <option>Delaware</option>
-                                                <option>Tennessee</option>
-                                                <option>Texas</option>
-                                                <option>Washington</option>
-                                            </select>
+                                            <label>DOB</label>
+                                            <div class="input-group date" id="timepicker" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" />
+                                                <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <!-- /.form-group -->
                                         <div class="form-group">
-                                            <label>Disabled Result</label>
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
-                                                <option>Alaska</option>
-                                                <option disabled="disabled">California (disabled)</option>
-                                                <option>Delaware</option>
-                                                <option>Tennessee</option>
-                                                <option>Texas</option>
-                                                <option>Washington</option>
-                                            </select>
+                                            <label>Age</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                        <!-- /.form-group -->
-                                    </div>
-                                    <!-- /.col -->
-                                </div>
-                                <!-- /.row -->
-
-                                <h5>Custom Color Variants</h5>
-                                <div class="row">
-                                    <div class="col-12 col-sm-6">
                                         <div class="form-group">
-                                            <label>Minimal (.select2-danger)</label>
-                                            <select class="form-control select2 select2-danger" data-dropdown-css-class="select2-danger" style="width: 100%;">
-                                                <option selected="selected">Alabama</option>
-                                                <option>Alaska</option>
-                                                <option>California</option>
-                                                <option>Delaware</option>
-                                                <option>Tennessee</option>
-                                                <option>Texas</option>
-                                                <option>Washington</option>
-                                            </select>
+                                            <label>Gender </label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1">
+                                                <label class="form-check-label">Male</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">Female</label>
+                                            </div>
                                         </div>
-                                        <!-- /.form-group -->
-                                    </div>
-                                    <!-- /.col -->
-                                    <div class="col-12 col-sm-6">
                                         <div class="form-group">
-                                            <label>Multiple (.select2-purple)</label>
+                                            <label>Current City</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Home Town</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nearest Famous Town </label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>T-shirt size </label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1">
+                                                <label class="form-check-label">S</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">M</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1">
+                                                <label class="form-check-label">L</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">XL</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>I am a </label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1">
+                                                <label class="form-check-label">Full time promoter</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">Employee</label>
+                                                <input type="text" class="form-control" placeholder="Company ...">
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">Part time promoter</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">Student</label>
+                                                <input type="text" class="form-control" placeholder="Uni ...">
+                                                <input type="text" class="form-control" placeholder="course ...">
+                                                <input type="text" class="form-control" placeholder="Year ...">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Promotional Experience (if any) </label>
+                                            <input type="text" class="form-control" placeholder="Year ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Brands </label>
                                             <div class="select2-purple">
                                                 <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                                                    <option>Alabama</option>
-                                                    <option>Alaska</option>
-                                                    <option>California</option>
-                                                    <option>Delaware</option>
-                                                    <option>Tennessee</option>
-                                                    <option>Texas</option>
-                                                    <option>Washington</option>
+                                                    <option>Elephant House</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <!-- /.form-group -->
                                     </div>
-                                    <!-- /.col -->
-                                </div>
+
+                                        <!-- /.col -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Mobile Number 1</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Viber</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Whatsapp</label>
+                                            </div>
+                                        </div>
+                                        <!-- /.form-group -->
+                                        <div class="form-group">
+                                            <label>Mobile Number 2 (if any)</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Viber</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Whatsapp</label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Mobile Number 3 (if any)</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Viber</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox">
+                                                <label class="form-check-label">Whatsapp</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Photo</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Photo</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Photo</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Photo (if any)</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile">Photo (if any)</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>English speaking</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Tamil speaking</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>I would like to do </label>
+                                            <div class="select2-purple">
+                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                                    <option>sales promotions</option>
+                                                    <option>Events </option>
+                                                    <option>Compere / Announcing </option>
+                                                    <option>Photography/videography </option>
+                                                    <option>Leaflet</option>
+                                                    <option>Data entry</option>
+                                                    <option>Cooking</option>
+                                                    <option>Catering</option>
+                                                    <option>Delivery/ packing</option>
+                                                    <option>Stock counting/ Stock Preparing</option>
+                                                    <option>Ashering </option>
+                                                    <option>Modling</option>
+                                                    <option>Cheering </option>
+                                                    <option>Drama Acting</option>
+                                                    <option>Dancing</option>
+                                                    <option>Magic shows </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Events</label>
+
+
+                                        </div>
+
+                                            <!-- /.form-group -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
                                 <!-- /.row -->
                             </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-                                the plugin.
-                            </div>
-                        </div>
-                        <!-- /.row -->
-                    </div><!-- /.container-fluid -->
+                            <!-- /.row -->
+                        </div><!-- /.container-fluid -->
+                    </div>
                 </section>
                 <!-- /.content -->
             </div>
@@ -376,8 +437,12 @@
     <script src="~/TemplateAssets/WebSite/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- overlayScrollbars -->
     <script src="~/TemplateAssets/DashBord/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="~/TemplateAssets/DashBord//plugins/daterangepicker/daterangepicker.js"></script>
     <!-- AdminLTE App -->
     <script src="~/TemplateAssets/DashBord/dist/js/adminlte.js"></script>
+    <!-- Select2 -->
+    <script src="~/TemplateAssets/DashBord/plugins/select2/js/select2.full.min.js"></script>
 
     <!-- OPTIONAL SCRIPTS -->
     <script src="~/TemplateAssets/DashBord/dist/js/demo.js"></script>
@@ -394,6 +459,22 @@
     <!-- PAGE SCRIPTS -->
     <script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>
 
+    <script>
+        $(function () {
+            //Initialize Select2 Elements
+            $('.select2').select2()
+        })
+
+        //Timepicker
+        $('#timepicker').datetimepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+                format: 'dd/MM/YYYY'
+            }
+        })
+
+    </script>
+
 </body>
 </html>
-<!-- ./wrapper -->
