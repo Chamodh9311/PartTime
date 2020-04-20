@@ -35,12 +35,6 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
             </ul>
 
             <!-- SEARCH FORM -->
@@ -64,26 +58,6 @@
                         <i class="far fa-bell"></i>
                         <span class="badge badge-warning navbar-badge">15</span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
                 </li>
 
             </ul>
@@ -100,16 +74,6 @@
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/TemplateAssets/DashBord/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
-                    </div>
-                </div>
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -120,7 +84,6 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
@@ -156,7 +119,6 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="container-fluid">
-                        <!-- SELECT2 EXAMPLE -->
                         <div class="card card-default">
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -166,7 +128,6 @@
                                             <label>Short Name</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                        <!-- /.form-group -->
                                         <div class="form-group">
                                             <label>NIC</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
@@ -250,22 +211,20 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Promotional Experience (if any) </label>
-                                            <input type="text" class="form-control" placeholder="Year ...">
+                                            <label>English speaking</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                         <div class="form-group">
-                                            <label>Brands </label>
-                                            <div class="select2-purple">
-                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                                                    <option>Elephant House</option>
-                                                </select>
-                                            </div>
+                                            <label>Tamil speaking</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                        <!-- /.form-group -->
                                     </div>
 
-                                        <!-- /.col -->
                                     <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Full Name</label>
+                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                        </div>
                                         <div class="form-group">
                                             <label>Mobile Number 1</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
@@ -278,7 +237,6 @@
                                                 <label class="form-check-label">Whatsapp</label>
                                             </div>
                                         </div>
-                                        <!-- /.form-group -->
                                         <div class="form-group">
                                             <label>Mobile Number 2 (if any)</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
@@ -350,14 +308,6 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>English speaking</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Tamil speaking</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                        <div class="form-group">
                                             <label>I would like to do </label>
                                             <div class="select2-purple">
                                                 <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
@@ -381,18 +331,25 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label>Brands </label>
+                                            <div class="select2-purple">
+                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                                    <option>Elephant House</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Promotional Experience (if any) </label>
+                                            <input type="text" class="form-control" placeholder="Year ...">
+                                        </div>
+                                        <div class="form-group">
                                             <label>Other working experiences  </label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-
-                                            <!-- /.form-group -->
-                                        </div>
-                                        <!-- /.col -->
                                     </div>
-                                <!-- /.row -->
+                                    </div>
                             </div>
-                            <!-- /.row -->
-                        </div><!-- /.container-fluid -->
+                        </div>
                     </div>
                 </section>
                 <!-- /.content -->
