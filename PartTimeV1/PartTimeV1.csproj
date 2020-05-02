@@ -479,6 +479,7 @@
     <Content Include="TemplateAssets\WebSite\assets\vendor\venobox\venobox.min.js" />
     <Content Include="TemplateAssets\WebSite\forms\contact.php" />
     <Content Include="TemplateAssets\WebSite\forms\Readme.txt" />
+    <Content Include="Scripts\Js\index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
