@@ -8,9 +8,12 @@ namespace PartTimeV1.Controllers
 {
     public class AdminController : Controller
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
         // GET: Admin
         public ActionResult Index()
         {
+            Logger.Error("Goodbye cruel world");
             return View();
         }
     }
