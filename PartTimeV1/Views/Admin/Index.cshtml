@@ -83,7 +83,7 @@
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Registration 
+                                    Registration
                                 </p>
                             </a>
                         </li>
@@ -123,6 +123,22 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <label>සැලකිය යුතු කරුණු</label>
+                                        <ol>
+                                            <li>
+                                                සේවායෝජකයා නියම කල නීති රීති අනුව කිසිඳු අතපසු කිරීමකින් තොරව සේවය සිදුකරන අතර එසේ නොවී මා කරන ඕනෑම වරදකදී වැටුපෙන් යම් ප්‍රමාණයක් හෝ සම්පූර්ණ මුදලම අඩු කර ගැනීමට parttime.lk වෙත අයිතිය ඇති බව දනිමි.
+                                            </li>
+                                            <li>
+                                                භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ සාමාජිකත්වය කිසිදිනක ලබා ගත නොහැකි ලෙස තහනම් (Permanent Suspend / Banned ) වන බව දනිමි.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>Full Name/සම්පුර්ණ නම</label>
@@ -160,7 +176,7 @@
                                                     <input type="file" onchange="document.getElementById('Image2').src = window.URL.createObjectURL(this.files[0])">
                                                 </div>
                                             </div>
-                                    
+
 
                                             <label for="exampleInputFile"></label>
                                             <div class="input-group">
@@ -188,7 +204,7 @@
                                             </div>
                                         </div>
 
-                                        <br />     
+                                        <br />
 
                                         <div class="form-group">
                                             <label>Mobile Numbers/දුරකතන අංක</label>
@@ -231,28 +247,19 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>DOB/උපන් දිනය </label>
-                                            <div class="input-group date" id="timepicker" data-target-input="nearest">
-                                                <input type="text" placeholder="උපන් දිනය" class="form-control datetimepicker-input" data-target="#timepicker" />
-                                                <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
-                                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Age/වයස</label>
-                                            <input type="number" class="form-control" placeholder="වයස">
-                                        </div>
-
                                     </div>
 
                                     <div class="col-md-6">
 
                                         <div class="form-group">
+                                            <label>Age/වයස</label>
+                                            <input type="number" class="form-control" placeholder="වයස">
+                                        </div>
+
+                                        <div class="form-group">
                                             <label>Gender/ස්ත්‍රී පුරුෂ බව </label>
                                             <div class="form-check">
-                                                <input type='radio' id='gender' value='yes' name="gender"/>
+                                                <input type='radio' id='gender' value='yes' name="gender" />
                                                 <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
                                                 <input type="radio" id="gender" value="yes" name="gender" />
                                                 <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
@@ -267,20 +274,16 @@
                                             <label>Home Town/ස්තීර පදිංචිය</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                        @*<div class="form-group">
-                                            <label> Nearest Famous Town/ස්තීර පදිංචියට ආසන්තම </label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>*@
                                         <div class="form-group">
-                                            <label>T-shirt size/කමිස කර </label>
+                                            <label>T-shirt size </label>
                                             <div class="form-check">
                                                 <input type='radio' id='tsize' value='yes' name="tsize" />
                                                 <span style="width:40px;display:inline-block;">S</span>
-                                                <input type="radio" id="tsize" value="yes" name="tsize"/>
+                                                <input type="radio" id="tsize" value="yes" name="tsize" />
                                                 <span style="width:40px;display:inline-block;">M</span>
-                                                <input type='radio' id='tsize' value='yes' name="tsize"/>
+                                                <input type='radio' id='tsize' value='yes' name="tsize" />
                                                 <span style="width:40px;display:inline-block;">L</span>
-                                                <input type="radio" id="tsize" value="yes" name="tsize"/>
+                                                <input type="radio" id="tsize" value="yes" name="tsize" />
                                                 <span style="width:40px;display:inline-block;">XL</span>
                                             </div>
                                         </div>
@@ -288,53 +291,60 @@
                                             <label>I am</label>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="promotor">
-                                                <label class="form-check-label">A Student</label>
+                                                <label class="form-check-label">A Student/ශිෂ්‍ය </label>
 
                                                 <ul>
-                                                    <li><input type="text" class="form-control" placeholder="Uni ..."></li>
-                                                    <li><input type="text" class="form-control" placeholder="course ..."></li>
-                                                    <li><input type="text" class="form-control" placeholder="Year ..."></li>
-                                                </ul>
-
-                                                <input class="form-check-input" type="radio" name="promotor" checked>
-                                                <label class="form-check-label">Employee</label>
-
-                                                <ul>
-                                                    <li><input type="text" class="form-control" placeholder="Company ..."></li>
+                                                    <li><input type="text" class="form-control" placeholder="University/විශ්ව විද්‍යාලය"></li>
+                                                    <li><input type="text" class="form-control" placeholder="Course/හදාරන උපාදියේ නම"></li>
+                                                    <li><input type="text" class="form-control" placeholder="Year/ඉගනුම ලබන වසර"></li>
                                                 </ul>
 
                                                 <input class="form-check-input" type="radio" name="promotor">
-                                                <label class="form-check-label">Full time promoter</label>
+                                                <label class="form-check-label">Full time employed/දැනට පුර්ණකාලීන රැකියාවක නිරතවේ </label>
+
+                                                <ul>
+                                                    <li><input type="text" class="form-control" placeholder="Company/ආයතනය"></li>
+                                                    <li><input type="text" class="form-control" placeholder="Branch/නගරය"></li>
+                                                    <li><input type="text" class="form-control" placeholder="Designation/තනතුර"></li>
+                                                </ul>
+
+                                                <input class="form-check-input" type="radio" name="promotor">
+                                                <label class="form-check-label">Full time promoter/දැනට පුර්ණකාලීන ප්‍රවර්දකයෙක් ලෙස කටුතු කරයි </label>
                                             </div>
 
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="promotornew" checked>
-                                                <label class="form-check-label">Currently looking for part time work on weekends or selected days</label>
+                                                <input class="form-check-input" type="radio" name="promotornew">
+                                                <label class="form-check-label">Searching for part time work on weekends or selected days/සති අන්ත හෝ සතියේ දින වල ප්‍රවර්දකයෙක් ලෙස කටයුතු කෙරීමට කැමති </label>
                                             </div>
 
                                         </div>
                                         <div class="form-group">
-                                            <label>English speaking</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <label>English speaking/ඉංග්‍රීසි බස හොදින් හසුරවයි පමණක් Fluent නම් ලෙස යොදන්න</label>
+                                            <input type="text" class="form-control" placeholder="Fluent">
                                         </div>
                                         <div class="form-group">
-                                            <label>Tamil speaking</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <label>Tamil speaking/දෙමල බස හොදින් හසුරවයි පමණක් Fluent නම් ලෙස යොදන්න</label>
+                                            <input type="text" class="form-control" placeholder="Type">
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Sales promotion Experience (if any) </label>
-                                            <input type="text" class="form-control" placeholder="Year ...">
-                                            <label>Brands </label>
-                                            <div class="select2-purple">
-                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                            <label>Sales promotion Experience/ප්‍රවර්දකයෙක් ලෙස අත්දැකීමේ ඇතිනම් පමණක් අදාළ වසර ගණන දක්වන්න </label>
+                                            <input type="number" class="form-control" placeholder="Year/වසර ගණන">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Brands/අත්දැකීම ඇති වෙළද නාම</label>
+                                            <div class="select2-blue">
+                                                <select class="select2" multiple="multiple" data-placeholder="Select" data-dropdown-css-class="select2-purple" style="width: 100%;">
                                                     <option>Elephant House</option>
                                                 </select>
                                             </div>
+                                        </div>
 
-                                            <label>Other part time experience </label>
-                                            <div class="select2-purple">
-                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                        <div class="form-group">
+                                            <label>Other part time experience/වෙනත් අත්දැකීමේ ඇතිනම් </label>
+                                            <div class="select2-blue">
+                                                <select class="select2" multiple="multiple" data-placeholder="Select" data-dropdown-css-class="select2-purple" style="width: 100%;">
                                                     <option>Data entry</option>
                                                     <option>Leaflet</option>
                                                     <option>Photography/Videography </option>
@@ -350,11 +360,19 @@
                                                 </select>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
 
+                                <hr/>
+
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">I would like to participate </label>
+                                                <label class="form-check-label">I would like to participate/මම සහබාගී වීමට කැමැත්තෙමි </label>
+
+
                                             </div>
                                         </div>
                                     </div>
