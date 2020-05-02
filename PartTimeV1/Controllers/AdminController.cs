@@ -7,17 +7,7 @@ namespace PartTimeV1.Controllers
     {
         public ActionResult Index()
         {
-            try
-            {
-                throw new NullReferenceException();
-                return View();
-            }
-            catch (Exception exp)
-            {
-                Logger.Error(exp, "Goodbye cruel world");
-                throw exp;
-            }
-        
+            return View();
         }
     }
 }
