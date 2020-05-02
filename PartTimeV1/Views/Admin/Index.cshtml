@@ -83,7 +83,7 @@
                             <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Dashboard
+                                    Registration 
                                 </p>
                             </a>
                         </li>
@@ -105,7 +105,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Registration  Form</h1>
+                                <h1>Profile</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
@@ -125,90 +125,193 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>Short Name</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <label>Full Name/සම්පුර්ණ නම</label>
+                                            <input type="text" class="form-control" placeholder="සම්පුර්ණ නම">
                                         </div>
                                         <div class="form-group">
-                                            <label>NIC</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <label>Short Name/කෙටි නම</label>
+                                            <input type="text" class="form-control" placeholder="කෙටි නම">
                                         </div>
                                         <div class="form-group">
-                                            <label>DOB</label>
+                                            <label>NIC/ජාතික හැදුනුම්පත් අංකය</label>
+                                            <input type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය">
+                                        </div>
+
+                                        <label for="exampleInputFile">Photos/ඡායාරූප</label>
+                                        <ul>
+                                            <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, අනවශ්‍ය ලෙස edit නොකල ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
+                                            <li>Full Photo 1ක් ද ඇතුලත් කරන්න.</li>
+                                            <li>කාන්තාවන් make up රහිත, unedited ඡායාරූප අවම වශයෙන් 1ක්වත් ඇතුලත් කල යුතු වේ.</li>
+                                            <li>ඡායාරූප 5ම ඇතුලත් කිරීම මඟින් වැඩි ප්‍රතිඵලයක් ලබා ගත හැක.</li>
+                                        </ul>
+                                        <div class="form-group">
+                                            <label for="exampleInputFile"></label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <img id="Image1" alt="image" width="80" height="55" />
+                                                    <input type="file" onchange="document.getElementById('Image1').src = window.URL.createObjectURL(this.files[0])">
+                                                </div>
+                                            </div>
+
+                                            <label for="exampleInputFile"></label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <img id="Image2" alt="image" width="80" height="55" />
+                                                    <input type="file" onchange="document.getElementById('Image2').src = window.URL.createObjectURL(this.files[0])">
+                                                </div>
+                                            </div>
+                                    
+
+                                            <label for="exampleInputFile"></label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <img id="Image3" alt="image" width="80" height="55" />
+                                                    <input type="file" onchange="document.getElementById('Image3').src = window.URL.createObjectURL(this.files[0])">
+                                                </div>
+                                            </div>
+
+
+                                            <label for="exampleInputFile"></label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <img id="Image4" alt="image" width="80" height="55" />
+                                                    <input type="file" onchange="document.getElementById('Image4').src = window.URL.createObjectURL(this.files[0])">
+                                                </div>
+                                            </div>
+
+                                            <label for="exampleInputFile"></label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <img id="Image5" alt="image" width="80" height="55" />
+                                                    <input type="file" onchange="document.getElementById('Image5').src = window.URL.createObjectURL(this.files[0])">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br />     
+
+                                        <div class="form-group">
+                                            <label>Mobile Numbers/දුරකතන අංක</label>
+                                            <ul>
+                                                <li>ඔබව සම්බන්ද කරගත හැකි ප්‍රදාන අංකය.</li>
+                                                <li>එම අංකය සදහා Whatsapp, Viber බාවිතා වන්නේ අංකය පහල අදාල කොටුද සලකුණු කරන්න.</li>
+                                            </ul>
+                                            <input type="text" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය">
+                                            <div class="form-check">
+                                                <input type='checkbox' id='WhatsApp1' value='yes' />
+                                                <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                <input type="checkbox" id="Viber1" value="yes" />
+                                                <span style="width:100px;display:inline-block;">Viber</span>
+                                            </div>
+
+                                            <label></label>
+                                            <ul>
+                                                <li>වෙනත් අංක(ඇතිනම්)</li>
+                                                <li>එම අංකය සදහා Whatsapp, Viber බාවිතා වන්නේ අංකය පහල අදාල කොටුද සලකුණු කරන්න.</li>
+                                            </ul>
+                                            <input type="text" class="form-control" placeholder="දුරකතන අංකය">
+                                            <div class="form-check">
+                                                <input type='checkbox' id='WhatsApp2' value='yes' />
+                                                <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                <input type="checkbox" id="Viber2" value="yes" />
+                                                <span style="width:100px;display:inline-block;">Viber</span>
+                                            </div>
+
+                                            <label></label>
+                                            <ul>
+                                                <li>වෙනත් අංක(ඇතිනම්)</li>
+                                                <li>එම අංකය සදහා Whatsapp, Viber බාවිතා වන්නේ අංකය පහල අදාල කොටුද සලකුණු කරන්න.</li>
+                                            </ul>
+                                            <input type="text" class="form-control" placeholder="දුරකතන අංකය">
+                                            <div class="form-check">
+                                                <input type='checkbox' id='WhatsApp3' value='yes' />
+                                                <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                <input type="checkbox" id="Viber3" value="yes" />
+                                                <span style="width:100px;display:inline-block;">Viber</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>DOB/උපන් දිනය </label>
                                             <div class="input-group date" id="timepicker" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" />
+                                                <input type="text" placeholder="උපන් දිනය" class="form-control datetimepicker-input" data-target="#timepicker" />
                                                 <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
                                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>Age</label>
+                                            <label>Age/වයස</label>
+                                            <input type="number" class="form-control" placeholder="වයස">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label>Gender/ස්ත්‍රී පුරුෂ බව </label>
+                                            <div class="form-check">
+                                                <input type='radio' id='gender' value='yes' name="gender"/>
+                                                <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
+                                                <input type="radio" id="gender" value="yes" name="gender" />
+                                                <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Current City/දැනට පදිංචිය</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
                                         <div class="form-group">
-                                            <label>Gender </label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1">
-                                                <label class="form-check-label">Male</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">Female</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Current City</label>
+                                            <label>Home Town/ස්තීර පදිංචිය</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Home Town</label>
+                                        @*<div class="form-group">
+                                            <label> Nearest Famous Town/ස්තීර පදිංචියට ආසන්තම </label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
+                                        </div>*@
                                         <div class="form-group">
-                                            <label>Nearest Famous Town </label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>T-shirt size </label>
+                                            <label>T-shirt size/කමිස කර </label>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1">
-                                                <label class="form-check-label">S</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">M</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1">
-                                                <label class="form-check-label">L</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">XL</label>
+                                                <input type='radio' id='tsize' value='yes' name="tsize" />
+                                                <span style="width:40px;display:inline-block;">S</span>
+                                                <input type="radio" id="tsize" value="yes" name="tsize"/>
+                                                <span style="width:40px;display:inline-block;">M</span>
+                                                <input type='radio' id='tsize' value='yes' name="tsize"/>
+                                                <span style="width:40px;display:inline-block;">L</span>
+                                                <input type="radio" id="tsize" value="yes" name="tsize"/>
+                                                <span style="width:40px;display:inline-block;">XL</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label>I am a </label>
+                                            <label>I am</label>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1">
+                                                <input class="form-check-input" type="radio" name="promotor">
+                                                <label class="form-check-label">A Student</label>
+
+                                                <ul>
+                                                    <li><input type="text" class="form-control" placeholder="Uni ..."></li>
+                                                    <li><input type="text" class="form-control" placeholder="course ..."></li>
+                                                    <li><input type="text" class="form-control" placeholder="Year ..."></li>
+                                                </ul>
+
+                                                <input class="form-check-input" type="radio" name="promotor" checked>
+                                                <label class="form-check-label">Employee</label>
+
+                                                <ul>
+                                                    <li><input type="text" class="form-control" placeholder="Company ..."></li>
+                                                </ul>
+
+                                                <input class="form-check-input" type="radio" name="promotor">
                                                 <label class="form-check-label">Full time promoter</label>
                                             </div>
+
                                             <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">Employee</label>
-                                                <input type="text" class="form-control" placeholder="Company ...">
+                                                <input class="form-check-input" type="radio" name="promotornew" checked>
+                                                <label class="form-check-label">Currently looking for part time work on weekends or selected days</label>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">Part time promoter</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radio1" checked>
-                                                <label class="form-check-label">Student</label>
-                                                <input type="text" class="form-control" placeholder="Uni ...">
-                                                <input type="text" class="form-control" placeholder="course ...">
-                                                <input type="text" class="form-control" placeholder="Year ...">
-                                            </div>
+
                                         </div>
                                         <div class="form-group">
                                             <label>English speaking</label>
@@ -218,136 +321,44 @@
                                             <label>Tamil speaking</label>
                                             <input type="text" class="form-control" placeholder="Enter ...">
                                         </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Full Name</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mobile Number 1</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">Viber</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">Whatsapp</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mobile Number 2 (if any)</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">Viber</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">Whatsapp</label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Mobile Number 3 (if any)</label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">Viber</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                                <label class="form-check-label">Whatsapp</label>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
-                                            <label for="exampleInputFile">Photo</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Photo</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Photo</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Photo (if any)</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Photo (if any)</label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>I would like to do </label>
-                                            <div class="select2-purple">
-                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
-                                                    <option>sales promotions</option>
-                                                    <option>Events </option>
-                                                    <option>Compere / Announcing </option>
-                                                    <option>Photography/videography </option>
-                                                    <option>Leaflet</option>
-                                                    <option>Data entry</option>
-                                                    <option>Cooking</option>
-                                                    <option>Catering</option>
-                                                    <option>Delivery/ packing</option>
-                                                    <option>Stock counting/ Stock Preparing</option>
-                                                    <option>Ashering </option>
-                                                    <option>Modling</option>
-                                                    <option>Cheering </option>
-                                                    <option>Drama Acting</option>
-                                                    <option>Dancing</option>
-                                                    <option>Magic shows </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
+                                            <label>Sales promotion Experience (if any) </label>
+                                            <input type="text" class="form-control" placeholder="Year ...">
                                             <label>Brands </label>
                                             <div class="select2-purple">
                                                 <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
                                                     <option>Elephant House</option>
                                                 </select>
                                             </div>
+
+                                            <label>Other part time experience </label>
+                                            <div class="select2-purple">
+                                                <select class="select2" multiple="multiple" data-placeholder="Select a State" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                                                    <option>Data entry</option>
+                                                    <option>Leaflet</option>
+                                                    <option>Photography/Videography </option>
+                                                    <option>Cooking</option>
+                                                    <option>Catering</option>
+                                                    <option>Delivery/ packing</option>
+                                                    <option>Stock counting</option>
+                                                    <option>Modeling</option>
+                                                    <option>Cheering </option>
+                                                    <option>Acting</option>
+                                                    <option>Dancing</option>
+                                                    <option>Magic shows </option>
+                                                </select>
+                                            </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label>Promotional Experience (if any) </label>
-                                            <input type="text" class="form-control" placeholder="Year ...">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Other working experiences  </label>
-                                            <input type="text" class="form-control" placeholder="Enter ...">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radio1" checked>
+                                                <label class="form-check-label">I would like to participate </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
