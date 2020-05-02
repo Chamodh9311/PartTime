@@ -54,3 +54,26 @@ $(document).ready(function () {
         }
     });
 });
+
+function submitFunction() {
+
+    var std = {};
+    std.studentName = "qq";
+    std.studentAddress = "test"; 
+
+    $.ajax({
+        type: "POST",
+        url: '/Admin/ProfileSubmit',
+        data: '{std: ' + JSON.stringify(std) + '}',
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+
+        success: function (result) {
+            alert('ok');
+        },
+        error: function (result) {
+            alert('error');
+        }
+    });
+}
+

@@ -8,5 +8,17 @@ namespace PartTimeV1.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult ProfileSubmit(Student std)
+        {
+            return View();
+        }
+    }
+
+    public class Student
+    {
+        public string studentName { get; set; }
+        public string studentAddress { get; set; }
     }
 }
