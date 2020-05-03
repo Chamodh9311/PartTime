@@ -55,7 +55,24 @@ $(document).ready(function () {
     });
 });
 
+//Submit button show hide
+$(document).ready(function () {
+    $('#submit').change(function () {
+        if ($(this).is(":checked")) {
+            $("#sumbitprofile").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $("#sumbitprofile").removeAttr('disabled');
+        }
+    });
+});
+
+
+
+//Profile Submit
 function submitFunction() {
+
+    $("#sumbitprofile").attr("disabled", "disabled").off('click');
 
     var std = {};
     std.studentName = "qq";
@@ -69,9 +86,11 @@ function submitFunction() {
         contentType: "application/json; charset=utf-8",
 
         success: function (result) {
+            $("#sumbitprofile").removeAttr('disabled');
             alert('ok');
         },
         error: function (result) {
+            $("#sumbitprofile").removeAttr('disabled');
             alert('error');
         }
     });
