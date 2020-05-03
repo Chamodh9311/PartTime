@@ -11,7 +11,7 @@ namespace PartTimeV1.Data
             ToTable("BrandsList");
 
             Property(t => t.Company).HasMaxLength(200);
-            Property(t => t.Brands).HasMaxLength(200);
+            Property(t => t.Brand).HasMaxLength(200);
         }
     }
 }

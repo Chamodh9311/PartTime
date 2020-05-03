@@ -10,7 +10,8 @@ namespace PartTimeV1.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.MyList = this.manager.DistrictsRepo.GetAll();
+            //ViewBag.MyList = this.manager.DropDownListsRepo.GetAllBrands();
+            ViewBag.MyList1 = this.manager.DropDownListsRepo.GetAllTowns(2);
             return View();
         }
 

@@ -5,7 +5,7 @@ namespace PartTimeV1.Data
     public class EFDbContext : DbContext
     {
         public EFDbContext() :
-          base("Name=DefaultConnection")
+          base("Name=DbConnection")
         {
             Database.SetInitializer<EFDbContext>(null);
             this.Configuration.LazyLoadingEnabled = false;

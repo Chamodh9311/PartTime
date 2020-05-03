@@ -9,3 +9,4 @@ D:\ProjectVs\PartTimeV1\PartTimeV1.Data\obj\Debug\PartTimeV1.Data.csproj.CoreCom
 D:\ProjectVs\PartTimeV1\PartTimeV1.Data\obj\Debug\PartTimeV1.Data.csproj.CopyComplete
 D:\ProjectVs\PartTimeV1\PartTimeV1.Data\obj\Debug\PartTimeV1.Data.dll
 D:\ProjectVs\PartTimeV1\PartTimeV1.Data\obj\Debug\PartTimeV1.Data.pdb
+D:\ProjectVs\PartTimeV1\PartTimeV1.Data\obj\Debug\PartTimeV1.Data.csprojAssemblyReference.cache

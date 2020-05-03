@@ -61,7 +61,7 @@
     <Compile Include="DistrictsEntity.cs" />
     <Compile Include="RepositoryManager\RepoManager.cs" />
     <Compile Include="RepositoryManager\RepoManager.Repo.cs" />
-    <Compile Include="Repository\DistrictsRepo.cs" />
+    <Compile Include="Repository\DropDownListsRepository.cs" />
     <Compile Include="Repository\EFRepository.cs" />
     <Compile Include="Repository\IEFRepository.cs" />
     <Compile Include="UserProfileEntity.cs" />

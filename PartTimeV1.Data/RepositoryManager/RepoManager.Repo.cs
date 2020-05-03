@@ -4,16 +4,16 @@ namespace PartTimeV1.Data.RepositoryManager
 {
     public partial class RepoManager
     {
-        private DistrictsRepo districtsRepo = null;
-        public DistrictsRepo DistrictsRepo
+        private DropDownListsRepo dropDownListsRepo = null;
+        public DropDownListsRepo DropDownListsRepo
         {
             get
             {
-                if (this.districtsRepo == null)
+                if (this.dropDownListsRepo == null)
                 {
-                    this.districtsRepo = new DistrictsRepo(this.dbContext);
+                    this.dropDownListsRepo = new DropDownListsRepo(this.dbContext);
                 }
-                return this.districtsRepo;
+                return this.dropDownListsRepo;
             }
         }
     }
