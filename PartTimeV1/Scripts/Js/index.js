@@ -3,6 +3,73 @@
     $('.select2').select2()
 });
 
+
+$(function () {
+
+    AjaxCall('/Admin/GetDistricts', null).done(function (response) {
+        if (response.length > 0) {
+            $('#currentdistrict').html('');
+            $('#homedistrict').html('');
+            var options = '';
+            options += '<option value="Select">Select</option>';
+            for (var i = 0; i < response.length; i++) {
+                options += '<option value="' + response[i].DistrictId + '">' + response[i].Name + '</option>';
+            }
+            $('#currentdistrict').append(options);
+            $('#homedistrict').append(options);
+
+        }
+    }).fail(function (error) {
+        alert(error.StatusText);
+    });
+
+    $('#currentdistrict').on("change", function () {
+        var town = $('#currentdistrict').val();
+        var obj = { districtId: town };
+        AjaxCall('/Admin/GetTowns', JSON.stringify(obj), 'POST').done(function (response) {
+            if (response.length > 0) {
+                $('#currentcity').html('');
+                var options = '';
+                options += '<option value="Select">Select</option>';
+                for (var i = 0; i < response.length; i++) {
+                    options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
+                }
+                $('#currentcity').append(options);
+            }
+        }).fail(function (error) {
+            alert(error.StatusText);
+        });
+    });
+
+    $('#homedistrict').on("change", function () {
+        var town = $('#homedistrict').val();
+        var obj = { districtId: town };
+        AjaxCall('/Admin/GetTowns', JSON.stringify(obj), 'POST').done(function (response) {
+            if (response.length > 0) {
+                $('#hometown').html('');
+                var options = '';
+                options += '<option value="Select">Select</option>';
+                for (var i = 0; i < response.length; i++) {
+                    options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
+                }
+                $('#hometown').append(options);
+            }
+        }).fail(function (error) {
+            alert(error.StatusText);
+        });
+    });
+
+});
+
+function AjaxCall(url, data, type) {
+    return $.ajax({
+        url: url,
+        type: type ? type : 'GET',
+        data: data,
+        contentType: 'application/json'
+    });
+}  
+
 //Show hide I am section
 $(document).ready(function () {
     $('#student').change(function () {
@@ -74,9 +141,9 @@ function submitFunction() {
 
     $("#sumbitprofile").attr("disabled", "disabled").off('click');
 
-    var std = {};
-    std.studentName = "qq";
-    std.studentAddress = "test"; 
+    //var std = {};
+    //std.studentName = "qq";
+    //std.studentAddress = "test"; 
 
     $.ajax({
         type: "POST",

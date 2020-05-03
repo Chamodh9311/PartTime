@@ -10,9 +10,19 @@ namespace PartTimeV1.Controllers
 
         public ActionResult Index()
         {
-            //ViewBag.MyList = this.manager.DropDownListsRepo.GetAllBrands();
-            ViewBag.MyList1 = this.manager.DropDownListsRepo.GetAllTowns(2);
             return View();
+        }
+
+        public JsonResult GetDistricts()
+        {
+            var districts = this.manager.DropDownListsRepo.GetAllDistricts();
+            return Json(districts, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetTowns(int districtId)
+        {
+            var towns = this.manager.DropDownListsRepo.GetAllTowns(districtId);
+            return Json(towns, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
