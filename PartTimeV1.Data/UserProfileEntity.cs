@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PartTimeV1.Data
 {
-    public class UserProfileEntity 
+    public class UserProfileEntity : Entity
     {
         public string FullName { get; set; }
         public string ShortName { get; set; }
@@ -39,7 +39,7 @@ namespace PartTimeV1.Data
         public bool Student { get; set; }
         public string University { get; set; }
         public string Course { get; set; }
-        public string UniYear { get; set; }
+        public int UniYear { get; set; }
         public bool Employeed { get; set; }
         public string Company { get; set; }
         public string Branch { get; set; }

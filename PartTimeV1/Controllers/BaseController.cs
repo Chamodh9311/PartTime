@@ -1,10 +1,18 @@
-﻿using System.Web.Mvc;
+﻿using PartTimeV1.Data.RepositoryManager;
+using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
 {
     public class BaseController : Controller
     {
         protected static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        protected RepoManager manager = null;
+
+        public BaseController()
+        {
+            this.manager = new RepoManager();
+        }
+
 
         protected override void OnException(ExceptionContext filterContext)  
         {

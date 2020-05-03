@@ -4,8 +4,13 @@ namespace PartTimeV1.Controllers
 {
     public class AdminController : BaseController
     {
+        public AdminController() : base()
+        {
+        }
+
         public ActionResult Index()
         {
+            ViewBag.MyList = this.manager.DistrictsRepo.GetAll();
             return View();
         }
 

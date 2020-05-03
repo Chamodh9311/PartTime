@@ -13,7 +13,8 @@ namespace PartTimeV1.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            _ = modelBuilder.Configurations.Add(new UserProfileEntityMap());
+            modelBuilder.Configurations.Add(new UserProfileEntityMap());
+            modelBuilder.Configurations.Add(new BrandsListsEntityMap());
 
             base.OnModelCreating(modelBuilder);
         }
