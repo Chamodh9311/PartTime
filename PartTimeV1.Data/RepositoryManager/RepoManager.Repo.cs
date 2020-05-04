@@ -16,5 +16,18 @@ namespace PartTimeV1.Data.RepositoryManager
                 return this.dropDownListsRepo;
             }
         }
+
+        private UserProfileRepository userProfileRepository = null;
+        public UserProfileRepository UserProfileRepository
+        {
+            get
+            {
+                if (this.userProfileRepository == null)
+                {
+                    this.userProfileRepository = new UserProfileRepository(this.dbContext);
+                }
+                return this.userProfileRepository;
+            }
+        }
     }
 }

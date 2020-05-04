@@ -13,3 +13,5 @@
 /packages/log4net.2.0.8/lib
 /packages/log4net.2.0.8/.signature.p7s
 /PartTimeV1/logs
+/PartTimeV1.Data/bin
+/PartTimeV1.Data/obj

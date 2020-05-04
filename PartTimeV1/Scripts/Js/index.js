@@ -171,14 +171,63 @@ function submitFunction() {
 
     $("#sumbitprofile").attr("disabled", "disabled").off('click');
 
-    //var std = {};
-    //std.studentName = "qq";
-    //std.studentAddress = "test"; 
+    var profileRequest = {};
+    profileRequest.FullName = $('#fullname').val();
+    profileRequest.ShortName = $('#shortname').val();
+    profileRequest.NIC = $('#nicno').val();
+
+
+    profileRequest.Photo1 = $('#Image1').val();
+    profileRequest.Photo2 = $('#Image2').val();
+    profileRequest.Photo3 = $('#Image3').val();
+    profileRequest.Photo4 = $('#Image4').val();
+    profileRequest.Photo5 = $('#Image5').val();
+
+
+    profileRequest.Mobiel1 = $('#mobile01').val();
+    profileRequest.Mobile1Whatsapp = $('#whatsApp1').val();
+    profileRequest.Mobile1Viber = $('#viber3').val();
+    profileRequest.Mobiel2 = $('#mobile02').val();
+    profileRequest.Mobile2Whatsapp = $('#whatsApp2').val();
+    profileRequest.Mobile2Viber = $('#viber3').val();
+    profileRequest.Mobiel3 = $('#mobile03').val();
+    profileRequest.Mobile3Whatsapp = $('#whatsApp2').val();
+    profileRequest.Mobile3Viber = $('#viber3').val();
+
+    profileRequest.DOB = $('#dob').val();
+    profileRequest.Age = $('#age').val();
+    profileRequest.GenderMale = $('#genderM').val();
+    profileRequest.GenderFemale = $('#genderF').val();
+    profileRequest.CurrentDistrict = $('#currentdistrict').val();
+    profileRequest.CurrentTown = $('#currentcity').val();
+    profileRequest.HomeDistrict = $('#homedistrict').val();
+    profileRequest.HomeTown = $('#hometown').val();
+    profileRequest.ShirtSizeS = $('#tsizeS').val();
+    profileRequest.ShirtSizeM = $('#tsizeM').val();
+    profileRequest.ShirtSizeL = $('#tsizeL').val();
+    profileRequest.ShirtSizeXS = $('#tsizeXS').val();
+    profileRequest.Student = $('#student').val();
+    profileRequest.University = $('#studentdetails1').val();
+    profileRequest.Course = $('#studentdetails2').val();
+    profileRequest.UniYear = $('#studentdetails3').val();
+    profileRequest.Employeed = $('#employee').val();
+    profileRequest.Company = $('#employeedetails1').val();
+    profileRequest.Branch = $('#employeedetails2').val();
+    profileRequest.Designation = $('#employeedetails3').val();
+    profileRequest.FullTimePromoter = $('#parttime').val();
+    profileRequest.PartTimePromoter = $('#freelance').val();
+    profileRequest.EnglishSpeaking = $('#englishlan').val();
+    profileRequest.TamilSpeaking = $('#tamillan').val();
+    profileRequest.SalesExperience = $('#promoexperience').val();
+
+
+    profileRequest.Brands = $('#brandnames').select2("val"),
+    profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),
 
     $.ajax({
         type: "POST",
         url: '/Admin/ProfileSubmit',
-        data: '{std: ' + JSON.stringify(std) + '}',
+        data: '{profileRequest: ' + JSON.stringify(profileRequest) + '}',
         dataType: "json",
         contentType: "application/json; charset=utf-8",
 

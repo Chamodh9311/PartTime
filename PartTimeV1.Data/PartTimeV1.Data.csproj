@@ -64,6 +64,7 @@
     <Compile Include="Repository\DropDownListsRepository.cs" />
     <Compile Include="Repository\EFRepository.cs" />
     <Compile Include="Repository\IEFRepository.cs" />
+    <Compile Include="Repository\UserProfileRepository.cs" />
     <Compile Include="UserProfileEntity.cs" />
     <Compile Include="UserProfileEntityMap.cs" />
   </ItemGroup>
