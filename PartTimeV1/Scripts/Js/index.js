@@ -1,6 +1,10 @@
 ﻿$(function () {
     //Initialize Select2 Elements
-    $('.select2').select2()
+    $('.select2').select2();
+
+    //Datemask2 mm/dd/yyyy
+    $('#dob').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' });
+
 });
 
 

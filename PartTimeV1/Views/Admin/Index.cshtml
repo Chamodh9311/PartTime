@@ -162,11 +162,11 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>1. Full Name/සම්පුර්ණ නම:</label>
-                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම">
+                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" style="width: 80%">
                                         </div>
                                         <div class="form-group">
                                             <label>2. Short Name/කෙටි නම:</label>
-                                            <input id="shortname" type="text" class="form-control" placeholder="කෙටි නම">
+                                            <input id="shortname" type="text" class="form-control" placeholder="කෙටි නම" style="width: 80%">
                                         </div>
                                         <div class="form-group">
                                             <label>3. NIC/ජාතික හැදුනුම්පත් අංකය:</label>
@@ -230,39 +230,59 @@
                                             <label>5. Mobile Numbers/දුරකතන අංක:</label>
                                             <ul>
                                                 <li>ඔබව සම්බන්ද කරගත හැකි ප්‍රදාන අංකය.</li>
-                                                <li>එම අංකය සදහා Whatsapp, Viber බාවිතා වන්නේ අංකය පහල අදාල කොටුද සලකුණු කරන්න.</li>
+                                                <li>එම අංකය සදහා Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
+                                                <li>වෙනත් අංක බාවිතා වන්නේ නම් පමනක් ඒවාද දක්වන්න.</li>
                                             </ul>
-                                            <input id="mobile01" type="number" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" style="width: 50%">
-                                            <div class="form-check">
-                                                <input type='checkbox' id='whatsApp1' value='yes' />
-                                                <span style="width:100px;display:inline-block;">WhatsApp</span>
-                                                <input type="checkbox" id="viber1" value="yes" />
-                                                <span style="width:100px;display:inline-block;">Viber</span>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input id="mobile01" type="number" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" style="width: 100%">
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-check">
+                                                        <input type='checkbox' id='whatsApp1' value='yes' />
+                                                        <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                        <input type="checkbox" id="viber1" value="yes" />
+                                                        <span style="width:100px;display:inline-block;">Viber</span>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <label></label>
-                                            <ul>
-                                                <li>වෙනත් අංක:</li>
-                                            </ul>
-                                            <input id="mobile02" type="number" class="form-control" placeholder="දුරකතන අංකය" style="width: 50%">
-                                            <div class="form-check">
-                                                <input type='checkbox' id='whatsApp2' value='yes' />
-                                                <span style="width:100px;display:inline-block;">WhatsApp</span>
-                                                <input type="checkbox" id="viber2" value="yes" />
-                                                <span style="width:100px;display:inline-block;">Viber</span>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input id="mobile02" type="number" class="form-control" placeholder="දුරකතන අංකය" style="width: 100%">
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-check">
+                                                        <input type='checkbox' id='whatsApp2' value='yes' />
+                                                        <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                        <input type="checkbox" id="viber2" value="yes" />
+                                                        <span style="width:100px;display:inline-block;">Viber</span>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                             <label></label>
-                                            <ul>
-                                                <li>වෙනත් අංක:</li>
-                                            </ul>
-                                            <input id="mobile03" type="number" class="form-control" placeholder="දුරකතන අංකය" style="width: 50%">
-                                            <div class="form-check">
-                                                <input type='checkbox' id='whatsApp3' value='yes' />
-                                                <span style="width:100px;display:inline-block;">WhatsApp</span>
-                                                <input type="checkbox" id="viber3" value="yes" />
-                                                <span style="width:100px;display:inline-block;">Viber</span>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <input id="mobile03" type="number" class="form-control" placeholder="දුරකතන අංකය" style="width: 100%">
+                                                </div>
+
+                                                <div class="col">
+                                                    <div class="form-check">
+                                                        <input type='checkbox' id='whatsApp3' value='yes' />
+                                                        <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                        <input type="checkbox" id="viber3" value="yes" />
+                                                        <span style="width:100px;display:inline-block;">Viber</span>
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
 
                                     </div>
@@ -271,12 +291,12 @@
 
                                         <div class="form-group">
                                             <label>6. DOB/උපන් දිනය :</label>
-                                            <input id="dob" type="number" class="form-control" placeholder="උපන් දිනය" style="width: 50%">
+                                            <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
                                         </div>
 
                                         <div class="form-group">
                                             <label>7. Age/වයස:</label>
-                                            <input id="age" type="number" class="form-control" placeholder="වයස" style="width: 50%">
+                                            <input id="age" type="text" class="form-control" placeholder="වයස" style="width: 50%">
                                         </div>
 
                                         <div class="form-group">
@@ -291,6 +311,10 @@
 
                                         <div class="form-group">
                                             <label>9. Current City/දැනට පදිංචිය:</label>
+                                            <ul>
+                                                <li>ඔබේ නගරය මෙහි නොමැති නම් පමණක් දැක්වෙන නගර අතරින් ඔබේ නරයට අසන්නම් නගරය තෝරන්න.</li>
+                                            </ul>
+
                                             <div class="row">
                                                 <div class="col">
                                                     <select id="currentdistrict" style="width: 100%;">
@@ -306,6 +330,10 @@
 
                                         <div class="form-group">
                                             <label>10. Home Town/ස්තීර පදිංචිය:</label>
+                                            <ul>
+                                                <li>ඔබේ නගරය මෙහි නොමැති නම් පමණක් දැක්වෙන නගර අතරින් ඔබේ නරයට අසන්නම් නගරය තෝරන්න.</li>
+                                            </ul>
+
                                             <div class="row">
                                                 <div class="col">
                                                     <select id="homedistrict" style="width: 100%;">
@@ -481,7 +509,9 @@
     <script src="~/TemplateAssets/DashBord/dist/js/adminlte.js"></script>
     <!-- Select2 -->
     <script src="~/TemplateAssets/DashBord/plugins/select2/js/select2.full.min.js"></script>
-
+    <!-- InputMask -->
+    @*<script src="~/TemplateAssets/DashBord/plugins/moment/moment.min.js"></script>*@
+    <script src="~/TemplateAssets/DashBord/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
     <!-- OPTIONAL SCRIPTS -->
     @*<script src="~/TemplateAssets/DashBord/dist/js/demo.js"></script>*@
 
