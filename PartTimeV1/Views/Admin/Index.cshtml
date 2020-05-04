@@ -162,15 +162,15 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label>1. Full Name/සම්පුර්ණ නම:</label>
-                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" style="width: 80%">
+                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" style="width: 80%">
                                         </div>
                                         <div class="form-group">
                                             <label>2. Short Name/කෙටි නම:</label>
-                                            <input id="shortname" type="text" class="form-control" placeholder="කෙටි නම" style="width: 80%">
+                                            <input id="shortname" type="text" class="form-control" placeholder="කෙටි නම" maxlength="490" style="width: 80%">
                                         </div>
                                         <div class="form-group">
                                             <label>3. NIC/ජාතික හැදුනුම්පත් අංකය:</label>
-                                            <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" style="width: 50%">
+                                            <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
                                         </div>
 
                                         <label for="photos">4. Photos/ඡායාරූප:</label>
@@ -236,7 +236,7 @@
 
                                             <div class="row">
                                                 <div class="col">
-                                                    <input id="mobile01" type="number" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" style="width: 100%">
+                                                    <input id="mobile01" type="number" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
                                                 </div>
 
                                                 <div class="col">
@@ -253,7 +253,7 @@
 
                                             <div class="row">
                                                 <div class="col">
-                                                    <input id="mobile02" type="number" class="form-control" placeholder="දුරකතන අංකය" style="width: 100%">
+                                                    <input id="mobile02" type="number" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
                                                 </div>
 
                                                 <div class="col">
@@ -270,7 +270,7 @@
 
                                             <div class="row">
                                                 <div class="col">
-                                                    <input id="mobile03" type="number" class="form-control" placeholder="දුරකතන අංකය" style="width: 100%">
+                                                    <input id="mobile03" type="number" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
                                                 </div>
 
                                                 <div class="col">
@@ -296,7 +296,7 @@
 
                                         <div class="form-group">
                                             <label>7. Age/වයස:</label>
-                                            <input id="age" type="text" class="form-control" placeholder="වයස" style="width: 50%">
+                                            <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
                                         </div>
 
                                         <div class="form-group">
@@ -317,13 +317,11 @@
 
                                             <div class="row">
                                                 <div class="col">
-                                                    <select id="currentdistrict" style="width: 100%;">
-                                                    </select>
+                                                    <select id="currentdistrict" style="height: 32px;width: 100%;"></select>
                                                 </div>
 
                                                 <div class="col">
-                                                    <select id="currentcity" style="width: 100%;">
-                                                    </select>
+                                                    <select id="currentcity" style="height: 32px;width: 100%;"></select>
                                                 </div>
                                             </div>
                                         </div>
@@ -336,13 +334,11 @@
 
                                             <div class="row">
                                                 <div class="col">
-                                                    <select id="homedistrict" style="width: 100%;">
-                                                    </select>
+                                                    <select id="homedistrict" style="height: 32px;width: 100%;"></select>
                                                 </div>
 
                                                 <div class="col">
-                                                    <select id="hometown" style="width: 100%;">
-                                                    </select>
+                                                    <select id="hometown" style="height: 32px;width: 100%;"> </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -372,9 +368,9 @@
 
                                                 <div id="studentdetails" style="display:none;">
                                                     <ul>
-                                                        <li><input id="studentdetails1" type="text" class="form-control" placeholder="University/විශ්ව විද්‍යාලය" style="width: 80%"></li>
-                                                        <li><input id="studentdetails2" type="text" class="form-control" placeholder="Course/හදාරන උපාදියේ නම" style="width: 80%"></li>
-                                                        <li><input id="studentdetails3" type="text" class="form-control" placeholder="Year/ඉගනුම ලබන වසර" style="width: 80%"></li>
+                                                        <li><input id="studentdetails1" type="text" class="form-control" placeholder="University/විශ්ව විද්‍යාලය" maxlength="190" style="width: 80%"></li>
+                                                        <li><input id="studentdetails2" type="text" class="form-control" placeholder="Course/හදාරන උපාදියේ නම" maxlength="190" style="width: 80%"></li>
+                                                        <li><input id="studentdetails3" type="text" class="form-control" placeholder="Year/ඉගනුම ලබන වසර" data-inputmask='"mask": "9"' data-mask maxlength="190" style="width: 80%"></li>
                                                     </ul>
                                                 </div>
 
@@ -385,9 +381,9 @@
 
                                                 <div id="employeedetails" style="display:none;">
                                                     <ul>
-                                                        <li><input id="employeedetails1" type="text" class="form-control" placeholder="Company/ආයතනය" style="width: 80%"></li>
-                                                        <li><input id="employeedetails2" type="text" class="form-control" placeholder="Branch/නගරය" style="width: 80%"></li>
-                                                        <li><input id="employeedetails3" type="text" class="form-control" placeholder="Designation/තනතුර" style="width: 80%"></li>
+                                                        <li><input id="employeedetails1" type="text" class="form-control" placeholder="Company/ආයතනය" maxlength="190" style="width: 80%"></li>
+                                                        <li><input id="employeedetails2" type="text" class="form-control" placeholder="Branch/නගරය" maxlength="190" style="width: 80%"></li>
+                                                        <li><input id="employeedetails3" type="text" class="form-control" placeholder="Designation/තනතුර" maxlength="190" style="width: 80%"></li>
                                                     </ul>
                                                 </div>
 
@@ -405,33 +401,29 @@
 
                                         <div class="form-group">
                                             <label>13. English speaking/ඉංග්‍රීසි හොදින් හසුරවයි නම් Fluent යොදන්න:</label>
-                                            <input id="englishlan" type="text" class="form-control" placeholder="Fluent" style="width: 50%">
+                                            <input id="englishlan" type="text" class="form-control" placeholder="Fluent" maxlength="90" style="width: 50%">
                                         </div>
                                         <div class="form-group">
                                             <label>14. Tamil speaking/දෙමල හොදින් හසුරවයි නම් Fluent යොදන්න:</label>
-                                            <input id="tamillan" type="text" class="form-control" placeholder="Type" style="width: 50%">
+                                            <input id="tamillan" type="text" class="form-control" placeholder="Fluent" maxlength="90" style="width: 50%">
                                         </div>
 
                                         <div class="form-group">
                                             <label>15. Sales promotion experience/ප්‍රවර්දකයෙක් ලෙස අත්දැකීමේ ඇතිනම්: </label>
-                                            <input id="promoexperience" type="number" class="form-control" placeholder="Year/වසර ගණන" style="width: 50%">
+                                            <input id="promoexperience" type="tel" class="form-control" placeholder="Year/වසර ගණන" data-inputmask='"mask": "99"' data-mask style="width: 50%">
                                         </div>
 
                                         <div class="form-group">
                                             <label>16. Brands/අත්දැකීම ඇති වෙළද නාම:</label>
                                             <div class="select2-blue">
-                                                <select id="brandnames" class="select2" multiple="multiple" data-placeholder="Select" data-dropdown-css-class="select2-blue" style="width: 100%;">
-                                                    <option>Select</option>
-                                                    <option>Elephant House</option>
-                                                </select>
+                                                <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label>17. Other part time experience/වෙනත් අත්දැකීමේ ඇතිනම්:</label>
                                             <div class="select2-blue">
-                                                <select id="otherpromoexperience" class="select2" multiple="multiple" data-placeholder="Select" data-dropdown-css-class="select2-blue" style="width: 100%;">
-                                                    <option>Select</option>
+                                                <select id="otherpromoexperience" class="select2" multiple="multiple" data-placeholder="-Select Experience-" data-dropdown-css-class="select2-blue" style="width: 100%;">
                                                     <option>Data entry</option>
                                                     <option>Leaflet</option>
                                                     <option>Photography/Videography </option>
@@ -458,7 +450,7 @@
                                             <div class="form-check">
                                                 <input id="submit" class="form-check-input" type="checkbox">
                                                 <label class="form-check-label">I would like to participate/මම සහබාගී වීමට කැමැත්තෙමි </label>
-                                                <button id="sumbitprofile" type="submit" onclick="submitFunction()" class="btn btn-info">Save</button>
+                                                <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
                                                 <button type="button" class="btn btn-warning">Cancel</button>
                                             </div>
                                         </div>

@@ -4,10 +4,6 @@ namespace PartTimeV1.Controllers
 {
     public class AdminController : BaseController
     {
-        public AdminController() : base()
-        {
-        }
-
         public ActionResult Index()
         {
             return View();
@@ -25,16 +21,16 @@ namespace PartTimeV1.Controllers
             return Json(towns, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public ActionResult ProfileSubmit(Student std)
+        public JsonResult GetBrands()
         {
-            return View();
+            var brands = this.manager.DropDownListsRepo.GetAllBrands();
+            return Json(brands, JsonRequestBehavior.AllowGet);
         }
-    }
 
-    public class Student
-    {
-        public string studentName { get; set; }
-        public string studentAddress { get; set; }
+        //[HttpPost]
+        //public ActionResult ProfileSubmit(Student std)
+        //{
+        //    return View();
+        //}
     }
 }

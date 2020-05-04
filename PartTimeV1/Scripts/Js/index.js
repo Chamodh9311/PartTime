@@ -2,12 +2,47 @@
     //Initialize Select2 Elements
     $('.select2').select2();
 
-    //Datemask2 mm/dd/yyyy
-    $('#dob').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' });
+    //Input mask
+    $('[data-mask]').inputmask()
 
 });
 
+function AjaxCall(url, data, type) {
+    return $.ajax({
+        url: url,
+        type: type ? type : 'GET',
+        data: data,
+        contentType: 'application/json'
+    });
+}  
 
+function AjaxCallSelect2(url, data, type) {
+    return $.ajax({
+        url: url,
+        type: type ? type : 'GET',
+        data: data,
+        contentType: 'application/json'
+    });
+}  
+
+//Load town dropdown values 
+$(function () {
+
+    AjaxCallSelect2('/Admin/GetBrands', null).done(function (response) {
+        if (response.length > 0) {
+            $('#brandnames').html('');
+            var options = '';
+            for (var i = 0; i < response.length; i++) {
+                options += '<option value="' + response[i].Brand + '">' + response[i].Brand + '</option>';
+            }
+            $('#brandnames').append(options);
+        }
+    }).fail(function (error) {
+        alert(error.StatusText);
+    });
+});
+
+//Load town dropdown values 
 $(function () {
 
     AjaxCall('/Admin/GetDistricts', null).done(function (response) {
@@ -15,7 +50,7 @@ $(function () {
             $('#currentdistrict').html('');
             $('#homedistrict').html('');
             var options = '';
-            options += '<option value="Select">Select</option>';
+            options += '<option value="Select">-Select District-</option>';
             for (var i = 0; i < response.length; i++) {
                 options += '<option value="' + response[i].DistrictId + '">' + response[i].Name + '</option>';
             }
@@ -34,7 +69,7 @@ $(function () {
             if (response.length > 0) {
                 $('#currentcity').html('');
                 var options = '';
-                options += '<option value="Select">Select</option>';
+                options += '<option value="Select">-Select Town-</option>';
                 for (var i = 0; i < response.length; i++) {
                     options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
                 }
@@ -52,7 +87,7 @@ $(function () {
             if (response.length > 0) {
                 $('#hometown').html('');
                 var options = '';
-                options += '<option value="Select">Select</option>';
+                options += '<option value="Select">-Select Town-</option>';
                 for (var i = 0; i < response.length; i++) {
                     options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
                 }
@@ -64,15 +99,6 @@ $(function () {
     });
 
 });
-
-function AjaxCall(url, data, type) {
-    return $.ajax({
-        url: url,
-        type: type ? type : 'GET',
-        data: data,
-        contentType: 'application/json'
-    });
-}  
 
 //Show hide I am section
 $(document).ready(function () {
@@ -130,10 +156,10 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#submit').change(function () {
         if ($(this).is(":checked")) {
-            $("#sumbitprofile").attr("disabled", "disabled").off('click');
+            $("#sumbitprofile").removeAttr('disabled');
         }
         else {
-            $("#sumbitprofile").removeAttr('disabled');
+            $("#sumbitprofile").attr("disabled", "disabled").off('click');
         }
     });
 });
