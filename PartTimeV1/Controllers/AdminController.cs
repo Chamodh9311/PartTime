@@ -13,6 +13,26 @@ namespace PartTimeV1.Controllers
             return View();
         }
 
+        public ActionResult Users()
+        {
+            return View();
+        }
+
+        public JsonResult GetUserProfileData()
+        {
+            var profiles = this.manager.UserProfileRepository.GetAllActive();
+
+            //var Result = new
+            //{
+            //    draw = draw,
+            //    recordsFiltered = recordsTotal,
+            //    recordsTotal = recordsTotal,
+            //    data = searchLogRecords
+            //};
+
+            return Json(new { data = profiles }, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult GetDistricts()
         {
             var districts = this.manager.DropDownListsRepo.GetAllDistricts();
@@ -85,6 +105,7 @@ namespace PartTimeV1.Controllers
                     Approved = false,
                     Deleted = false,
                     Banned = false,
+                    CreateOn = DateTime.Now,
                     Version = 1
 
                 };

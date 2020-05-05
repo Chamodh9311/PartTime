@@ -57,6 +57,7 @@ namespace PartTimeV1.Data
         public bool Approved { get; set; }
         public bool Deleted { get; set; }
         public bool Banned { get; set; }
+        public DateTime CreateOn { get; set; }
         public int Version { get; set; }
     }
 }

@@ -59,6 +59,7 @@ namespace PartTimeV1.Data
             Property(t => t.Approved);
             Property(t => t.Deleted);
             Property(t => t.Banned);
+            Property(t => t.CreateOn);
             Property(t => t.Version);
         }
     }
