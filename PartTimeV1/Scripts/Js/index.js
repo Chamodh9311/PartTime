@@ -165,6 +165,35 @@ $(document).ready(function () {
 });
 
 
+function encodeImageFileAsURL(e, a, i) {
+
+    var filesSelected = e.files;
+    if (filesSelected["0"].size > 1000000) {
+        alert("Unable to proceed upload, File is larger than 1 MB");
+        document.getElementById(i).value = null;
+    } else {
+        if (filesSelected.length > 0) {
+            var fileToLoad = filesSelected[0];
+
+            var fileReader = new FileReader();
+
+            fileReader.onload = function (fileLoadedEvent) {
+                var srcData = fileLoadedEvent.target.result;
+
+                var newImage = document.createElement('img');
+                newImage.src = srcData;
+
+                var $img = null;
+                $img = $("<img style=\"width: 95px; height: 95px; vertical-align: middle; \"/>");
+
+                $img.attr("src", srcData)
+                $(a).html($img);
+            }
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+}
+
 
 //Profile Submit
 function submitFunction() {
@@ -177,11 +206,11 @@ function submitFunction() {
     profileRequest.NIC = $('#nicno').val();
 
 
-    profileRequest.Photo1 = $('#Image1').val();
-    profileRequest.Photo2 = $('#Image2').val();
-    profileRequest.Photo3 = $('#Image3').val();
-    profileRequest.Photo4 = $('#Image4').val();
-    profileRequest.Photo5 = $('#Image5').val();
+    profileRequest.Photo1 = document.getElementById("Image1").innerHTML;  
+    profileRequest.Photo2 = document.getElementById("Image2").innerHTML;  
+    profileRequest.Photo3 = document.getElementById("Image3").innerHTML;  
+    profileRequest.Photo4 = document.getElementById("Image4").innerHTML;  
+    profileRequest.Photo5 = document.getElementById("Image5").innerHTML;  
 
 
     profileRequest.Mobile1 = $('#mobile01').val();

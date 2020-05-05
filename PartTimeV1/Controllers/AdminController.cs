@@ -21,15 +21,6 @@ namespace PartTimeV1.Controllers
         public JsonResult GetUserProfileData()
         {
             var profiles = this.manager.UserProfileRepository.GetAllActive();
-
-            //var Result = new
-            //{
-            //    draw = draw,
-            //    recordsFiltered = recordsTotal,
-            //    recordsTotal = recordsTotal,
-            //    data = searchLogRecords
-            //};
-
             return Json(new { data = profiles }, JsonRequestBehavior.AllowGet);
         }
 
@@ -99,8 +90,8 @@ namespace PartTimeV1.Controllers
                     EnglishSpeaking = profileRequest.EnglishSpeaking,
                     TamilSpeaking = profileRequest.TamilSpeaking,
                     SalesExperience = profileRequest.SalesExperience,
-                    Brands = profileRequest.Brands == null ? null : profileRequest.Brands.ToString(),
-                    OtherExperience = profileRequest.OtherExperience == null ? null : profileRequest.OtherExperience.ToString(),
+                    Brands = profileRequest.Brands == null ? null : string.Join(",", profileRequest.Brands),
+                    OtherExperience = profileRequest.OtherExperience == null ? null : string.Join(",", profileRequest.OtherExperience),
 
                     Approved = false,
                     Deleted = false,

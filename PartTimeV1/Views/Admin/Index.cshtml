@@ -150,13 +150,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label>සැලකිය යුතු කරුණු</label>
+                                        <label>කොන්දේසි සහ එකඟතාවයන්</label>
                                         <ol>
                                             <li>
                                                 සේවායෝජකයා නියම කල නීති රීති අනුව කිසිඳු අතපසු කිරීමකින් තොරව සේවය සිදුකරන අතර එසේ නොවී මා කරන ඕනෑම වරදකදී වැටුපෙන් යම් ප්‍රමාණයක් හෝ සම්පූර්ණ මුදලම අඩු කර ගැනීමට parttime.lk වෙත අයිතිය ඇති බව දනිමි.
                                             </li>
                                             <li>
-                                                භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ සාමාජිකත්වය කිසිදිනක ලබා ගත නොහැකි ලෙස තහනම් (Permanent Suspend / Banned ) වන බව දනිමි.
+                                                භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ මාගේ ගිණුම (Profile) තාවකාලිකව හෝ සදාකාලිකව තහනම් (Restrict / Suspend ) තහනම් වන බව දනිමි.
                                             </li>
                                         </ol>
                                     </div>
@@ -172,60 +172,60 @@
                                         </div>
                                         <div class="form-group">
                                             <label>2. Short Name/කෙටි නම:</label>
-                                            <input id="shortname" type="text" class="form-control" placeholder="කෙටි නම" maxlength="490" style="width: 80%">
+                                            <input id="shortname" type="text" class="form-control" placeholder="ඔබට ආමන්ත්‍රණය කළ යුතු නම" maxlength="490" style="width: 80%">
                                         </div>
                                         <div class="form-group">
-                                            <label>3. NIC/ජාතික හැදුනුම්පත් අංකය:</label>
+                                            <label>3. NIC number/ජාතික හැදුනුම්පත් අංකය:</label>
                                             <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
                                         </div>
 
                                         <label for="photos">4. Photos/ඡායාරූප:</label>
                                         <ul>
-                                            <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, අනවශ්‍ය ලෙස edit නොකල ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
-                                            <li>Full Photo 1ක් ද ඇතුලත් කරන්න.</li>
-                                            <li>කාන්තාවන් make up රහිත, unedited ඡායාරූප අවම වශයෙන් 1ක්වත් ඇතුලත් කල යුතු වේ.</li>
+                                            <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, ඔබගේ සැබෑ පැහැය / පෙනුම වෙනස් නොකළ (unedit) ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
+                                            <li>Full Photo (සම්පූර්ණ උස පෙනෙන) 1ක් ද ඇතුලත් කරන්න.</li>
+                                            <li>කාන්තාවන් make up සහිත ඡායාරූප 1කට අමතරව, makeup රහිත (unedited) ඡායාරූප 1ක්වත් අවම වශයෙන් ඇතුලත් කල යුතු වේ.</li>
                                             <li>ඡායාරූප 5ම ඇතුලත් කිරීම මඟින් වැඩි ප්‍රතිඵලයක් ලබා ගත හැක.</li>
                                         </ul>
                                         <div class="form-group">
                                             <label for="exampleInputFile"></label>
                                             <div class="input-group">
+                                                <div id="Image1"> </div>
                                                 <div class="custom-file">
-                                                    <img id="Image1" alt="image" width="80" height="55" />
-                                                    <input id="image01" type="file" onchange="document.getElementById('Image1').src = window.URL.createObjectURL(this.files[0])">
+                                                    <input id="image01" type="file" onchange="encodeImageFileAsURL(this, '#Image1', 'image01');">
                                                 </div>
                                             </div>
 
                                             <label for="exampleInputFile"></label>
                                             <div class="input-group">
+                                                <div id="Image2"></div>
                                                 <div class="custom-file">
-                                                    <img id="Image2" alt="image" width="80" height="55" />
-                                                    <input id="image02" type="file" onchange="document.getElementById('Image2').src = window.URL.createObjectURL(this.files[0])">
-                                                </div>
-                                            </div>
-
-
-                                            <label for="exampleInputFile"></label>
-                                            <div class="input-group">
-                                                <div class="custom-file">
-                                                    <img id="Image3" alt="image" width="80" height="55" />
-                                                    <input id="image03" type="file" onchange="document.getElementById('Image3').src = window.URL.createObjectURL(this.files[0])">
+                                                    <input id="image02" type="file" onchange="encodeImageFileAsURL(this, '#Image2' , 'image02');">
                                                 </div>
                                             </div>
 
 
                                             <label for="exampleInputFile"></label>
                                             <div class="input-group">
+                                                <div id="Image3"> </div>
                                                 <div class="custom-file">
-                                                    <img id="Image4" alt="image" width="80" height="55" />
-                                                    <input id="image04" type="file" onchange="document.getElementById('Image4').src = window.URL.createObjectURL(this.files[0])">
+                                                    <input id="image03" type="file" onchange="encodeImageFileAsURL(this, '#Image3', 'image03');">
+                                                </div>
+                                            </div>
+
+
+                                            <label for="exampleInputFile"></label>
+                                            <div class="input-group">
+                                                <div id="Image4"> </div>
+                                                <div class="custom-file">
+                                                    <input id="image04" type="file" onchange="encodeImageFileAsURL(this, '#Image4', 'image04');">
                                                 </div>
                                             </div>
 
                                             <label for="exampleInputFile"></label>
                                             <div class="input-group">
+                                                <div id="Image5"> </div>
                                                 <div class="custom-file">
-                                                    <img id="Image5" alt="image" width="80" height="55" />
-                                                    <input id="image04" type="file" onchange="document.getElementById('Image5').src = window.URL.createObjectURL(this.files[0])">
+                                                    <input id="image05" type="file" onchange="encodeImageFileAsURL(this, '#Image5', 'image05');">
                                                 </div>
                                             </div>
                                         </div>
@@ -233,11 +233,11 @@
                                         <br />
 
                                         <div class="form-group">
-                                            <label>5. Mobile Numbers/දුරකතන අංක:</label>
+                                            <label>5. Mobile Numbers/දුරකථන අංක:</label>
                                             <ul>
-                                                <li>ඔබව සම්බන්ද කරගත හැකි ප්‍රදාන අංකය.</li>
-                                                <li>එම අංකය සදහා Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
-                                                <li>වෙනත් අංක බාවිතා වන්නේ නම් පමනක් ඒවාද දක්වන්න.</li>
+                                                <li>ඔබව සම්බන්ධ කරගත හැකි ප්‍රධාන අංකය.</li>
+                                                <li>Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
+                                                <li>වෙනත් අංක බාවිතා වන්නේ නම් ඒවාද දක්වන්න.</li>
                                             </ul>
 
                                             <div class="row">
@@ -296,7 +296,7 @@
                                     <div class="col-md-6">
 
                                         <div class="form-group">
-                                            <label>6. DOB/උපන් දිනය :</label>
+                                            <label>6. Date of birth/උපන් දිනය :</label>
                                             <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
                                         </div>
 
@@ -318,7 +318,7 @@
                                         <div class="form-group">
                                             <label>9. Current City/දැනට පදිංචිය:</label>
                                             <ul>
-                                                <li>ඔබේ නගරය මෙහි නොමැති නම් පමණක් දැක්වෙන නගර අතරින් ඔබේ නරයට අසන්නම් නගරය තෝරන්න.</li>
+                                                <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
                                             </ul>
 
                                             <div class="row">
@@ -333,9 +333,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>10. Home Town/ස්තීර පදිංචිය:</label>
+                                            <label>10. Home Town/ස්ථිර පදිංචිය:</label>
                                             <ul>
-                                                <li>ඔබේ නගරය මෙහි නොමැති නම් පමණක් දැක්වෙන නගර අතරින් ඔබේ නරයට අසන්නම් නගරය තෝරන්න.</li>
+                                                <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
                                             </ul>
 
                                             <div class="row">
@@ -395,23 +395,37 @@
 
                                                 <div id="parttime1">
                                                     <input id="parttime" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">Full time promoter/දැනට පුර්ණකාලීන ප්‍රවර්දකයෙක් ලෙස කටුතු කරයි </label>
+                                                    <label class="form-check-label">Full time promoter/දැනට පුර්ණකාලීන අලෙවි ප්‍රවර්ධකයෙක් ලෙස කටුතු කරයි </label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check">
                                                 <input id="freelance" class="form-check-input" value="yes" type="checkbox">
-                                                <label class="form-check-label">Searching for part time work on weekends or selected days/සති අන්ත හෝ සතියේ දින වල ප්‍රවර්දකයෙක් ලෙස කටයුතු කෙරීමට කැමති </label>
+                                                <label class="form-check-label">Searching for part time work on weekends or selected days/සති අන්තයේ හෝ සතියේ දින වල part-time job කිරීමට බලාපොරොත්තු වෙමි </label>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label>13. English speaking/ඉංග්‍රීසි හොදින් හසුරවයි නම් Fluent යොදන්න:</label>
-                                            <input id="englishlan" type="text" class="form-control" placeholder="Fluent" maxlength="90" style="width: 50%">
+                                            <div class="form-check">
+                                                <input type='radio' id='englishA' value='yes' name="tsize" />
+                                                <span style="width:40px;display:inline-block;">Fluent</span>
+                                                <input type="radio" id="englishB" value="yes" name="tsize" />
+                                                <span style="width:40px;display:inline-block;">Normal</span>
+                                                <input type='radio' id='englishC' value='yes' name="tsize" />
+                                                <span style="width:40px;display:inline-block;">Can`t</span>
+                                            </div>
+                                            @*<input id="englishlan" type="text" class="form-control" placeholder="Fluent" maxlength="90" style="width: 50%">*@
                                         </div>
                                         <div class="form-group">
                                             <label>14. Tamil speaking/දෙමල හොදින් හසුරවයි නම් Fluent යොදන්න:</label>
-                                            <input id="tamillan" type="text" class="form-control" placeholder="Fluent" maxlength="90" style="width: 50%">
+                                            <input type='radio' id='tamilA' value='yes' name="tsize" />
+                                            <span style="width:40px;display:inline-block;">Fluent</span>
+                                            <input type="radio" id="tamilB" value="yes" name="tsize" />
+                                            <span style="width:40px;display:inline-block;">Normal</span>
+                                            <input type='radio' id='tamilC' value='yes' name="tsize" />
+                                            <span style="width:40px;display:inline-block;">Can`t</span>
+                                            @*<input id="tamillan" type="text" class="form-control" placeholder="Fluent" maxlength="90" style="width: 50%">*@
                                         </div>
 
                                         <div class="form-group">
