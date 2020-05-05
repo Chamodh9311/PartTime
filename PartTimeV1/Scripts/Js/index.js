@@ -400,12 +400,13 @@ function submitFunction() {
 
         success: function (result) {
             $("#sumbitprofile").removeAttr('disabled');
-            alert('ok');
+            $("#successModel").modal()
+            //alert('ok');
             //$('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
         },
         error: function (result) {
             $("#sumbitprofile").removeAttr('disabled');
-            alert('error');
+            $("#failModel").modal()
         }
     });
 }
