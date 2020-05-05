@@ -50,8 +50,12 @@ namespace PartTimeV1.Data
             Property(t => t.Designation).HasMaxLength(200).IsOptional();
             Property(t => t.FullTimePromoter);
             Property(t => t.PartTimePromoter);
-            Property(t => t.EnglishSpeaking).HasMaxLength(100).IsOptional();
-            Property(t => t.TamilSpeaking).HasMaxLength(100).IsOptional();
+            Property(t => t.EnglishA);
+            Property(t => t.EnglishB);
+            Property(t => t.EnglishC);
+            Property(t => t.TamilA);
+            Property(t => t.TamilB);
+            Property(t => t.TamilC);
             Property(t => t.SalesExperience).HasMaxLength(10).IsOptional();
             Property(t => t.Brands).IsOptional();
             Property(t => t.OtherExperience).IsOptional();

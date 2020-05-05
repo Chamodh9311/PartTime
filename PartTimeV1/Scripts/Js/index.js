@@ -338,17 +338,55 @@ function submitFunction() {
         profileRequest.FullTimePromoter = false;
     }
 
-    profileRequest.FullTimePromoter = $('#freelance').val();
-
-    if (document.getElementById('tsizeXS').checked) {
+    if (document.getElementById('freelance').checked) {
         profileRequest.PartTimePromoter = true;
     }
     else {
         profileRequest.PartTimePromoter = false;
     }
 
-    profileRequest.EnglishSpeaking = $('#englishlan').val();
-    profileRequest.TamilSpeaking = $('#tamillan').val();
+    if (document.getElementById('englishA').checked) {
+        profileRequest.EnglishA = true;
+    }
+    else {
+        profileRequest.EnglishA = false;
+    }
+
+    if (document.getElementById('englishB').checked) {
+        profileRequest.EnglishB = true;
+    }
+    else {
+        profileRequest.EnglishB = false;
+    }
+
+    if (document.getElementById('englishC').checked) {
+        profileRequest.EnglishC = true;
+    }
+    else {
+        profileRequest.EnglishC = false;
+    }
+
+    if (document.getElementById('tamilA').checked) {
+        profileRequest.TamilA = true;
+    }
+    else {
+        profileRequest.TamilA = false;
+    }
+
+    if (document.getElementById('tamilB').checked) {
+        profileRequest.TamilB = true;
+    }
+    else {
+        profileRequest.TamilB = false;
+    }
+
+    if (document.getElementById('tamilC').checked) {
+        profileRequest.TamilC = true;
+    }
+    else {
+        profileRequest.TamilC = false;
+    }
+
     profileRequest.SalesExperience = $('#promoexperience').val();
     profileRequest.Brands = $('#brandnames').select2("val"),
     profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),

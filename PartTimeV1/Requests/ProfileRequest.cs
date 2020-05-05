@@ -46,8 +46,12 @@ namespace PartTimeV1.Requests
         public string Designation { get; set; }
         public bool FullTimePromoter { get; set; }
         public bool PartTimePromoter { get; set; }
-        public string EnglishSpeaking { get; set; }
-        public string TamilSpeaking { get; set; }
+        public bool EnglishA { get; set; }
+        public bool EnglishB { get; set; }
+        public bool EnglishC { get; set; }
+        public bool TamilA { get; set; }
+        public bool TamilB { get; set; }
+        public bool TamilC { get; set; }
         public string SalesExperience { get; set; }
         public List<string> Brands { get; set; }
         public List<string> OtherExperience { get; set; }
