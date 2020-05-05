@@ -1,9 +1,11 @@
 ﻿using PartTimeV1.Data;
 using PartTimeV1.Requests;
+using System;
 using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
 {
+    [Authorize]
     public class AdminController : BaseController
     {
         public ActionResult Index()
@@ -39,13 +41,52 @@ namespace PartTimeV1.Controllers
                     FullName = profileRequest.FullName,
                     ShortName = profileRequest.ShortName,
                     NIC = profileRequest.NIC,
-                    Photo1 = profileRequest.Photo1,
-                    Photo2 = profileRequest.Photo2,
-                    Photo3 = profileRequest.Photo3,
+                    Photo1 = "",//profileRequest.Photo1,
+                    Photo2 = "",//profileRequest.Photo2,
+                    Photo3 = "",//profileRequest.Photo3,
                     Photo4 = profileRequest.Photo4,
                     Photo5 = profileRequest.Photo5,
+                    Mobile1 = profileRequest.Mobile1,
+                    Mobile1Whatsapp = profileRequest.Mobile1Whatsapp,
+                    Mobile1Viber = profileRequest.Mobile1Viber,
+                    Mobile2 = profileRequest.Mobile2,
+                    Mobile3Whatsapp = profileRequest.Mobile2Whatsapp,
+                    Mobile3Viber = profileRequest.Mobile2Viber,
+                    Mobile3 = profileRequest.Mobile3,
 
-                    //Mobile1 = 
+                    DOB = DateTime.ParseExact(profileRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                    Age = profileRequest.Age,
+                    GenderMale = profileRequest.GenderMale,
+                    GenderFemale = profileRequest.GenderFemale,
+                    CurrentDistrict = profileRequest.CurrentDistrict,
+                    CurrentTown = profileRequest.CurrentTown,
+                    HomeDistrict = profileRequest.HomeDistrict,
+                    HomeTown = profileRequest.HomeTown,
+                    ShirtSizeS = profileRequest.ShirtSizeS,
+                    ShirtSizeM = profileRequest.ShirtSizeM,
+                    ShirtSizeL = profileRequest.ShirtSizeL,
+                    ShirtSizeXS = profileRequest.ShirtSizeXS,
+                    Student = profileRequest.Student,
+                    University = profileRequest.University,
+                    Course = profileRequest.Course,
+                    UniYear = profileRequest.UniYear,
+                    Employeed = profileRequest.Employeed,
+                    Company = profileRequest.Company,
+                    Branch = profileRequest.Branch,
+                    Designation = profileRequest.Designation,
+                    FullTimePromoter = profileRequest.FullTimePromoter,
+                    PartTimePromoter = profileRequest.PartTimePromoter,
+                    EnglishSpeaking = profileRequest.EnglishSpeaking,
+                    TamilSpeaking = profileRequest.TamilSpeaking,
+                    SalesExperience = profileRequest.SalesExperience,
+                    Brands = profileRequest.Brands == null ? null : profileRequest.Brands.ToString(),
+                    OtherExperience = profileRequest.OtherExperience == null ? null : profileRequest.OtherExperience.ToString(),
+
+                    Approved = false,
+                    Deleted = false,
+                    Banned = false,
+                    Version = 1
+
                 };
 
                 manager.BeginTransaction();

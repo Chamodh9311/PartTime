@@ -184,43 +184,143 @@ function submitFunction() {
     profileRequest.Photo5 = $('#Image5').val();
 
 
-    profileRequest.Mobiel1 = $('#mobile01').val();
-    profileRequest.Mobile1Whatsapp = $('#whatsApp1').val();
-    profileRequest.Mobile1Viber = $('#viber3').val();
+    profileRequest.Mobile1 = $('#mobile01').val();
+    if (document.getElementById('whatsApp1').checked) {
+        profileRequest.Mobile1Whatsapp = true;
+    }
+    else {
+        profileRequest.Mobile1Whatsapp = false;
+    }
+
+    if (document.getElementById('viber1').checked) {
+        profileRequest.Mobile1Viber = true;
+    }
+    else {
+        profileRequest.Mobile1Viber = false;
+    }
+
     profileRequest.Mobiel2 = $('#mobile02').val();
-    profileRequest.Mobile2Whatsapp = $('#whatsApp2').val();
-    profileRequest.Mobile2Viber = $('#viber3').val();
+    if (document.getElementById('whatsApp2').checked) {
+        profileRequest.Mobile2Whatsapp = true;
+    }
+    else {
+        profileRequest.Mobile2Whatsapp = false;
+    }
+
+    if (document.getElementById('viber2').checked) {
+        profileRequest.Mobile2Viber = true;
+    }
+    else {
+        profileRequest.Mobile2Viber = false;
+    }
+
     profileRequest.Mobiel3 = $('#mobile03').val();
-    profileRequest.Mobile3Whatsapp = $('#whatsApp2').val();
-    profileRequest.Mobile3Viber = $('#viber3').val();
+    if (document.getElementById('whatsApp3').checked) {
+        profileRequest.Mobile3Whatsapp = true;
+    }
+    else {
+        profileRequest.Mobile3Whatsapp = false;
+    }
+
+    if (document.getElementById('viber3').checked) {
+        profileRequest.Mobile3Viber = true;
+    }
+    else {
+        profileRequest.Mobile3Viber = false;
+    }
 
     profileRequest.DOB = $('#dob').val();
     profileRequest.Age = $('#age').val();
-    profileRequest.GenderMale = $('#genderM').val();
-    profileRequest.GenderFemale = $('#genderF').val();
+
+    if (document.getElementById('genderM').checked) {
+        profileRequest.GenderMale = true;
+    }
+    else {
+        profileRequest.GenderMale = false;
+    }
+
+    if (document.getElementById('genderF').checked) {
+        profileRequest.GenderFemale = true;
+    }
+    else {
+        profileRequest.GenderFemale = false;
+    }
+
     profileRequest.CurrentDistrict = $('#currentdistrict').val();
     profileRequest.CurrentTown = $('#currentcity').val();
     profileRequest.HomeDistrict = $('#homedistrict').val();
     profileRequest.HomeTown = $('#hometown').val();
-    profileRequest.ShirtSizeS = $('#tsizeS').val();
-    profileRequest.ShirtSizeM = $('#tsizeM').val();
-    profileRequest.ShirtSizeL = $('#tsizeL').val();
-    profileRequest.ShirtSizeXS = $('#tsizeXS').val();
-    profileRequest.Student = $('#student').val();
+
+
+    if (document.getElementById('tsizeS').checked) {
+        profileRequest.ShirtSizeS = true;
+    }
+    else {
+        profileRequest.ShirtSizeS = false;
+    }
+
+    if (document.getElementById('tsizeM').checked) {
+        profileRequest.ShirtSizeM = true;
+    }
+    else {
+        profileRequest.ShirtSizeM = false;
+    }
+
+    if (document.getElementById('tsizeL').checked) {
+        profileRequest.ShirtSizeL = true;
+    }
+    else {
+        profileRequest.ShirtSizeL = false;
+    }
+
+    if (document.getElementById('tsizeXS').checked) {
+        profileRequest.ShirtSizeXS = true;
+    }
+    else {
+        profileRequest.ShirtSizeXS = false;
+    }
+
+    if (document.getElementById('student').checked) {
+        profileRequest.Student = true;
+    }
+    else {
+        profileRequest.Student = false;
+    }
+
     profileRequest.University = $('#studentdetails1').val();
     profileRequest.Course = $('#studentdetails2').val();
     profileRequest.UniYear = $('#studentdetails3').val();
-    profileRequest.Employeed = $('#employee').val();
+
+    if (document.getElementById('employee').checked) {
+        profileRequest.Employeed = true;
+    }
+    else {
+        profileRequest.Employeed = false;
+    }
+
     profileRequest.Company = $('#employeedetails1').val();
     profileRequest.Branch = $('#employeedetails2').val();
     profileRequest.Designation = $('#employeedetails3').val();
-    profileRequest.FullTimePromoter = $('#parttime').val();
-    profileRequest.PartTimePromoter = $('#freelance').val();
+
+    if (document.getElementById('parttime').checked) {
+        profileRequest.FullTimePromoter = true;
+    }
+    else {
+        profileRequest.FullTimePromoter = false;
+    }
+
+    profileRequest.FullTimePromoter = $('#freelance').val();
+
+    if (document.getElementById('tsizeXS').checked) {
+        profileRequest.PartTimePromoter = true;
+    }
+    else {
+        profileRequest.PartTimePromoter = false;
+    }
+
     profileRequest.EnglishSpeaking = $('#englishlan').val();
     profileRequest.TamilSpeaking = $('#tamillan').val();
     profileRequest.SalesExperience = $('#promoexperience').val();
-
-
     profileRequest.Brands = $('#brandnames').select2("val"),
     profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),
 
@@ -234,6 +334,7 @@ function submitFunction() {
         success: function (result) {
             $("#sumbitprofile").removeAttr('disabled');
             alert('ok');
+            //$('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
         },
         error: function (result) {
             $("#sumbitprofile").removeAttr('disabled');
