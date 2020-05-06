@@ -221,6 +221,7 @@
     <Content Include="Scripts\Js\users.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SiteImages\CoverV1.jpg" />
+    <Content Include="SiteImages\favicon.jpg" />
     <Content Include="SiteImages\JPEG1011.jpg" />
     <Content Include="SiteImages\Logo.jpg" />
     <Content Include="SiteImages\P_20160911_145111_BF.jpg" />
