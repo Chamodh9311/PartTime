@@ -27,6 +27,8 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/select2/css/select2.min.css">
 
+    <link rel="stylesheet" href="~/Scripts/CSS/index.css">
+
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -172,449 +174,886 @@
                 <section class="content">
                     <div class="container-fluid">
                         <div class="card card-default">
-                            <!-- /.card-header -->
-                            <div class="card-body">
 
-                                <div id="profilePageDiv" class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>1. Full Name/සම්පුර්ණ නම:</label>
-                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" style="width: 80%">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>2. Short Name/කෙටි නම:</label>
-                                            <input id="shortname" type="text" class="form-control" placeholder="ඔබට ආමන්ත්‍රණය කළ යුතු නම" maxlength="490" style="width: 80%">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:</label>
-                                            <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
-                                        </div>
+                            <div class="tab">
+                                <button id="tabLoad" class="tablinks" onclick="openTab(event, 'Promoter')">Promoter</button>
+                                <button class="tablinks" onclick="openTab(event, 'Coordinator')">Coordinator</button>
+                            </div>
 
-                                        <label for="photos">4. Photos/ඡායාරූප:</label>
-                                        <ul>
-                                            <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, ඔබගේ සැබෑ පැහැය / පෙනුම වෙනස් නොකළ (unedit) ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
-                                            <li>Full Photo (සම්පූර්ණ උස පෙනෙන) 1ක් ද ඇතුලත් කරන්න.</li>
-                                            <li>කාන්තාවන් make up සහිත ඡායාරූප 1කට අමතරව, makeup රහිත (unedited) ඡායාරූප 1ක්වත් අවම වශයෙන් ඇතුලත් කල යුතු වේ.</li>
-                                            <li>ඡායාරූප 5ම ඇතුලත් කිරීම මඟින් වැඩි ප්‍රතිඵලයක් ලබා ගත හැක.</li>
-                                        </ul>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile"></label>
-                                            <div class="input-group">
-                                                <div id="Image1"> </div>
-                                                <div class="custom-file">
-                                                    <input id="image01" type="file" onchange="encodeImageFileAsURL(this, '#Image1', 'image01');">
-                                                </div>
+                            <div id="Promoter" class="tabcontent">
+
+                                <!-- /.card-header -->
+                                <div class="card-body">
+
+                                    <div id="profilePageDiv" class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>1. Full Name/සම්පුර්ණ නම:</label>
+                                                <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" style="width: 80%">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>2. Short Name/කෙටි නම:</label>
+                                                <input id="shortname" type="text" class="form-control" placeholder="ඔබට ආමන්ත්‍රණය කළ යුතු නම" maxlength="490" style="width: 80%">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:</label>
+                                                <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
                                             </div>
 
-                                            <label for="exampleInputFile"></label>
-                                            <div class="input-group">
-                                                <div id="Image2"></div>
-                                                <div class="custom-file">
-                                                    <input id="image02" type="file" onchange="encodeImageFileAsURL(this, '#Image2' , 'image02');">
-                                                </div>
-                                            </div>
-
-
-                                            <label for="exampleInputFile"></label>
-                                            <div class="input-group">
-                                                <div id="Image3"> </div>
-                                                <div class="custom-file">
-                                                    <input id="image03" type="file" onchange="encodeImageFileAsURL(this, '#Image3', 'image03');">
-                                                </div>
-                                            </div>
-
-
-                                            <label for="exampleInputFile"></label>
-                                            <div class="input-group">
-                                                <div id="Image4"> </div>
-                                                <div class="custom-file">
-                                                    <input id="image04" type="file" onchange="encodeImageFileAsURL(this, '#Image4', 'image04');">
-                                                </div>
-                                            </div>
-
-                                            <label for="exampleInputFile"></label>
-                                            <div class="input-group">
-                                                <div id="Image5"> </div>
-                                                <div class="custom-file">
-                                                    <input id="image05" type="file" onchange="encodeImageFileAsURL(this, '#Image5', 'image05');">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <br />
-
-                                        <div class="form-group">
-                                            <label>5. Mobile Numbers/දුරකථන අංක:</label>
+                                            <label for="photos">4. Photos/ඡායාරූප:</label>
                                             <ul>
-                                                <li>ඔබව සම්බන්ධ කරගත හැකි ප්‍රධාන අංකය.</li>
-                                                <li>Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
-                                                <li>වෙනත් අංක බාවිතා වන්නේ නම් ඒවාද දක්වන්න.</li>
+                                                <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, ඔබගේ සැබෑ පැහැය / පෙනුම වෙනස් නොකළ (unedit) ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
+                                                <li>Full Photo (සම්පූර්ණ උස පෙනෙන) 1ක් ද ඇතුලත් කරන්න.</li>
+                                                <li>කාන්තාවන් make up සහිත ඡායාරූප 1කට අමතරව, makeup රහිත (unedited) ඡායාරූප 1ක්වත් අවම වශයෙන් ඇතුලත් කල යුතු වේ.</li>
+                                                <li>ඡායාරූප 5ම ඇතුලත් කිරීම මඟින් වැඩි ප්‍රතිඵලයක් ලබා ගත හැක.</li>
                                             </ul>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input id="mobile01" type="text" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
+                                            <div class="form-group">
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image1"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image01" type="file" onchange="encodeImageFileAsURL(this, '#Image1', 'image01');">
+                                                    </div>
                                                 </div>
 
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input type='checkbox' id='whatsApp1' value='yes' />
-                                                        <span style="width:100px;display:inline-block;">WhatsApp</span>
-                                                        <input type="checkbox" id="viber1" value="yes" />
-                                                        <span style="width:100px;display:inline-block;">Viber</span>
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image2"></div>
+                                                    <div class="custom-file">
+                                                        <input id="image02" type="file" onchange="encodeImageFileAsURL(this, '#Image2' , 'image02');">
+                                                    </div>
+                                                </div>
+
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image3"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image03" type="file" onchange="encodeImageFileAsURL(this, '#Image3', 'image03');">
+                                                    </div>
+                                                </div>
+
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image4"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image04" type="file" onchange="encodeImageFileAsURL(this, '#Image4', 'image04');">
+                                                    </div>
+                                                </div>
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image5"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image05" type="file" onchange="encodeImageFileAsURL(this, '#Image5', 'image05');">
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <label></label>
+                                            <br />
 
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input id="mobile02" type="text" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
-                                                </div>
+                                            <div class="form-group">
+                                                <label>5. Mobile Numbers/දුරකථන අංක:</label>
+                                                <ul>
+                                                    <li>ඔබව සම්බන්ධ කරගත හැකි ප්‍රධාන අංකය.</li>
+                                                    <li>Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
+                                                    <li>වෙනත් අංක බාවිතා වන්නේ නම් ඒවාද දක්වන්න.</li>
+                                                </ul>
 
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input type='checkbox' id='whatsApp2' value='yes' />
-                                                        <span style="width:100px;display:inline-block;">WhatsApp</span>
-                                                        <input type="checkbox" id="viber2" value="yes" />
-                                                        <span style="width:100px;display:inline-block;">Viber</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <label></label>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <input id="mobile03" type="text" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
-                                                </div>
-
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input type='checkbox' id='whatsApp3' value='yes' />
-                                                        <span style="width:100px;display:inline-block;">WhatsApp</span>
-                                                        <input type="checkbox" id="viber3" value="yes" />
-                                                        <span style="width:100px;display:inline-block;">Viber</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-                                            <label>6. Date Of Birth/උපන් දිනය:</label>
-                                            <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>7. Age/වයස:</label>
-                                            <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
-                                            <div class="form-check">
-                                                <input type='radio' id='genderM' value='yes' name="gender" />
-                                                <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
-                                                <input type="radio" id="genderF" value="yes" name="gender" />
-                                                <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>9. Current City/දැනට පදිංචිය:</label>
-                                            <ul>
-                                                <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
-                                            </ul>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <select id="currentdistrict" style="height: 32px;width: 100%;"></select>
-                                                </div>
-
-                                                <div class="col">
-                                                    <select id="currentcity" style="height: 32px;width: 100%;"></select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>10. Home Town/ස්ථිර පදිංචිය:</label>
-                                            <ul>
-                                                <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
-                                            </ul>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <select id="homedistrict" style="height: 32px;width: 100%;"></select>
-                                                </div>
-
-                                                <div class="col">
-                                                    <select id="hometown" style="height: 32px;width: 100%;"> </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>11. T-shirt size: </label>
-                                            <div class="form-check">
-                                                <input type='radio' id='tsizeS' value='yes' name="tsize" />
-                                                <span style="width:40px;display:inline-block;">S</span>
-                                                <input type="radio" id="tsizeM" value="yes" name="tsize" />
-                                                <span style="width:40px;display:inline-block;">M</span>
-                                                <input type='radio' id='tsizeL' value='yes' name="tsize" />
-                                                <span style="width:40px;display:inline-block;">L</span>
-                                                <input type="radio" id="tsizeXS" value="yes" name="tsize" />
-                                                <span style="width:40px;display:inline-block;">XL</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>12. I am:</label>
-                                            <div class="form-check">
-
-                                                <div id="student1">
-                                                    <input id="student" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">A Student/ශිෂ්‍ය</label>
-                                                </div>
-
-                                                <div id="studentdetails" style="display:none;">
-                                                    <ul>
-                                                        <li>
-                                                            <input id="studentdetails1" type="text" class="form-control" placeholder="University/විශ්ව විද්‍යාලය" maxlength="190" style="width: 80%">
-                                                        </li>
-                                                        <li>
-                                                            <input id="studentdetails2" type="text" class="form-control" placeholder="Course/හදාරන උපාදියේ නම" maxlength="190" style="width: 80%">
-                                                        </li>
-                                                        <li>
-                                                            <input id="studentdetails3" type="text" class="form-control" placeholder="Year/ඉගනුම ලබන වසර" data-inputmask='"mask": "9"' data-mask maxlength="190" style="width: 80%">
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div id="employee1">
-                                                    <input id="employee" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">Full Time Employed/දැනට පුර්ණකාලීන රැකියාවක නිරතවේ </label>
-                                                </div>
-
-                                                <div id="employeedetails" style="display:none;">
-                                                    <ul>
-                                                        <li>
-                                                            <input id="employeedetails1" type="text" class="form-control" placeholder="Company/ආයතනය" maxlength="190" style="width: 80%">
-                                                        </li>
-                                                        <li>
-                                                            <input id="employeedetails2" type="text" class="form-control" placeholder="Branch/නගරය" maxlength="190" style="width: 80%">
-                                                        </li>
-                                                        <li>
-                                                            <input id="employeedetails3" type="text" class="form-control" placeholder="Designation/තනතුර" maxlength="190" style="width: 80%">
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div id="parttime1">
-                                                    <input id="parttime" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">Full Time Promoter/දැනට පුර්ණකාලීන අලෙවි ප්‍රවර්ධකයෙක් ලෙස කටුතු කරයි </label>
-                                                </div>
-
-                                                <div id="freelancer">
-                                                    <input id="freelanceYes" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">Freelancer  </label>
-                                                </div>
-                                   
-                                                <div id="freelancerdetails" style="display:none;">
-                                                    <ul>
-                                                        <li>
-                                                            <select id="homedistrict" style="height: 32px;width: 70%;">
-                                                                <option>-Select-</option>
-                                                                <option>Graphic/Video designer</option>
-                                                                <option>Book keeping or Accounting</option>
-                                                                <option>Logo designer</option>
-                                                                <option>Photoshop</option>
-                                                            </select>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div id="professional">
-                                                    <input id="professionalYes" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">Professional/Self employed</label>
-                                                </div>
-
-                                                <div id="professionaldetails" style="display:none;">
-                                                    <ul>
-                                                        <li>
-                                                            <select id="homedistrict" style="height: 32px;width: 70%;">
-                                                                <option>-Select-</option>
-                                                                <option>Lawyer</option>
-                                                                <option>Compere</option>
-                                                                <option>Actor/Actress</option>
-                                                                <option>Architecture </option>
-                                                                <option>Teacher</option>
-                                                            </select>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-
-                                            </div>
-
-                                            <div class="form-check">
-                                                <input id="freelance" class="form-check-input" value="yes" type="checkbox">
-                                                <label class="form-check-label">Searching for part time work on weekends or selected days/සති අන්තයේ හෝ සතියේ දින වල part-time job කිරීමට බලාපොරොත්තු වෙමි </label>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
-                                            <div class="form-check">
-                                                <input type='radio' id='englishA' value='yes' name="tsize" />
-                                                <span style="width:100px;display:inline-block;">Fluent</span>
-                                                <input type="radio" id="englishB" value="yes" name="tsize" />
-                                                <span style="width:100px;display:inline-block;">Normal</span>
-                                                <input type='radio' id='englishC' value='yes' name="tsize" />
-                                                <span style="width:100px;display:inline-block;">Can`t</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
-                                            <div class="form-check">
-                                                <input type='radio' id='tamilA' value='yes' name="tsize" />
-                                                <span style="width:100px;display:inline-block;">Fluent</span>
-                                                <input type="radio" id="tamilB" value="yes" name="tsize" />
-                                                <span style="width:100px;display:inline-block;">Normal</span>
-                                                <input type='radio' id='tamilC' value='yes' name="tsize" />
-                                                <span style="width:100px;display:inline-block;">Can`t</span>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:</label>
-                                            <div class="form-check">
-
-                                                <div id="exprienceYes">
-                                                    <input id="experienceno" value="1" type="radio" onclick="experiencehandleClick(1);" name="exprienceYes">
-                                                    <label class="form-check-label">No exprience/අත්දැකීම් නැත</label>
-                                                </div>
-                                                <div id="exprienceYes">
-                                                    <input value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
-                                                    <label class="form-check-label">Have experience/අත්දැකීම් ඇත</label>
-                                                </div>
-
-                                                <div id="experiencecheck" style="display:none;">
-                                                    <ul>
-                                                        <li>
-                                                            <label>Number of years/අත්දැකීමේ ඇති වසර ගණන:</label>
-                                                            <input id="promoexperience" type="tel" class="form-control" placeholder="Year/වසර ගණන" data-inputmask='"mask": "99"' data-mask style="width: 50%">
-                                                        </li>
-
-                                                        <li>
-                                                            <label>Brands/අත්දැකීම් ඇති වෙළද නාම:</label>
-                                                            <div class="select2-blue">
-                                                                <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
-                                                            </div>
-                                                        </li>
-
-                                                        <li>
-                                                            <label>Other Parttime Experience/වෙනත් parttime අත්දැකීම්:</label>
-                                                            <div class="select2-blue">
-                                                                <select id="otherpromoexperience" class="select2" multiple="multiple" data-placeholder="-Select Experience-" data-dropdown-css-class="select2-blue" style="width: 100%;">
-                                                                    <option>Data entry</option>
-                                                                    <option>Leaflet</option>
-                                                                    <option>Photography/Videography </option>
-                                                                    <option>Cooking</option>
-                                                                    <option>Catering</option>
-                                                                    <option>Delivery/ packing</option>
-                                                                    <option>Stock counting</option>
-                                                                    <option>Modeling</option>
-                                                                    <option>Cheering </option>
-                                                                    <option>Acting</option>
-                                                                    <option>Dancing</option>
-                                                                    <option>Magic shows </option>
-                                                                </select>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>16. How did you know about parttime.lk:</label>
-
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input id="ffacebook" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From FaceBook </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="finstagram" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From Instagram </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="fstaff" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From PartTime.lk staff </label>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="mobile01" type="text" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
                                                     </div>
 
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input id="fcordinator" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From a Cordinator </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="ffriend" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From a Friend </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="fgoogle" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From Google</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                            <hr />
-
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <label>කොන්දේසි සහ එකඟතාවයන්</label>
-                                                    <ol>
-                                                        <li>
-                                                            සේවායෝජකයා නියම කල නීති රීති අනුව කිසිඳු අතපසු කිරීමකින් තොරව සේවය සිදුකරන අතර එසේ නොවී මා කරන ඕනෑම වරදකදී වැටුපෙන් යම් ප්‍රමාණයක් හෝ සම්පූර්ණ මුදලම අඩු කර ගැනීමට parttime.lk වෙත අයිතිය ඇති බව දනිමි.
-                                                        </li>
-                                                        <li>
-                                                            භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ ගිණුම (Profile) තාවකාලිකව හෝ සදාකාලිකව තහනම් (Restrict / Suspend ) වන බව දනිමි.
-                                                        </li>
-                                                        <li style="list-style-type: none;">
-                                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agremeentModel">Read full agreement</button>
-                                                        </li>
-                                                    </ol>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="form-group">
+                                                    <div class="col">
                                                         <div class="form-check">
-                                                            <input id="submit" class="form-check-input" type="checkbox">
-                                                            <label class="form-check-label">I would like to participate/මම සහභාගී වීමට කැමැත්තෙමි </label>
-                                                            <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
-                                                            <button type="button" class="btn btn-warning">Cancel</button>
+                                                            <input type='checkbox' id='whatsApp1' value='yes' />
+                                                            <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                            <input type="checkbox" id="viber1" value="yes" />
+                                                            <span style="width:100px;display:inline-block;">Viber</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <label></label>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="mobile02" type="text" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input type='checkbox' id='whatsApp2' value='yes' />
+                                                            <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                            <input type="checkbox" id="viber2" value="yes" />
+                                                            <span style="width:100px;display:inline-block;">Viber</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <label></label>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="mobile03" type="text" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input type='checkbox' id='whatsApp3' value='yes' />
+                                                            <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                            <input type="checkbox" id="viber3" value="yes" />
+                                                            <span style="width:100px;display:inline-block;">Viber</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label>6. Date Of Birth/උපන් දිනය:</label>
+                                                <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>7. Age/වයස:</label>
+                                                <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='genderM' value='yes' name="gender" />
+                                                    <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
+                                                    <input type="radio" id="genderF" value="yes" name="gender" />
+                                                    <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>9. Current City/දැනට පදිංචිය:</label>
+                                                <ul>
+                                                    <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
+                                                </ul>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <select id="currentdistrict" style="height: 32px;width: 100%;"></select>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <select id="currentcity" style="height: 32px;width: 100%;"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>10. Home Town/ස්ථිර පදිංචිය:</label>
+                                                <ul>
+                                                    <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
+                                                </ul>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <select id="homedistrict" style="height: 32px;width: 100%;"></select>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <select id="hometown" style="height: 32px;width: 100%;"> </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>11. T-shirt size: </label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='tsizeS' value='yes' name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">S</span>
+                                                    <input type="radio" id="tsizeM" value="yes" name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">M</span>
+                                                    <input type='radio' id='tsizeL' value='yes' name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">L</span>
+                                                    <input type="radio" id="tsizeXS" value="yes" name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">XL</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>12. I am:</label>
+                                                <div class="form-check">
+
+                                                    <div id="student1">
+                                                        <input id="student" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">A Student/ශිෂ්‍ය</label>
+                                                    </div>
+
+                                                    <div id="studentdetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <input id="studentdetails1" type="text" class="form-control" placeholder="University/විශ්ව විද්‍යාලය" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="studentdetails2" type="text" class="form-control" placeholder="Course/හදාරන උපාදියේ නම" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="studentdetails3" type="text" class="form-control" placeholder="Year/ඉගනුම ලබන වසර" data-inputmask='"mask": "9"' data-mask maxlength="190" style="width: 80%">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div id="employee1">
+                                                        <input id="employee" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Full Time Employed/දැනට පුර්ණකාලීන රැකියාවක නිරතවේ </label>
+                                                    </div>
+
+                                                    <div id="employeedetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <input id="employeedetails1" type="text" class="form-control" placeholder="Company/ආයතනය" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="employeedetails2" type="text" class="form-control" placeholder="Branch/නගරය" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="employeedetails3" type="text" class="form-control" placeholder="Designation/තනතුර" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div id="parttime1">
+                                                        <input id="parttime" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Full Time Promoter/දැනට පුර්ණකාලීන අලෙවි ප්‍රවර්ධකයෙක් ලෙස කටුතු කරයි </label>
+                                                    </div>
+
+                                                    <div id="freelancer">
+                                                        <input id="freelanceYes" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Freelancer  </label>
+                                                    </div>
+
+                                                    <div id="freelancerdetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <select id="homedistrict" style="height: 32px;width: 70%;">
+                                                                    <option>-Select-</option>
+                                                                    <option>Graphic/Video designer</option>
+                                                                    <option>Book keeping or Accounting</option>
+                                                                    <option>Logo designer</option>
+                                                                    <option>Photoshop</option>
+                                                                </select>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div id="professional">
+                                                        <input id="professionalYes" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Professional/Self employed</label>
+                                                    </div>
+
+                                                    <div id="professionaldetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <select id="homedistrict" style="height: 32px;width: 70%;">
+                                                                    <option>-Select-</option>
+                                                                    <option>Lawyer</option>
+                                                                    <option>Compere</option>
+                                                                    <option>Actor/Actress</option>
+                                                                    <option>Architecture </option>
+                                                                    <option>Teacher</option>
+                                                                </select>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input id="freelance" class="form-check-input" value="yes" type="checkbox">
+                                                    <label class="form-check-label">Searching for part time work on weekends or selected days/සති අන්තයේ හෝ සතියේ දින වල part-time job කිරීමට බලාපොරොත්තු වෙමි </label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='englishA' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Fluent</span>
+                                                    <input type="radio" id="englishB" value="yes" name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Normal</span>
+                                                    <input type='radio' id='englishC' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Can`t</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='tamilA' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Fluent</span>
+                                                    <input type="radio" id="tamilB" value="yes" name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Normal</span>
+                                                    <input type='radio' id='tamilC' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Can`t</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:</label>
+                                                <div class="form-check">
+
+                                                    <div id="exprienceYes">
+                                                        <input id="experienceno" value="1" type="radio" onclick="experiencehandleClick(1);" name="exprienceYes">
+                                                        <label class="form-check-label">No exprience/අත්දැකීම් නැත</label>
+                                                    </div>
+                                                    <div id="exprienceYes">
+                                                        <input value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
+                                                        <label class="form-check-label">Have experience/අත්දැකීම් ඇත</label>
+                                                    </div>
+
+                                                    <div id="experiencecheck" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Number of years/අත්දැකීමේ ඇති වසර ගණන:</label>
+                                                                <input id="promoexperience" type="tel" class="form-control" placeholder="Year/වසර ගණන" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                                            </li>
+
+                                                            <li>
+                                                                <label>Brands/අත්දැකීම් ඇති වෙළද නාම:</label>
+                                                                <div class="select2-blue">
+                                                                    <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
+                                                                </div>
+                                                            </li>
+
+                                                            <li>
+                                                                <label>Other Parttime Experience/වෙනත් parttime අත්දැකීම්:</label>
+                                                                <div class="select2-blue">
+                                                                    <select id="otherpromoexperience" class="select2" multiple="multiple" data-placeholder="-Select Experience-" data-dropdown-css-class="select2-blue" style="width: 100%;">
+                                                                        <option>Data entry</option>
+                                                                        <option>Leaflet</option>
+                                                                        <option>Photography/Videography </option>
+                                                                        <option>Cooking</option>
+                                                                        <option>Catering</option>
+                                                                        <option>Delivery/ packing</option>
+                                                                        <option>Stock counting</option>
+                                                                        <option>Modeling</option>
+                                                                        <option>Cheering </option>
+                                                                        <option>Acting</option>
+                                                                        <option>Dancing</option>
+                                                                        <option>Magic shows </option>
+                                                                    </select>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>16. How did you know about parttime.lk:</label>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input id="ffacebook" class="form-check-input" value="yes" type="checkbox">
+                                                            <label class="form-check-label">From FaceBook </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input id="finstagram" class="form-check-input" value="yes" type="checkbox">
+                                                            <label class="form-check-label">From Instagram </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input id="fstaff" class="form-check-input" value="yes" type="checkbox">
+                                                            <label class="form-check-label">From PartTime.lk staff </label>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input id="fcordinator" class="form-check-input" value="yes" type="checkbox">
+                                                            <label class="form-check-label">From a Cordinator </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input id="ffriend" class="form-check-input" value="yes" type="checkbox">
+                                                            <label class="form-check-label">From a Friend </label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input id="fgoogle" class="form-check-input" value="yes" type="checkbox">
+                                                            <label class="form-check-label">From Google</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>කොන්දේසි සහ එකඟතාවයන්</label>
+                                                <ol>
+                                                    <li>
+                                                        සේවායෝජකයා නියම කල නීති රීති අනුව කිසිඳු අතපසු කිරීමකින් තොරව සේවය සිදුකරන අතර එසේ නොවී මා කරන ඕනෑම වරදකදී වැටුපෙන් යම් ප්‍රමාණයක් හෝ සම්පූර්ණ මුදලම අඩු කර ගැනීමට parttime.lk වෙත අයිතිය ඇති බව දනිමි.
+                                                    </li>
+                                                    <li>
+                                                        භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ ගිණුම (Profile) තාවකාලිකව හෝ සදාකාලිකව තහනම් (Restrict / Suspend ) වන බව දනිමි.
+                                                    </li>
+                                                    <li style="list-style-type: none;">
+                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agremeentModel">Read full agreement</button>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="form-check">
+                                                        <input id="submit" class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">I would like to participate/මම සහභාගී වීමට කැමැත්තෙමි </label>
+                                                        <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
+                                                        <button type="button" class="btn btn-warning">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
+                            <div id="Coordinator" class="tabcontent">
+
+                                <!-- /.card-header -->
+                                <div class="card-body">
+
+                                    <div id="profilePageDiv" class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>1. Full Name/සම්පුර්ණ නම:</label>
+                                                <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" style="width: 80%">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>2. Short Name/කෙටි නම:</label>
+                                                <input id="shortname" type="text" class="form-control" placeholder="ඔබට ආමන්ත්‍රණය කළ යුතු නම" maxlength="490" style="width: 80%">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:</label>
+                                                <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
+                                            </div>
+
+                                            <label for="photos">4. Photos/ඡායාරූප:</label>
+                                            <ul>
+                                                <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, ඔබගේ සැබෑ පැහැය / පෙනුම වෙනස් නොකළ (unedit) ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
+                                                <li>Full Photo (සම්පූර්ණ උස පෙනෙන) 1ක් ද ඇතුලත් කරන්න.</li>
+                                                <li>කාන්තාවන් make up සහිත ඡායාරූප 1කට අමතරව, makeup රහිත (unedited) ඡායාරූප 1ක්වත් අවම වශයෙන් ඇතුලත් කල යුතු වේ.</li>
+                                                <li>ඡායාරූප 5ම ඇතුලත් කිරීම මඟින් වැඩි ප්‍රතිඵලයක් ලබා ගත හැක.</li>
+                                            </ul>
+                                            <div class="form-group">
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image1"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image01" type="file" onchange="encodeImageFileAsURL(this, '#Image1', 'image01');">
+                                                    </div>
+                                                </div>
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image2"></div>
+                                                    <div class="custom-file">
+                                                        <input id="image02" type="file" onchange="encodeImageFileAsURL(this, '#Image2' , 'image02');">
+                                                    </div>
+                                                </div>
+
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image3"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image03" type="file" onchange="encodeImageFileAsURL(this, '#Image3', 'image03');">
+                                                    </div>
+                                                </div>
+
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image4"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image04" type="file" onchange="encodeImageFileAsURL(this, '#Image4', 'image04');">
+                                                    </div>
+                                                </div>
+
+                                                <label for="exampleInputFile"></label>
+                                                <div class="input-group">
+                                                    <div id="Image5"> </div>
+                                                    <div class="custom-file">
+                                                        <input id="image05" type="file" onchange="encodeImageFileAsURL(this, '#Image5', 'image05');">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <br />
+
+                                            <div class="form-group">
+                                                <label>5. Mobile Numbers/දුරකථන අංක:</label>
+                                                <ul>
+                                                    <li>ඔබව සම්බන්ධ කරගත හැකි ප්‍රධාන අංකය.</li>
+                                                    <li>Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
+                                                    <li>වෙනත් අංක බාවිතා වන්නේ නම් ඒවාද දක්වන්න.</li>
+                                                </ul>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="mobile01" type="text" class="form-control" placeholder="ප්‍රදාන දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input type='checkbox' id='whatsApp1' value='yes' />
+                                                            <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                            <input type="checkbox" id="viber1" value="yes" />
+                                                            <span style="width:100px;display:inline-block;">Viber</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <label></label>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="mobile02" type="text" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input type='checkbox' id='whatsApp2' value='yes' />
+                                                            <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                            <input type="checkbox" id="viber2" value="yes" />
+                                                            <span style="width:100px;display:inline-block;">Viber</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <label></label>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <input id="mobile03" type="text" class="form-control" placeholder="දුරකතන අංකය" data-inputmask='"mask": "9999999999"' data-mask style="width: 100%">
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <div class="form-check">
+                                                            <input type='checkbox' id='whatsApp3' value='yes' />
+                                                            <span style="width:100px;display:inline-block;">WhatsApp</span>
+                                                            <input type="checkbox" id="viber3" value="yes" />
+                                                            <span style="width:100px;display:inline-block;">Viber</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label>6. Date Of Birth/උපන් දිනය:</label>
+                                                <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>7. Age/වයස:</label>
+                                                <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='genderM' value='yes' name="gender" />
+                                                    <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
+                                                    <input type="radio" id="genderF" value="yes" name="gender" />
+                                                    <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>9. Current City/දැනට පදිංචිය:</label>
+                                                <ul>
+                                                    <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
+                                                </ul>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <select id="currentdistrict" style="height: 32px;width: 100%;"></select>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <select id="currentcity" style="height: 32px;width: 100%;"></select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>10. Home Town/ස්ථිර පදිංචිය:</label>
+                                                <ul>
+                                                    <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
+                                                </ul>
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <select id="homedistrict" style="height: 32px;width: 100%;"></select>
+                                                    </div>
+
+                                                    <div class="col">
+                                                        <select id="hometown" style="height: 32px;width: 100%;"> </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>11. T-shirt size: </label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='tsizeS' value='yes' name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">S</span>
+                                                    <input type="radio" id="tsizeM" value="yes" name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">M</span>
+                                                    <input type='radio' id='tsizeL' value='yes' name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">L</span>
+                                                    <input type="radio" id="tsizeXS" value="yes" name="tsize" />
+                                                    <span style="width:40px;display:inline-block;">XL</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>12. I am:</label>
+                                                <div class="form-check">
+
+                                                    <div id="student1">
+                                                        <input id="student" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">A Student/ශිෂ්‍ය</label>
+                                                    </div>
+
+                                                    <div id="studentdetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <input id="studentdetails1" type="text" class="form-control" placeholder="University/විශ්ව විද්‍යාලය" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="studentdetails2" type="text" class="form-control" placeholder="Course/හදාරන උපාදියේ නම" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="studentdetails3" type="text" class="form-control" placeholder="Year/ඉගනුම ලබන වසර" data-inputmask='"mask": "9"' data-mask maxlength="190" style="width: 80%">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div id="employee1">
+                                                        <input id="employee" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Full Time Employed/දැනට පුර්ණකාලීන රැකියාවක නිරතවේ </label>
+                                                    </div>
+
+                                                    <div id="employeedetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <input id="employeedetails1" type="text" class="form-control" placeholder="Company/ආයතනය" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="employeedetails2" type="text" class="form-control" placeholder="Branch/නගරය" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                            <li>
+                                                                <input id="employeedetails3" type="text" class="form-control" placeholder="Designation/තනතුර" maxlength="190" style="width: 80%">
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div id="parttime1">
+                                                        <input id="parttime" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Full Time Promoter/දැනට පුර්ණකාලීන අලෙවි ප්‍රවර්ධකයෙක් ලෙස කටුතු කරයි </label>
+                                                    </div>
+
+                                                    <div id="freelancer">
+                                                        <input id="freelanceYes" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Freelancer  </label>
+                                                    </div>
+
+                                                    <div id="freelancerdetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <select id="homedistrict" style="height: 32px;width: 70%;">
+                                                                    <option>-Select-</option>
+                                                                    <option>Graphic/Video designer</option>
+                                                                    <option>Book keeping or Accounting</option>
+                                                                    <option>Logo designer</option>
+                                                                    <option>Photoshop</option>
+                                                                </select>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div id="professional">
+                                                        <input id="professionalYes" class="form-check-input" value="yes" type="checkbox">
+                                                        <label class="form-check-label">Professional/Self employed</label>
+                                                    </div>
+
+                                                    <div id="professionaldetails" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <select id="homedistrict" style="height: 32px;width: 70%;">
+                                                                    <option>-Select-</option>
+                                                                    <option>Lawyer</option>
+                                                                    <option>Compere</option>
+                                                                    <option>Actor/Actress</option>
+                                                                    <option>Architecture </option>
+                                                                    <option>Teacher</option>
+                                                                </select>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input id="freelance" class="form-check-input" value="yes" type="checkbox">
+                                                    <label class="form-check-label">Searching for part time work on weekends or selected days/සති අන්තයේ හෝ සතියේ දින වල part-time job කිරීමට බලාපොරොත්තු වෙමි </label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='englishA' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Fluent</span>
+                                                    <input type="radio" id="englishB" value="yes" name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Normal</span>
+                                                    <input type='radio' id='englishC' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Can`t</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='tamilA' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Fluent</span>
+                                                    <input type="radio" id="tamilB" value="yes" name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Normal</span>
+                                                    <input type='radio' id='tamilC' value='yes' name="tsize" />
+                                                    <span style="width:100px;display:inline-block;">Can`t</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:</label>
+                                                <div class="form-check">
+
+                                                    <div id="exprienceYes">
+                                                        <input id="experienceno" value="1" type="radio" onclick="experiencehandleClick(1);" name="exprienceYes">
+                                                        <label class="form-check-label">No exprience/අත්දැකීම් නැත</label>
+                                                    </div>
+                                                    <div id="exprienceYes">
+                                                        <input value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
+                                                        <label class="form-check-label">Have experience/අත්දැකීම් ඇත</label>
+                                                    </div>
+
+                                                    <div id="experiencecheck" style="display:none;">
+                                                        <ul>
+                                                            <li>
+                                                                <label>Number of years/අත්දැකීමේ ඇති වසර ගණන:</label>
+                                                                <input id="promoexperience" type="tel" class="form-control" placeholder="Year/වසර ගණන" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                                            </li>
+
+                                                            <li>
+                                                                <label>Brands/අත්දැකීම් ඇති වෙළද නාම:</label>
+                                                                <div class="select2-blue">
+                                                                    <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
+                                                                </div>
+                                                            </li>
+
+                                                            <li>
+                                                                <label>Other Parttime Experience/වෙනත් parttime අත්දැකීම්:</label>
+                                                                <div class="select2-blue">
+                                                                    <select id="otherpromoexperience" class="select2" multiple="multiple" data-placeholder="-Select Experience-" data-dropdown-css-class="select2-blue" style="width: 100%;">
+                                                                        <option>Data entry</option>
+                                                                        <option>Leaflet</option>
+                                                                        <option>Photography/Videography </option>
+                                                                        <option>Cooking</option>
+                                                                        <option>Catering</option>
+                                                                        <option>Delivery/ packing</option>
+                                                                        <option>Stock counting</option>
+                                                                        <option>Modeling</option>
+                                                                        <option>Cheering </option>
+                                                                        <option>Acting</option>
+                                                                        <option>Dancing</option>
+                                                                        <option>Magic shows </option>
+                                                                    </select>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:</label>
+
+                                                <div class="form-group">
+                                                    <label>Company/ආයතන</label>
+                                                    <input id="age" type="text" class="form-control" placeholder="ආයතන" style="width: 100%">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Supervisors/පුද්ගලයින්</label>
+                                                    <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්" style="width: 100%">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label>කොන්දේසි සහ එකඟතාවයන්</label>
+                                                <ol>
+                                                    <li>
+                                                        සේවායෝජකයා නියම කල නීති රීති අනුව කිසිඳු අතපසු කිරීමකින් තොරව සේවය සිදුකරන අතර එසේ නොවී මා කරන ඕනෑම වරදකදී වැටුපෙන් යම් ප්‍රමාණයක් හෝ සම්පූර්ණ මුදලම අඩු කර ගැනීමට parttime.lk වෙත අයිතිය ඇති බව දනිමි.
+                                                    </li>
+                                                    <li>
+                                                        භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ ගිණුම (Profile) තාවකාලිකව හෝ සදාකාලිකව තහනම් (Restrict / Suspend ) වන බව දනිමි.
+                                                    </li>
+                                                    <li style="list-style-type: none;">
+                                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agremeentModel">Read full agreement</button>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <div class="form-check">
+                                                        <input id="submit" class="form-check-input" type="checkbox">
+                                                        <label class="form-check-label">I would like to participate/මම සහභාගී වීමට කැමැත්තෙමි </label>
+                                                        <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
+                                                        <button type="button" class="btn btn-warning">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        </div>
                 </section>
             </div>
 
@@ -721,7 +1160,6 @@
 
                 </div>
             </div>
-
 
             <!-- /.content -->
         </div>
