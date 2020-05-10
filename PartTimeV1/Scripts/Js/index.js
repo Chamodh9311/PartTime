@@ -108,12 +108,20 @@ $(document).ready(function () {
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
             $("#parttime").attr("disabled", "disabled").off('click');
+            $("#freelanceYes").attr("disabled", "disabled").off('click');
+            $("#freelancerdetails").attr("disabled", "disabled").off('click');
+            $("#professionalYes").attr("disabled", "disabled").off('click');
+            $("#professionaldetails").attr("disabled", "disabled").off('click');
         }
         else {
             $('#studentdetails').fadeOut('slow');
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
             $("#parttime").removeAttr('disabled');
+            $("#freelanceYes").removeAttr('disabled');
+            $("#freelancerdetails").removeAttr('disabled');
+            $("#professionalYes").removeAttr('disabled');
+            $("#professionaldetails").removeAttr('disabled');
         }
     });
 });
@@ -125,12 +133,20 @@ $(document).ready(function () {
             $("#student").attr("disabled", "disabled").off('click');
             $("#studentdetails").attr("disabled", "disabled").off('click');
             $("#parttime").attr("disabled", "disabled").off('click');
+            $("#freelanceYes").attr("disabled", "disabled").off('click');
+            $("#freelancerdetails").attr("disabled", "disabled").off('click');
+            $("#professionalYes").attr("disabled", "disabled").off('click');
+            $("#professionaldetails").attr("disabled", "disabled").off('click');
         }
         else {
             $('#employeedetails').fadeOut('slow');
             $("#student").removeAttr('disabled');
             $("#studentdetails").removeAttr('disabled');
             $("#parttime").removeAttr('disabled');
+            $("#freelanceYes").removeAttr('disabled');
+            $("#freelancerdetails").removeAttr('disabled');
+            $("#professionalYes").removeAttr('disabled');
+            $("#professionaldetails").removeAttr('disabled');
         }
     });
 });
@@ -142,15 +158,82 @@ $(document).ready(function () {
             $("#studentdetails").attr("disabled", "disabled").off('click');
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#freelanceYes").attr("disabled", "disabled").off('click');
+            $("#freelancerdetails").attr("disabled", "disabled").off('click');
+            $("#professionalYes").attr("disabled", "disabled").off('click');
+            $("#professionaldetails").attr("disabled", "disabled").off('click');
         }
         else {
             $("#student").removeAttr('disabled');
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
+            $("#freelanceYes").removeAttr('disabled');
+            $("#freelancerdetails").removeAttr('disabled');
+            $("#professionalYes").removeAttr('disabled');
+            $("#professionaldetails").removeAttr('disabled');
         }
     });
 });
+
+$(document).ready(function () {
+    $('#freelanceYes').change(function () {
+        if ($(this).is(":checked")) {
+            $('#freelancerdetails').fadeIn('slow');
+            $("#student").attr("disabled", "disabled").off('click');
+            $("#studentdetails").attr("disabled", "disabled").off('click');
+            $("#employee").attr("disabled", "disabled").off('click');
+            $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#professionalYes").attr("disabled", "disabled").off('click');
+            $("#professionaldetails").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#freelancerdetails').fadeOut('slow');
+            $("#student").removeAttr('disabled');
+            $("#studentdetails").removeAttr('disabled');
+            $("#employee").removeAttr('disabled');
+            $("#employeedetails").removeAttr('disabled');
+            $("#professionalYes").removeAttr('disabled');
+            $("#professionaldetails").removeAttr('disabled');
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#professionalYes').change(function () {
+        if ($(this).is(":checked")) {
+            $('#professionaldetails').fadeIn('slow');
+            $("#student").attr("disabled", "disabled").off('click');
+            $("#studentdetails").attr("disabled", "disabled").off('click');
+            $("#employee").attr("disabled", "disabled").off('click');
+            $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#freelanceYes").attr("disabled", "disabled").off('click');
+            $("#freelancerdetails").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#professionaldetails').fadeOut('slow');
+            $("#student").removeAttr('disabled');
+            $("#studentdetails").removeAttr('disabled');
+            $("#employee").removeAttr('disabled');
+            $("#employeedetails").removeAttr('disabled');
+            $("#freelanceYes").removeAttr('disabled');
+            $("#freelancerdetails").removeAttr('disabled');
+        }
+    });
+});
+
+
+
+
+
+function experiencehandleClick(value) {
+    if (value == "2") {
+        $('#experiencecheck').fadeIn('slow');
+    }
+    else {
+        $('#experiencecheck').fadeOut('slow');
+    }
+}
 
 //Submit button show hide
 $(document).ready(function () {
