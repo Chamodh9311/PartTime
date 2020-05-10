@@ -5,11 +5,14 @@ using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
 {
-    [Authorize]
+
+    [Authorize(Roles = "SuperAdmin , User")]
     public class AdminController : BaseController
     {
+
         public ActionResult Index()
         {
+
             return View();
         }
 
