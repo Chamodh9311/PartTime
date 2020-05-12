@@ -308,31 +308,32 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group">
+                                                <label>6. Date Of Birth/උපන් දිනය:</label>
+                                                <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>7. Age/වයස:</label>
+                                                <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
+                                                <div class="form-check">
+                                                    <input type='radio' id='genderM' value='yes' name="gender" />
+                                                    <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
+                                                    <input type="radio" id="genderF" value="yes" name="gender" />
+                                                    <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
+                                                </div>
+                                            </div>
+
                                         </div>
 
                                     </div>
 
-                                    <div class="col-md-6">
-
-                                        <div class="form-group">
-                                            <label>6. Date Of Birth/උපන් දිනය:</label>
-                                            <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>7. Age/වයස:</label>
-                                            <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
-                                            <div class="form-check">
-                                                <input type='radio' id='genderM' value='yes' name="gender" />
-                                                <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
-                                                <input type="radio" id="genderF" value="yes" name="gender" />
-                                                <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-6">  
 
                                         <div class="form-group">
                                             <label>9. Current City/දැනට පදිංචිය:</label>
@@ -570,8 +571,30 @@
                                                 <label>Supervisors/සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්</label>
                                                 <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 100%">
                                             </div>
-
                                         </div>
+
+                                        <div class="form-group">
+                                            <label>17. Bank Details/බැංකු තොරතුරු:</label>
+                                            <ul>
+                                                <li>
+                                                    <label>Account holder`s name/ගිණුම් හිමියාගේ නම</label>
+                                                    <input id="accountholder" type="text" class="form-control" placeholder="නම" style="width: 60%">
+                                                </li>
+                                                <li>
+                                                    <label>Account number/ගිණුම් අංකය</label>
+                                                    <input id="accountnumber" type="text" class="form-control" placeholder="ගිණුම් අංකය" style="width: 60%">
+                                                </li>
+                                                <li>
+                                                    <label>Bank/බැංකුව</label>
+                                                    <input id="bank" type="text" class="form-control" placeholder="බැංකුව" style="width: 60%">
+                                                </li>
+                                                <li>
+                                                    <label>Branch/ශාකාව </label>
+                                                    <input id="branch" type="text" class="form-control" placeholder="ශාකාව" style="width: 60%">
+                                                </li>
+                                            </ul>
+                                        </div>
+
                                     </div>
 
                                     <hr /> 
