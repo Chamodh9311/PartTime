@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Part Time | Register - Coordinator</title>
+    <title>Part Time | Register - Promoter</title>
 
     <!-- Favicons -->
     <link href="~/SiteImages/favicon.jpg" rel="icon">
@@ -21,7 +21,7 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- daterange picker -->
-    @*<link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/daterangepicker/daterangepicker.css">*@
+    <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/daterangepicker/daterangepicker.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/dist/css/adminlte.min.css">
     <!-- Select2 -->
@@ -157,7 +157,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Profile - Promoter</h1>
+                                <h1>Profile - Coordinator</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
@@ -176,8 +176,8 @@
                         <div class="card card-default">
 
                             <div class="tab">
-                                <button style="background-color:aqua;" class="tablinks">Promoter</button>
-                                <button class="tablinks" onclick="location.href='@Url.Action("Coordinator", "Admin")';return false;">Coordinator</button>
+                                <button class="tablinks" onclick="location.href='@Url.Action("Index", "Admin")';return false;">Promoter</button>
+                                <button class="tablinks" style="background-color:aqua;" onclick="location.href='@Url.Action("Coordinator", "Admin")';return false;">Coordinator</button>
                             </div>
 
                             <!-- /.card-header -->
@@ -445,9 +445,6 @@
                                                                 <option>Photoshop</option>
                                                             </select>
                                                         </li>
-                                                        <li>
-                                                            <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 70%">
-                                                        </li>
                                                     </ul>
                                                 </div>
 
@@ -467,9 +464,6 @@
                                                                 <option>Architecture </option>
                                                                 <option>Teacher</option>
                                                             </select>
-                                                        </li>
-                                                        <li>
-                                                            <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 70%">
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -560,43 +554,21 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>16. How did you know about parttime.lk:</label>
+                                            <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:</label>
 
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input id="ffacebook" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From FaceBook </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="finstagram" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From Instagram </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="fstaff" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From PartTime.lk staff </label>
-                                                        <input id="age" type="text" class="form-control" placeholder="පුද්ගලයාගේ නම" style="display:none; width: 100%">
-                                                    </div>
-
-                                                </div>
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input id="fcordinator" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From a Cordinator </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="ffriend" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From a Friend </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input id="fgoogle" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From Google</label>
-                                                    </div>
-                                                </div>
+                                            <div class="form-group">
+                                                <label>Company/ආයතන</label>
+                                                <input id="age" type="text" class="form-control" placeholder="ආයතන" style="width: 100%">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Supervisors/සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්</label>
+                                                <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 100%">
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <hr />
+
+                                    <hr /> 
 
                                     <div class="row">
                                         <div class="col-md-12">
@@ -604,9 +576,6 @@
                                             <ol>
                                                 <li>
                                                     සේවායෝජකයා නියම කල නීති රීති අනුව කිසිඳු අතපසු කිරීමකින් තොරව සේවය සිදුකරන අතර එසේ නොවී මා කරන ඕනෑම වරදකදී වැටුපෙන් යම් ප්‍රමාණයක් හෝ සම්පූර්ණ මුදලම අඩු කර ගැනීමට parttime.lk වෙත අයිතිය ඇති බව දනිමි.
-                                                </li>
-                                                <li>
-                                                    භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ ගිණුම (Profile) තාවකාලිකව හෝ සදාකාලිකව තහනම් (Restrict / Suspend ) වන බව දනිමි.
                                                 </li>
                                                 <li style="list-style-type: none;">
                                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agremeentModel">Read full agreement</button>
@@ -642,7 +611,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <p>
-                                parttime.lk අප සේවා යෝජකයන් හා අර්ධකාලීන සේවකයන් අතර තුන්වන පාර්ශවයක් ලෙස කටයුතු කරන අතර එකී තුන්වන පාර්ශවයක් ලෙස අප බැදී සිටින සියලූ කාරනා උපරිම විශ්වාසයකින් හා වගකීමෙන් ඉටු කරන්නෙමු.
+                                parttime.lk අප සේවා යෝජකයන් හා අර්ධකාලීන සේවකයන් අතර තුනවන පාර්ශවයක් ලෙස කටයුතු කරන අතර එකී තුන්වන පාර්ශවයක් ලෙස අප බැදී සිටින සියලූ කාරනා උපරිම විශ්වාසයකින් හා වගකීමෙන් ඉටු කරන්නෙමු.
                             </p>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
@@ -651,19 +620,16 @@
                                 *Customer aggrement*
                                 <ul>
                                     <li>
-                                        parttime.lk අර්ධ කාලීන සේවකයකු ලෙස ලියාපදින්චි වන මම අදාල සේවා ස්ථානය තුල උපරිම විශ්වාසය රැකෙන පරිදි මෙන්ම අවංක හා වගකීමෙන් යුතුව සේවා සපයනු ලබන අතර එසේ නොකලහොත් මාගේ ගිණුම තාවකාලිකව හෝ සදාකාලිකව තහනම් වන බව මා හොදින් දන්නා අතර ආයතනය විසින් ගනු ලබන ඕනෑම නීතිමය පියවරකට සහය දීමට එකග වෙමි.
+                                        parttime.lk හි සම්බන්ධීකාරවරයකු ලෙස ලියාපදිංචි වන මම ආයතනයේ ගෞරවයද මාගේ ගෞරවයද රැකෙන ලෙස අවන්කව හා වගකීමෙන් යුතුව සේවා සපයනු ලබන අතර,
+                                        - මා හා සේවයේ නියුතු වන අර්ධකාලීන සේවකයන් හට උපරිම විස්වාසයෙන් සේවා සපයන අතර සපයනු ලබන සේවා සදහා ඉහල හා සාධාරණ වැටුපක් ලබා දීමට මා බැදී සිටින්නෙමි.
                                     </li>
 
                                     <li>
-                                        භාරගත් වැඩ පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම වැනි දෑ තුලින් ද මාගේ ගිණුම තාවකාලිකව හෝ සදාකාලිකව තහනම් වන බව මා හොදින් දන්නා අතර ආයතනය විසින් ගනු ලබන ඕනෑම නීතිමය පියවරකට සහය දීමට එකග වෙමි.
+                                        කිසිදු හේතුවක් නිසාවෙන් සිතා මතා වැටුප් පැහැර හැරීමක් සිදු නොකරන අතර අර්ධ කාලීන සේවකයන් හටා ලබා දුන් පොරොන්දු ඒ ලෙස ඉටුකිරීමට සෑම විටම වගකීමෙන් යුතුව කටයුතු කරන්නෙමි.
                                     </li>
 
                                     <li>
-                                        සේවායෝජකයන් නියම කරන ලද වේලාවට අදාල ස්ථානය සදහා සේවයට වාර්තා කිරීමට මා බැදී සිටින අතර කිසිදු හේතුවක් මත එකගවන කාලය සම්පූර්ණ වීමට පෙර සේවයෙන් බැහැර නොයන බවට පොරොන්දු වෙමි.
-                                    </li>
-
-                                    <li>
-                                        ඉහත දක්වා ඇති වැරදි හෝ යම් අතපසු වීම් හේතුවෙන් parttime.lk වෙත වන අපකීර්තිය හෝ මූල්‍යමය පාඩු වෙනුවෙන් වැටුපෙන් යම් මුදලක් අය කිරීමට හෝ උපරිම වශයෙන් වැටුප් නොගෙවා සිටීමට ආයතනය වෙන සම්පූර්ණ අයිතිය මා ලබා දෙන්නෙමි.
+                                        සම්බන්ධීකාරවරයකු ලෙස මා හට පැවරී ඇති මෙම වගකීම් පැහැර හැරීමෙන් parttime.lk හි මාගේ ගිනුම තාවකාලිකව හෝ සදාකාලිකව තහනම් වන බව මා හොදින් දන්නා අතර ආයතනය විසින් ගනු ලබන ඕනෑම නීතිමය පියවරකට සහය දීමට එකග වෙමි.
                                     </li>
                                 </ul>
                             </p>
@@ -671,7 +637,10 @@
                                 *Special Notice*
                                 <ul>
                                     <li>
-                                        parttime.lk වන අප ඔබ හා රැකියා සමබන්ධීකාරක වරුන් (Coordinator) අතර තුන්වන පාර්ශවයක් ලෙස නිසැකයෙන්ම පෙනී සිටින අතර සම්බන්ධීකාරක වරුන් (Coordinator) රැකියා ලබා දීමේදී ඔබ හට ලබා දෙන සියලු පොරොන්දු අනිවාර්යයෙන් ඉටු කල යුතු අතර, එසේ නොකොට ඔබට වැටුප් සිතා මතා පැහැර හැරීම ඇතුලුව සිදු කරන ඕනෑම කාරනාවක් සම්බන්දයෙන් parttime.lk ඔබගේ පාර්ශවය වෙනුවෙන් පෙනී සිටීමට නිසැකයෙන්ම කටයුතු කරනු ඇත. එමනිසා ඔබට සම්බන්ධීකාරක වරුන් (Coordinator) සම්බන්ද ඕනෑම ගැටලුවක් parttime.lk වන අප වෙත දැනුම් දීම ඉතා වැදගත් වන අතර එය ඔබගේ අයිතියක්ද වනු ඇත.
+                                        parttime.lk වන අප ඔබ හා රැකියා සමබන්ධීකාරක වරුන් (Coordinator) අතර තුන්වන පාර්ශවයක් ලෙස නිසැකයෙන්ම පෙනී සිටින අතර සම්බන්ධීකාරක වරුන් (Coordinator) රැකියා ලබා දීමේදී ඔබ හට ලබා දෙන සියලු පොරොන්දු අනිවාර්යයෙන් ඉටු කල යුතු අතර, එසේ නොකොට ඔබට වැටුප් සිතා මතා පැහැර හැරීම ඇතුලුව සිදු කරන ඕනෑම කාරනාවක් සම්බන්දයෙන් parttime.lk ඔබගේ පාර්ශවය වෙනුවෙන් පෙනී සිටීමට නිසැකයෙන්ම කටයුතු කරනු ඇත. එමනිසා ඔබට සම්බන්ධීකාරක වරුන් (Coordinator) සම්බන්ද ඕනෑම ගැටලුවක් parttime.lk වන අප වෙත දැනුම් දීම ඉතා වැදගත් වන අතර එය ඔබගේ අයිතියක්ද වනු ඇත.    
+                                    </li>
+                                    <li>
+                                        එම සියලූම අවස්තාවන්හීදී parttime.lk වන අප ඔබ වෙනුවෙන් පෙනී සිටින අතර අර්ධකාලීන සේවකයන් සම්බන්ධ ඕනෑම ගැටලුවක් parttime.lk වන අප වෙත දැනුම් දීම ඉතා වැදගත් වේ.
                                     </li>
                                     <li>
                                         ඔබගේ පැමිනිලි පහත අංක සදහා යොමු කරන්න.
@@ -771,13 +740,29 @@
     <script src="~/TemplateAssets/WebSite/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- overlayScrollbars -->
     <script src="~/TemplateAssets/DashBord/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="~/TemplateAssets/DashBord//plugins/daterangepicker/daterangepicker.js"></script>
     <!-- AdminLTE App -->
     <script src="~/TemplateAssets/DashBord/dist/js/adminlte.js"></script>
     <!-- Select2 -->
     <script src="~/TemplateAssets/DashBord/plugins/select2/js/select2.full.min.js"></script>
     <!-- InputMask -->
+    @*<script src="~/TemplateAssets/DashBord/plugins/moment/moment.min.js"></script>*@
     <script src="~/TemplateAssets/DashBord/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
     <!-- OPTIONAL SCRIPTS -->
+    @*<script src="~/TemplateAssets/DashBord/dist/js/demo.js"></script>*@
+
+    <!-- PAGE PLUGINS -->
+    <!-- jQuery Mapael -->
+    @*<script src="~/TemplateAssets/DashBord/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+        <script src="~/TemplateAssets/DashBord/plugins/raphael/raphael.min.js"></script>
+        <script src="~/TemplateAssets/DashBord/plugins/jquery-mapael/jquery.mapael.min.js"></script>
+        <script src="~/TemplateAssets/DashBord/plugins/jquery-mapael/maps/usa_states.min.js"></script>*@
+    <!-- ChartJS -->
+    @*<script src="~/TemplateAssets/DashBord/plugins/chart.js/Chart.min.js"></script>*@
+
+    <!-- PAGE SCRIPTS -->
+    @*<script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>*@
 
     @Scripts.Render("~/Scripts/Js/coordinator.js")
 

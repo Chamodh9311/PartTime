@@ -226,6 +226,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Js\coordinator.js" />
     <Content Include="Scripts\Js\users.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SiteImages\CoverV1.jpg" />
@@ -568,6 +569,7 @@
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\bower.json" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Admin\Coordinator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
