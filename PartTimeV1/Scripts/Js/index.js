@@ -11,6 +11,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////// Promoter //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function AjaxCall(url, data, type) {
     return $.ajax({
         url: url,
@@ -163,6 +164,7 @@ $(document).ready(function () {
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
             $("#freelanceYes").attr("disabled", "disabled").off('click');
+            $("#parttime").removeAttr('disabled');
             $("#freelancerdetails").attr("disabled", "disabled").off('click');
             $("#professionalYes").attr("disabled", "disabled").off('click');
             $("#professionaldetails").attr("disabled", "disabled").off('click');
@@ -188,6 +190,7 @@ $(document).ready(function () {
             $("#studentdetails").attr("disabled", "disabled").off('click');
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#parttime").attr("disabled", "disabled").off('click');
             $("#professionalYes").attr("disabled", "disabled").off('click');
             $("#professionaldetails").attr("disabled", "disabled").off('click');
         }
@@ -197,6 +200,7 @@ $(document).ready(function () {
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
+            $("#parttime").removeAttr('disabled');
             $("#professionalYes").removeAttr('disabled');
             $("#professionaldetails").removeAttr('disabled');
         }
@@ -211,6 +215,7 @@ $(document).ready(function () {
             $("#studentdetails").attr("disabled", "disabled").off('click');
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#parttime").attr("disabled", "disabled").off('click');
             $("#freelanceYes").attr("disabled", "disabled").off('click');
             $("#freelancerdetails").attr("disabled", "disabled").off('click');
         }
@@ -220,6 +225,7 @@ $(document).ready(function () {
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
+            $("#parttime").removeAttr('disabled');
             $("#freelanceYes").removeAttr('disabled');
             $("#freelancerdetails").removeAttr('disabled');
         }
@@ -227,7 +233,123 @@ $(document).ready(function () {
 });
 
 
+//Disable Social media selection 
 
+$(document).ready(function () {
+    $('#ffacebook').change(function () {
+        if ($(this).is(":checked")) {
+            $("#finstagram").attr("disabled", "disabled").off('click');
+            $('#fstaff').attr("disabled", "disabled").off('click');
+            $('#fcordinator').attr("disabled", "disabled").off('click');
+            $("#ffriend").attr("disabled", "disabled").off('click'); 
+            $("#fgoogle").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $("#finstagram").removeAttr('disabled');
+            $('#fstaff').removeAttr('disabled');
+            $('#fcordinator').removeAttr('disabled');
+            $("#ffriend").removeAttr('disabled'); 
+            $("#fgoogle").removeAttr('disabled');
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#finstagram').change(function () {
+        if ($(this).is(":checked")) {
+            $('#ffacebook').attr("disabled", "disabled").off('click');
+            $("#fstaff").attr("disabled", "disabled").off('click');
+            $('#fcordinator').attr("disabled", "disabled").off('click');
+            $("#ffriend").attr("disabled", "disabled").off('click');
+            $("#fgoogle").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#ffacebook').removeAttr('disabled');
+            $("#fstaff").removeAttr('disabled');
+            $('#fcordinator').removeAttr('disabled');
+            $("#ffriend").removeAttr('disabled');
+            $("#fgoogle").removeAttr('disabled');
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#fstaff').change(function () {
+        if ($(this).is(":checked")) {
+            $('#fstaffname').fadeIn('slow');
+            $('#ffacebook').attr("disabled", "disabled").off('click');
+            $("#finstagram").attr("disabled", "disabled").off('click');
+            $('#fcordinator').attr("disabled", "disabled").off('click');
+            $("#ffriend").attr("disabled", "disabled").off('click');
+            $("#fgoogle").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#fstaffname').fadeOut('slow');
+            $('#ffacebook').removeAttr('disabled');
+            $("#finstagram").removeAttr('disabled');
+            $('#fcordinator').removeAttr('disabled');
+            $("#ffriend").removeAttr('disabled');
+            $("#fgoogle").removeAttr('disabled');
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#fcordinator').change(function () {
+        if ($(this).is(":checked")) {     
+            $('#ffacebook').attr("disabled", "disabled").off('click');
+            $("#finstagram").attr("disabled", "disabled").off('click');
+            $('#fstaff').attr("disabled", "disabled").off('click');
+            $("#ffriend").attr("disabled", "disabled").off('click');
+            $("#fgoogle").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#ffacebook').removeAttr('disabled');
+            $("#finstagram").removeAttr('disabled');
+            $('#fstaff').removeAttr('disabled');
+            $("#ffriend").removeAttr('disabled');
+            $("#fgoogle").removeAttr('disabled');
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#ffriend').change(function () {
+        if ($(this).is(":checked")) {
+            $('#ffacebook').attr("disabled", "disabled").off('click');
+            $("#finstagram").attr("disabled", "disabled").off('click');
+            $('#fstaff').attr("disabled", "disabled").off('click');
+            $("#fcordinator").attr("disabled", "disabled").off('click');
+            $("#fgoogle").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#ffacebook').removeAttr('disabled');
+            $("#finstagram").removeAttr('disabled');
+            $('#fstaff').removeAttr('disabled');
+            $("#fcordinator").removeAttr('disabled');
+            $("#fgoogle").removeAttr('disabled');
+        }
+    });
+});
+
+$(document).ready(function () {
+    $('#fgoogle').change(function () {
+        if ($(this).is(":checked")) {
+            $('#ffacebook').attr("disabled", "disabled").off('click');
+            $("#finstagram").attr("disabled", "disabled").off('click');
+            $('#fstaff').attr("disabled", "disabled").off('click');
+            $("#fcordinator").attr("disabled", "disabled").off('click');
+            $("#ffriend").attr("disabled", "disabled").off('click');
+        }
+        else {
+            $('#ffacebook').removeAttr('disabled');
+            $("#finstagram").removeAttr('disabled');
+            $('#fstaff').removeAttr('disabled');
+            $("#fcordinator").removeAttr('disabled');
+            $("#ffriend").removeAttr('disabled');
+        }
+    });
+});
 
 
 function experiencehandleClick(value) {
@@ -497,7 +619,3 @@ function submitFunction() {
         }
     });
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////// Coordinator //////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

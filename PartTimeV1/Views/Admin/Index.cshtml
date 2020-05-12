@@ -162,7 +162,7 @@
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Home</a>
+                                        @*<a href="#">Home</a>*@
                                     </li>
                                 </ol>
                             </div>
@@ -445,7 +445,7 @@
                                                                 <option>Photoshop</option>
                                                             </select>
                                                         </li>
-                                                        <li>
+                                                        <li style="list-style-type: none;">
                                                             <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 70%">
                                                         </li>
                                                     </ul>
@@ -468,7 +468,7 @@
                                                                 <option>Teacher</option>
                                                             </select>
                                                         </li>
-                                                        <li>
+                                                        <li style="list-style-type: none;">
                                                             <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 70%">
                                                         </li>
                                                     </ul>
@@ -563,7 +563,7 @@
                                             <label>16. How did you know about parttime.lk:</label>
 
                                             <div class="row">
-                                                <div class="col">
+                                                <div id="social1" class="col">
                                                     <div class="form-check">
                                                         <input id="ffacebook" class="form-check-input" value="yes" type="checkbox">
                                                         <label class="form-check-label">From FaceBook </label>
@@ -575,11 +575,11 @@
                                                     <div class="form-check">
                                                         <input id="fstaff" class="form-check-input" value="yes" type="checkbox">
                                                         <label class="form-check-label">From PartTime.lk staff </label>
-                                                        <input id="age" type="text" class="form-control" placeholder="පුද්ගලයාගේ නම" style="display:none; width: 100%">
+                                                        <input id="fstaffname" type="text" class="form-control" placeholder="පුද්ගලයාගේ නම" style="display:none; width: 100%">
                                                     </div>
 
                                                 </div>
-                                                <div class="col">
+                                                <div id="social2" class="col">
                                                     <div class="form-check">
                                                         <input id="fcordinator" class="form-check-input" value="yes" type="checkbox">
                                                         <label class="form-check-label">From a Cordinator </label>
@@ -779,7 +779,7 @@
     <script src="~/TemplateAssets/DashBord/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
     <!-- OPTIONAL SCRIPTS -->
 
-    @Scripts.Render("~/Scripts/Js/coordinator.js")
+    @Scripts.Render("~/Scripts/Js/index.js")
 
 </body>
 </html>

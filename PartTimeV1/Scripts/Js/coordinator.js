@@ -9,8 +9,9 @@
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////// Promoter //////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////// Coordinator //////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function AjaxCall(url, data, type) {
     return $.ajax({
         url: url,
@@ -18,7 +19,7 @@ function AjaxCall(url, data, type) {
         data: data,
         contentType: 'application/json'
     });
-}  
+}
 
 function AjaxCallSelect2(url, data, type) {
     return $.ajax({
@@ -27,7 +28,7 @@ function AjaxCallSelect2(url, data, type) {
         data: data,
         contentType: 'application/json'
     });
-}  
+}
 
 //Load town dropdown values 
 $(function () {
@@ -104,7 +105,6 @@ $(function () {
 
 });
 
-
 //Show hide I am section
 $(document).ready(function () {
     $('#student').change(function () {
@@ -164,6 +164,7 @@ $(document).ready(function () {
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
             $("#freelanceYes").attr("disabled", "disabled").off('click');
+            $("#parttime").removeAttr('disabled');
             $("#freelancerdetails").attr("disabled", "disabled").off('click');
             $("#professionalYes").attr("disabled", "disabled").off('click');
             $("#professionaldetails").attr("disabled", "disabled").off('click');
@@ -189,6 +190,7 @@ $(document).ready(function () {
             $("#studentdetails").attr("disabled", "disabled").off('click');
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#parttime").attr("disabled", "disabled").off('click');
             $("#professionalYes").attr("disabled", "disabled").off('click');
             $("#professionaldetails").attr("disabled", "disabled").off('click');
         }
@@ -198,6 +200,7 @@ $(document).ready(function () {
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
+            $("#parttime").removeAttr('disabled');
             $("#professionalYes").removeAttr('disabled');
             $("#professionaldetails").removeAttr('disabled');
         }
@@ -212,6 +215,7 @@ $(document).ready(function () {
             $("#studentdetails").attr("disabled", "disabled").off('click');
             $("#employee").attr("disabled", "disabled").off('click');
             $("#employeedetails").attr("disabled", "disabled").off('click');
+            $("#parttime").attr("disabled", "disabled").off('click');
             $("#freelanceYes").attr("disabled", "disabled").off('click');
             $("#freelancerdetails").attr("disabled", "disabled").off('click');
         }
@@ -221,6 +225,7 @@ $(document).ready(function () {
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
+            $("#parttime").removeAttr('disabled');
             $("#freelanceYes").removeAttr('disabled');
             $("#freelancerdetails").removeAttr('disabled');
         }
@@ -294,11 +299,11 @@ function submitFunction() {
     profileRequest.NIC = $('#nicno').val();
 
 
-    profileRequest.Photo1 = document.getElementById("Image1").innerHTML;  
-    profileRequest.Photo2 = document.getElementById("Image2").innerHTML;  
-    profileRequest.Photo3 = document.getElementById("Image3").innerHTML;  
-    profileRequest.Photo4 = document.getElementById("Image4").innerHTML;  
-    profileRequest.Photo5 = document.getElementById("Image5").innerHTML;  
+    profileRequest.Photo1 = document.getElementById("Image1").innerHTML;
+    profileRequest.Photo2 = document.getElementById("Image2").innerHTML;
+    profileRequest.Photo3 = document.getElementById("Image3").innerHTML;
+    profileRequest.Photo4 = document.getElementById("Image4").innerHTML;
+    profileRequest.Photo5 = document.getElementById("Image5").innerHTML;
 
 
     profileRequest.Mobile1 = $('#mobile01').val();
@@ -477,28 +482,24 @@ function submitFunction() {
 
     profileRequest.SalesExperience = $('#promoexperience').val();
     profileRequest.Brands = $('#brandnames').select2("val"),
-    profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),
+        profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),
 
-    $.ajax({
-        type: "POST",
-        url: '/Admin/ProfileSubmit',
-        data: '{profileRequest: ' + JSON.stringify(profileRequest) + '}',
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
+        $.ajax({
+            type: "POST",
+            url: '/Admin/ProfileSubmit',
+            data: '{profileRequest: ' + JSON.stringify(profileRequest) + '}',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
 
-        success: function (result) {
-            $("#sumbitprofile").removeAttr('disabled');
-            $("#successModel").modal()
-            //alert('ok');
-            //$('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
-        },
-        error: function (result) {
-            $("#sumbitprofile").removeAttr('disabled');
-            $("#failModel").modal()
-        }
-    });
+            success: function (result) {
+                $("#sumbitprofile").removeAttr('disabled');
+                $("#successModel").modal()
+                //alert('ok');
+                //$('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+            },
+            error: function (result) {
+                $("#sumbitprofile").removeAttr('disabled');
+                $("#failModel").modal()
+            }
+        });
 }
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////// Coordinator //////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
