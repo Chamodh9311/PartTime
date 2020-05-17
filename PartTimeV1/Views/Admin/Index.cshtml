@@ -308,6 +308,9 @@
                                                 </div>
                                             </div>
 
+
+                                        </div>
+
                                             <div class="form-group">
                                                 <label>6. Date Of Birth/උපන් දිනය:</label>
                                                 <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
@@ -317,8 +320,6 @@
                                                 <label>7. Age/වයස:</label>
                                                 <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
                                             </div>
-
-                                        </div>
 
                                     </div>
 
@@ -432,13 +433,13 @@
 
                                                 <div id="freelancer">
                                                     <input id="freelanceYes" class="form-check-input" value="yes" type="checkbox">
-                                                    <label class="form-check-label">Freelancer  </label>
+                                                    <label class="form-check-label">Freelancer</label>
                                                 </div>
 
                                                 <div id="freelancerdetails" style="display:none;">
                                                     <ul>
                                                         <li>
-                                                            <select id="homedistrict" style="height: 32px;width: 70%;">
+                                                            <select id="freelancerdetailsdrp" style="height: 32px;width: 70%;">
                                                                 <option>-Select-</option>
                                                                 <option>Graphic/Video designer</option>
                                                                 <option>Book keeping or Accounting</option>
@@ -447,7 +448,7 @@
                                                             </select>
                                                         </li>
                                                         <li style="list-style-type: none;">
-                                                            <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 70%">
+                                                            <input id="otherExp" type="text" class="form-control" placeholder="වෙනත්" maxlength="490" style="width: 70%">
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -460,7 +461,7 @@
                                                 <div id="professionaldetails" style="display:none;">
                                                     <ul>
                                                         <li>
-                                                            <select id="homedistrict" style="height: 32px;width: 70%;">
+                                                            <select id="professionaldetailsdrp" style="height: 32px;width: 70%;">
                                                                 <option>-Select-</option>
                                                                 <option>Lawyer</option>
                                                                 <option>Compere</option>
@@ -470,7 +471,7 @@
                                                             </select>
                                                         </li>
                                                         <li style="list-style-type: none;">
-                                                            <input id="age" type="text" class="form-control" placeholder="පුද්ගලයින්ගේ නම්" style="width: 70%">
+                                                            <input id="professionalexp" type="text" class="form-control" placeholder="වෙනත්" maxlength="490" style="width: 70%">
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -532,7 +533,8 @@
                                                         <li>
                                                             <label>Brands/අත්දැකීම් ඇති වෙළද නාම:</label>
                                                             <div class="select2-blue">
-                                                                <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
+                                                                <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>                                             
+                                                                <input id="otherbrandnames" type="text" class="form-control" placeholder="වෙනත්" maxlength="490" width: 100%">
                                                             </div>
                                                         </li>
 
@@ -553,6 +555,7 @@
                                                                     <option>Dancing</option>
                                                                     <option>Magic shows </option>
                                                                 </select>
+                                                                <input id="otherexperience" type="text" class="form-control" placeholder="වෙනත්" maxlength="490" width: 100%">
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -567,27 +570,28 @@
                                                 <div id="social1" class="col">
                                                     <div class="form-check">
                                                         <input id="ffacebook" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From FaceBook </label>
+                                                        <label class="form-check-label">From FaceBook</label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input id="finstagram" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From Instagram </label>
+                                                        <label class="form-check-label">From Instagram</label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input id="fstaff" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From PartTime.lk staff </label>
-                                                        <input id="fstaffname" type="text" class="form-control" placeholder="පුද්ගලයාගේ නම" style="display:none; width: 100%">
+                                                        <label class="form-check-label">From PartTime.lk staff</label>
+                                                        <input id="fstaffname" type="text" class="form-control" placeholder="නම" maxlength="200" style="display:none; width: 100%">
                                                     </div>
 
                                                 </div>
                                                 <div id="social2" class="col">
                                                     <div class="form-check">
                                                         <input id="fcordinator" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From a Cordinator </label>
+                                                        <label class="form-check-label">From a Cordinator</label>
+                                                        <input id="fcordinatorname" type="text" class="form-control" placeholder="නම" maxlength="200" style="display:none; width: 100%">
                                                     </div>
                                                     <div class="form-check">
                                                         <input id="ffriend" class="form-check-input" value="yes" type="checkbox">
-                                                        <label class="form-check-label">From a Friend </label>
+                                                        <label class="form-check-label">From a Friend</label>
                                                     </div>
                                                     <div class="form-check">
                                                         <input id="fgoogle" class="form-check-input" value="yes" type="checkbox">
@@ -602,19 +606,19 @@
                                             <ul>
                                                 <li>
                                                     <label>Account holder`s name/ගිණුම් හිමියාගේ නම</label>
-                                                    <input id="accountholder" type="text" class="form-control" placeholder="නම" style="width: 60%">
+                                                    <input id="accountholder" type="text" class="form-control" placeholder="නම" maxlength="490" style="width: 60%">
                                                 </li>
                                                 <li>
                                                     <label>Account number/ගිණුම් අංකය</label>
-                                                    <input id="accountnumber" type="text" class="form-control" placeholder="ගිණුම් අංකය" style="width: 60%">
+                                                    <input id="accountnumber" type="text" class="form-control" placeholder="ගිණුම් අංකය" maxlength="20" style="width: 60%">
                                                 </li>
                                                 <li>
                                                     <label>Bank/බැංකුව</label>
-                                                    <input id="bank" type="text" class="form-control" placeholder="බැංකුව" style="width: 60%">
+                                                    <input id="bank" type="text" class="form-control" placeholder="බැංකුව" maxlength="100" style="width: 60%">
                                                 </li>
                                                 <li>
-                                                    <label>Branch/ශාකාව </label>
-                                                    <input id="branch" type="text" class="form-control" placeholder="ශාකාව" style="width: 60%">
+                                                    <label>Branch/ශාඛාව</label>
+                                                    <input id="branch" type="text" class="form-control" placeholder="ශාඛාව" maxlength="100" style="width: 60%">
                                                 </li>
                                             </ul>
                                         </div>

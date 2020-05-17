@@ -297,6 +297,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#fcordinator').change(function () {
         if ($(this).is(":checked")) {     
+            $('#fcordinatorname').fadeIn('slow');
             $('#ffacebook').attr("disabled", "disabled").off('click');
             $("#finstagram").attr("disabled", "disabled").off('click');
             $('#fstaff').attr("disabled", "disabled").off('click');
@@ -304,6 +305,7 @@ $(document).ready(function () {
             $("#fgoogle").attr("disabled", "disabled").off('click');
         }
         else {
+            $('#fcordinatorname').fadeOut('slow');
             $('#ffacebook').removeAttr('disabled');
             $("#finstagram").removeAttr('disabled');
             $('#fstaff').removeAttr('disabled');
