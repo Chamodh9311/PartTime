@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -26,6 +27,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -226,6 +228,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Js\calendar.js" />
     <Content Include="Scripts\Js\coordinator.js" />
     <Content Include="Scripts\Js\users.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -326,6 +329,100 @@
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\LICENSE.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\main.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\main.esm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\main.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\main.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\LICENSE.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\main.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\main.esm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\main.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\main.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-interaction\LICENSE.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-interaction\main.esm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-interaction\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-interaction\main.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\LICENSE.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\main.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\main.esm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\main.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\main.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\LICENSE.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales-all.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales-all.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\af.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar-dz.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar-kw.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar-ly.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar-ma.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar-sa.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar-tn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ar.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\bg.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\bs.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ca.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\cs.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\da.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\de.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\el.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\en-au.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\en-gb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\en-nz.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\es-us.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\es.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\et.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\eu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\fa.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\fi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\fr-ca.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\fr-ch.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\fr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\gl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\he.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\hi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\hr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\hu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\id.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\is.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\it.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ja.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ka.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\kk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ko.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\lb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\lt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\lv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\mk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ms.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\nb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\nl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\nn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\pl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\pt-br.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\pt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ro.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\ru.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\sk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\sl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\sq.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\sr-cyrl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\sr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\sv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\th.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\tr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\uk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\vi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\zh-cn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\locales\zh-tw.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\main.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\main.esm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\main.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\fullcalendar\main.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\bindings\inputmask.binding.js" />
     <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
     <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.js" />
@@ -348,6 +445,155 @@
     <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\inputmask.numeric.extensions.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\jquery.inputmask.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\jquery.inputmask.bundle.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\AUTHORS.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\external\jquery\jquery.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\images\ui-icons_444444_256x240.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\images\ui-icons_555555_256x240.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\images\ui-icons_777620_256x240.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\images\ui-icons_777777_256x240.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.structure.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.structure.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.theme.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\jquery-ui.theme.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\jquery-ui\LICENSE.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locales.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locales.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\af.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar-dz.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar-kw.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar-ly.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar-ma.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar-sa.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar-tn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ar.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\az.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\be.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\bg.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\bm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\bn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\bo.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\br.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\bs.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ca.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\cs.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\cv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\cy.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\da.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\de-at.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\de-ch.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\de.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\dv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\el.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-au.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-ca.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-gb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-ie.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-il.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-nz.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\en-SG.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\eo.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\es-do.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\es-us.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\es.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\et.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\eu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fa.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fo.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fr-ca.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fr-ch.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\fy.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ga.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\gd.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\gl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\gom-latn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\gu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\he.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\hi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\hr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\hu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\hy-am.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\id.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\is.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\it-ch.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\it.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ja.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\jv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ka.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\kk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\km.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\kn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ko.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ku.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ky.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\lb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\lo.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\lt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\lv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\me.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\mi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\mk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ml.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\mn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\mr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ms-my.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ms.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\mt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\my.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\nb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ne.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\nl-be.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\nl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\nn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\pa-in.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\pl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\pt-br.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\pt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ro.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ru.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sd.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\se.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\si.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sq.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sr-cyrl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ss.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\sw.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ta.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\te.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tet.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tg.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\th.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tl-ph.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tlh.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tzl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tzm-latn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\tzm.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ug-cn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\uk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\ur.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\uz-latn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\uz.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\vi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\x-pseudo.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\yo.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\zh-cn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\zh-hk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\locale\zh-tw.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\moment-with-locales.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\moment-with-locales.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\moment\moment.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\css\OverlayScrollbars.css" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\css\OverlayScrollbars.min.css" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\js\jquery.overlayScrollbars.js" />
@@ -570,6 +816,7 @@
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Admin\Coordinator.cshtml" />
+    <Content Include="Views\Admin\Calendar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -593,11 +840,22 @@
       <Name>PartTimeV1.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="TemplateAssets\DashBord\plugins\fullcalendar-bootstrap\main.d.ts" />
+    <TypeScriptCompile Include="TemplateAssets\DashBord\plugins\fullcalendar-daygrid\main.d.ts" />
+    <TypeScriptCompile Include="TemplateAssets\DashBord\plugins\fullcalendar-interaction\main.d.ts" />
+    <TypeScriptCompile Include="TemplateAssets\DashBord\plugins\fullcalendar-timegrid\main.d.ts" />
+    <TypeScriptCompile Include="TemplateAssets\DashBord\plugins\fullcalendar\main.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

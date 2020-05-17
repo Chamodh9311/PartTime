@@ -364,16 +364,16 @@ function experiencehandleClick(value) {
 }
 
 //Submit button show hide
-$(document).ready(function () {
-    $('#submit').change(function () {
-        if ($(this).is(":checked")) {
-            $("#sumbitprofile").removeAttr('disabled');
-        }
-        else {
-            $("#sumbitprofile").attr("disabled", "disabled").off('click');
-        }
-    });
-});
+//$(document).ready(function () {
+//    $('#submit').change(function () {
+//        if ($(this).is(":checked")) {
+//            $("#sumbitprofile").removeAttr('disabled');
+//        }
+//        else {
+//            $("#sumbitprofile").attr("disabled", "disabled").off('click');
+//        }
+//    });
+//});
 
 
 function encodeImageFileAsURL(e, a, i) {

@@ -13,14 +13,17 @@ namespace PartTimeV1.Controllers
 
         public ActionResult Index()
         {
-
             return View();
         }
 
         public ActionResult Coordinator()
         {
+            return View(); 
+        }
 
-            return View();
+        public ActionResult Calendar()
+        {
+            return View(); 
         }
 
         public ActionResult Users()
