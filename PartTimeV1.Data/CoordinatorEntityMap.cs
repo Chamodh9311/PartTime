@@ -2,13 +2,13 @@
 
 namespace PartTimeV1.Data
 {
-    public class UserProfileEntityMap : EntityTypeConfiguration<UserProfileEntity>
+    public class CoordinatorEntityMap : EntityTypeConfiguration<CoordinatorEntity>
     {
-        public UserProfileEntityMap()
+        public CoordinatorEntityMap()
         {
             HasKey(t => t.Id);
 
-            ToTable("UserProfile");
+            ToTable("CoordinatoProfile");
 
             Property(t => t.FullName).HasMaxLength(500).IsRequired();
             Property(t => t.ShortName).HasMaxLength(500).IsRequired();
@@ -29,10 +29,10 @@ namespace PartTimeV1.Data
             Property(t => t.Mobile3Viber);
             Property(t => t.DOB);
             Property(t => t.Age).HasMaxLength(10).IsRequired();
-
-
             Property(t => t.GenderMale);
             Property(t => t.GenderFemale);
+
+
             Property(t => t.CurrentDistrict).HasMaxLength(200);
             Property(t => t.CurrentTown).HasMaxLength(200);
             Property(t => t.HomeDistrict).HasMaxLength(200);
@@ -70,17 +70,11 @@ namespace PartTimeV1.Data
             Property(t => t.BrandsOther).HasMaxLength(500).IsOptional();
             Property(t => t.OtherExperience).HasMaxLength(200).IsOptional();
             Property(t => t.OtherExperienceOther).HasMaxLength(500).IsOptional();
-            Property(t => t.Facebook);
-            Property(t => t.Instagram);
-            Property(t => t.PartTimelkStaff);
-            Property(t => t.PartTimelkStafName).HasMaxLength(200).IsOptional();
-            Property(t => t.Cordinator);
-            Property(t => t.CordinatorName).HasMaxLength(200).IsOptional(); 
-            Property(t => t.Friend);
-            Property(t => t.Google);
+            Property(t => t.PreviousAdvertisingCompany).HasMaxLength(500).IsOptional();
+            Property(t => t.PreviousAdvertisingSupervisors).HasMaxLength(500).IsOptional();
 
 
-            Property(t => t.AccountHolder).HasMaxLength(500).IsRequired();
+            Property(t => t.AccountHolder).HasMaxLength(500).IsRequired(); 
             Property(t => t.AccountNumber).HasMaxLength(20).IsRequired();
             Property(t => t.Bank).HasMaxLength(200).IsRequired();
             Property(t => t.BankBranch).HasMaxLength(200).IsRequired();

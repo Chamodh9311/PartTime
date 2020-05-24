@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PartTimeV1.Data
 {
-    public class UserProfileEntity : Entity
+    public class CoordinatorEntity : Entity
     {
         public string FullName { get; set; }
         public string ShortName { get; set; }
@@ -24,10 +24,10 @@ namespace PartTimeV1.Data
         public bool Mobile3Viber { get; set; }
         public DateTime DOB { get; set; }
         public string Age { get; set; }
-
-
         public bool GenderMale { get; set; }
         public bool GenderFemale { get; set; }
+
+
         public string CurrentDistrict { get; set; }
         public string CurrentTown { get; set; }
         public string HomeDistrict { get; set; }
@@ -58,21 +58,15 @@ namespace PartTimeV1.Data
         public bool TamilA { get; set; }
         public bool TamilB { get; set; }
         public bool TamilC { get; set; }
-        public bool SalesExperienceNo  { get; set; }
+        public bool SalesExperienceNo { get; set; }
         public bool SalesExperienceYes { get; set; }
         public string SalesExperienceYears { get; set; }
         public string Brands { get; set; }
         public string BrandsOther { get; set; }
         public string OtherExperience { get; set; }
         public string OtherExperienceOther { get; set; }
-        public bool Facebook { get; set; }
-        public bool Instagram { get; set; }
-        public bool PartTimelkStaff { get; set; }
-        public string PartTimelkStafName { get; set; }
-        public bool Cordinator { get; set; }
-        public string CordinatorName { get; set; }
-        public bool Friend { get; set; }
-        public bool Google { get; set; }
+        public string PreviousAdvertisingCompany { get; set; }
+        public string PreviousAdvertisingSupervisors { get; set; }
 
         //Bank Details
         public string AccountHolder { get; set; }

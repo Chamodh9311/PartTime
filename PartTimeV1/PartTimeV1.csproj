@@ -214,9 +214,9 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\parttimers - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\parttimers - ReadOnly - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\parttimers - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\parttime - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\parttime - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\parttime - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\CSS\index.css" />
     <Content Include="Scripts\jquery-3.3.1.js" />

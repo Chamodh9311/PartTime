@@ -35,3 +35,7 @@
     border: 1px solid #ccc;
     border-top: none;
 }
+
+.red-star {
+    color: red;
+}

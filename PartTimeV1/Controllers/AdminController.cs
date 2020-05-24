@@ -7,7 +7,7 @@ namespace PartTimeV1.Controllers
 {
 
     //[Authorize(Roles = "SuperAdmin , Admin , User")]
-    [Authorize]
+    //[Authorize]
     public class AdminController : BaseController
     {
 
@@ -106,7 +106,7 @@ namespace PartTimeV1.Controllers
                     TamilA = profileRequest.TamilA,
                     TamilB = profileRequest.TamilB,
                     TamilC = profileRequest.TamilC,
-                    SalesExperience = profileRequest.SalesExperience,
+                    SalesExperienceYears = profileRequest.SalesExperience,
                     Brands = profileRequest.Brands == null ? null : string.Join(",", profileRequest.Brands),
                     OtherExperience = profileRequest.OtherExperience == null ? null : string.Join(",", profileRequest.OtherExperience),
 

@@ -184,21 +184,28 @@
                             <div class="card-body">
 
                                 <div id="profilePageDiv" class="row">
+                                    <ul>
+                                        <li> Please fill all fields marked in a red star/රතු පැහැති තරුවක් දක්වා ඇති සියලු කොටස් අනිවාර්යවේ.<span class="red-star">★</span></li>
+                                    </ul>
+                                    <hr />
+                                </div>
+
+                                <div id="profilePageDiv" class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>1. Full Name/සම්පුර්ණ නම:</label>
-                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" style="width: 80%">
+                                            <label>1. Full Name/සම්පුර්ණ නම:<span class="red-star">★</span></label>
+                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" required style="width: 80%">
                                         </div>
                                         <div class="form-group">
-                                            <label>2. Short Name/කෙටි නම:</label>
+                                            <label>2. Short Name/කෙටි නම:<span class="red-star">★</span></label>
                                             <input id="shortname" type="text" class="form-control" placeholder="ඔබට ආමන්ත්‍රණය කළ යුතු නම" maxlength="490" style="width: 80%">
                                         </div>
                                         <div class="form-group">
-                                            <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:</label>
+                                            <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:<span class="red-star">★</span></label>
                                             <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
                                         </div>
 
-                                        <label for="photos">4. Photos/ඡායාරූප:</label>
+                                        <label for="photos">4. Photos/ඡායාරූප:<span class="red-star">★</span></label>
                                         <ul>
                                             <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, ඔබගේ සැබෑ පැහැය / පෙනුම වෙනස් නොකළ (unedit) ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
                                             <li>Full Photo (සම්පූර්ණ උස පෙනෙන) 1ක් ද ඇතුලත් කරන්න.</li>
@@ -252,7 +259,7 @@
                                         <br />
 
                                         <div class="form-group">
-                                            <label>5. Mobile Numbers/දුරකථන අංක:</label>
+                                            <label>5. Mobile Numbers/දුරකථන අංක:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>ඔබව සම්බන්ධ කරගත හැකි ප්‍රධාන අංකය.</li>
                                                 <li>Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
@@ -309,18 +316,18 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label>6. Date Of Birth/උපන් දිනය:</label>
+                                                <label>6. Date Of Birth/උපන් දිනය:<span class="red-star">★</span></label>
                                                 <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
                                             </div>
 
                                             <div class="form-group">
-                                                <label>7. Age/වයස:</label>
+                                                <label>7. Age/වයස:<span class="red-star">★</span></label>
                                                 <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
                                             </div>
 
 
                                             <div class="form-group">
-                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
+                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:<span class="red-star">★</span></label>
                                                 <div class="form-check">
                                                     <input type='radio' id='genderM' value='yes' name="gender" />
                                                     <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
@@ -336,7 +343,7 @@
                                     <div class="col-md-6">
 
                                         <div class="form-group">
-                                            <label>9. Current City/දැනට පදිංචිය:</label>
+                                            <label>9. Current City/දැනට පදිංචිය:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
                                             </ul>
@@ -353,7 +360,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>10. Home Town/ස්ථිර පදිංචිය:</label>
+                                            <label>10. Home Town/ස්ථිර පදිංචිය:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
                                             </ul>
@@ -370,7 +377,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>11. T-shirt size: </label>
+                                            <label>11. T-shirt size:<span class="red-star">★</span></label>
                                             <div class="form-check">
                                                 <input type='radio' id='tsizeS' value='yes' name="tsize" />
                                                 <span style="width:40px;display:inline-block;">S</span>
@@ -384,7 +391,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>12. I am:</label>
+                                            <label>12. I am:<span class="red-star">★</span></label>
                                             <div class="form-check">
 
                                                 <div id="student1">
@@ -484,7 +491,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                            <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                             <div class="form-check">
                                                 <input type='radio' id='englishA' value='yes' name="tsize" />
                                                 <span style="width:100px;display:inline-block;">Fluent</span>
@@ -496,7 +503,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                            <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                             <div class="form-check">
                                                 <input type='radio' id='tamilA' value='yes' name="tsize" />
                                                 <span style="width:100px;display:inline-block;">Fluent</span>
@@ -508,7 +515,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:</label>
+                                            <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:<span class="red-star">★</span></label>
                                             <div class="form-check">
 
                                                 <div id="exprienceYes">
@@ -561,10 +568,10 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:</label>
+                                            <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:<span class="red-star">★</span></label>
                                             <div class="form-group">
                                                 <label>Company/ආයතන</label>
-                                                <input id="company" type="text" class="form-control" placeholder="ආයතන" style="width: 100%">
+                                                <input id="company" type="text" class="form-control" placeholder="ආයතන" maxlength="490" style="width: 100%">
                                             </div>
                                             <div class="form-group">
                                                 <label>Supervisors/සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්</label>
@@ -573,7 +580,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>17. Bank Details/බැංකු තොරතුරු:</label>
+                                            <label>17. Bank Details/බැංකු තොරතුරු:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>
                                                     <label>Account holder`s name/ගිණුම් හිමියාගේ නම</label>
@@ -618,7 +625,7 @@
                                                 <div class="form-check">
                                                     @*<input id="submit" class="form-check-input" type="checkbox">*@
                                                     <label class="form-check-label">I would like to participate/මම සහභාගී වීමට කැමැත්තෙමි </label>
-                                                    <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
+                                                    <button id="sumbitprofile" type="submit" onclick="submitFunction()" class="btn btn-info">Save</button>
                                                     <button type="button" class="btn btn-warning">Cancel</button>
                                                 </div>
                                             </div>

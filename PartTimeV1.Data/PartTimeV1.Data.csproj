@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="BrandsListsEntity.cs" />
     <Compile Include="BrandsListsEntityMap.cs" />
+    <Compile Include="CoordinatorEntity.cs" />
+    <Compile Include="CoordinatorEntityMap.cs" />
     <Compile Include="EFDbContext.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Migrations\Configuration.cs" />

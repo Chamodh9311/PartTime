@@ -196,6 +196,8 @@ $(document).ready(function () {
         }
         else {
             $('#freelancerdetails').fadeOut('slow');
+            document.getElementById('freelancerdetailsdrp').value = "-Select-";
+            document.getElementById('otherExp').value = "";
             $("#student").removeAttr('disabled');
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
@@ -221,6 +223,8 @@ $(document).ready(function () {
         }
         else {
             $('#professionaldetails').fadeOut('slow');
+            document.getElementById('professionaldetailsdrp').value = "-Select-";
+            document.getElementById('professionalexp').value = "";
             $("#student").removeAttr('disabled');
             $("#studentdetails").removeAttr('disabled');
             $("#employee").removeAttr('disabled');
@@ -233,15 +237,17 @@ $(document).ready(function () {
 });
 
 
-
-
-
 function experiencehandleClick(value) {
     if (value == "2") {
         $('#experiencecheck').fadeIn('slow');
     }
     else {
         $('#experiencecheck').fadeOut('slow');
+        document.getElementById('promoexperience').value = "";
+        $("#brandnames").select2("val", "");
+        document.getElementById('otherbrandnames').value = "";
+        $("#otherpromoexperience").select2("val", "");
+        document.getElementById('otherexperience').value = "";
     }
 }
 
