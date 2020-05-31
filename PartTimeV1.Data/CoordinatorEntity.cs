@@ -77,6 +77,8 @@ namespace PartTimeV1.Data
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
+        public string UserId { get; set; }
+        public string Role { get; set; }
         public bool Approved { get; set; }
         public bool Deleted { get; set; }
         public bool Banned { get; set; }

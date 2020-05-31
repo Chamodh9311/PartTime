@@ -315,27 +315,27 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label>6. Date Of Birth/උපන් දිනය:<span class="red-star">★</span></label>
-                                                <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>6. Date Of Birth/උපන් දිනය:<span class="red-star">★</span></label>
+                                            <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>7. Age/වයස:<span class="red-star">★</span></label>
+                                            <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>8. Gender/ස්ත්‍රී පුරුෂ බව:<span class="red-star">★</span></label>
+                                            <div class="form-check">
+                                                <input type='radio' id='genderM' value='yes' name="gender" />
+                                                <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
+                                                <input type="radio" id="genderF" value="yes" name="gender" />
+                                                <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label>7. Age/වයස:<span class="red-star">★</span></label>
-                                                <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:<span class="red-star">★</span></label>
-                                                <div class="form-check">
-                                                    <input type='radio' id='genderM' value='yes' name="gender" />
-                                                    <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
-                                                    <input type="radio" id="genderF" value="yes" name="gender" />
-                                                    <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
-                                                </div>
-                                            </div>
-
                                         </div>
 
                                     </div>
@@ -445,7 +445,7 @@
                                                     <ul>
                                                         <li>
                                                             <select id="freelancerdetailsdrp" style="height: 32px;width: 70%;">
-                                                                <option>-Select-</option>
+                                                                <option></option>
                                                                 <option>Graphic/Video designer</option>
                                                                 <option>Book keeping or Accounting</option>
                                                                 <option>Logo designer</option>
@@ -467,7 +467,7 @@
                                                     <ul>
                                                         <li>
                                                             <select id="professionaldetailsdrp" style="height: 32px;width: 70%;">
-                                                                <option>-Select-</option>
+                                                                <option></option>
                                                                 <option>Lawyer</option>
                                                                 <option>Compere</option>
                                                                 <option>Actor/Actress</option>
@@ -493,11 +493,11 @@
                                         <div class="form-group">
                                             <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                             <div class="form-check">
-                                                <input type='radio' id='englishA' value='yes' name="tsize" />
+                                                <input type='radio' id='englishA' value='yes' name="english" />
                                                 <span style="width:100px;display:inline-block;">Fluent</span>
-                                                <input type="radio" id="englishB" value="yes" name="tsize" />
+                                                <input type="radio" id="englishB" value="yes" name="english" />
                                                 <span style="width:100px;display:inline-block;">Normal</span>
-                                                <input type='radio' id='englishC' value='yes' name="tsize" />
+                                                <input type='radio' id='englishC' value='yes' name="english" />
                                                 <span style="width:100px;display:inline-block;">Can`t</span>
                                             </div>
                                         </div>
@@ -505,11 +505,11 @@
                                         <div class="form-group">
                                             <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                             <div class="form-check">
-                                                <input type='radio' id='tamilA' value='yes' name="tsize" />
+                                                <input type='radio' id='tamilA' value='yes' name="tmail" />
                                                 <span style="width:100px;display:inline-block;">Fluent</span>
-                                                <input type="radio" id="tamilB" value="yes" name="tsize" />
+                                                <input type="radio" id="tamilB" value="yes" name="tmail" />
                                                 <span style="width:100px;display:inline-block;">Normal</span>
-                                                <input type='radio' id='tamilC' value='yes' name="tsize" />
+                                                <input type='radio' id='tamilC' value='yes' name="tmail" />
                                                 <span style="width:100px;display:inline-block;">Can`t</span>
                                             </div>
                                         </div>
@@ -523,7 +523,7 @@
                                                     <label class="form-check-label">No exprience/අත්දැකීම් නැත</label>
                                                 </div>
                                                 <div id="exprienceYes">
-                                                    <input value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
+                                                    <input id="experienceYes" value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
                                                     <label class="form-check-label">Have experience/අත්දැකීම් ඇත</label>
                                                 </div>
 
@@ -571,11 +571,11 @@
                                             <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:<span class="red-star">★</span></label>
                                             <div class="form-group">
                                                 <label>Company/ආයතන</label>
-                                                <input id="company" type="text" class="form-control" placeholder="ආයතන" maxlength="490" style="width: 100%">
+                                                <input id="company" type="text" class="form-control" placeholder="ආයතන" maxlength="490" style="width: 80%">
                                             </div>
                                             <div class="form-group">
                                                 <label>Supervisors/සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්</label>
-                                                <input id="peoplenames" type="text" class="form-control" placeholder="නම්" maxlength="490" style="width: 100%">
+                                                <input id="peoplenames" type="text" class="form-control" placeholder="නම්" maxlength="490" style="width: 80%">
                                             </div>
                                         </div>
 
@@ -625,7 +625,7 @@
                                                 <div class="form-check">
                                                     @*<input id="submit" class="form-check-input" type="checkbox">*@
                                                     <label class="form-check-label">I would like to participate/මම සහභාගී වීමට කැමැත්තෙමි </label>
-                                                    <button id="sumbitprofile" type="submit" onclick="submitFunction()" class="btn btn-info">Save</button>
+                                                    <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
                                                     <button type="button" class="btn btn-warning">Cancel</button>
                                                 </div>
                                             </div>
@@ -717,7 +717,6 @@
                 </div>
             </div>
 
-            <!-- Modal Fail -->
             <div class="modal fade" id="failModel" role="dialog">
                 <div class="modal-dialog">
 
@@ -729,11 +728,34 @@
                         </div>
                         <div class="modal-body">
                             <div class="alert alert-danger">
-                                <strong>Success!</strong> Changes not saved!.
+                                <strong>ERROR!</strong> Changes not saved!.
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Validate -->
+            <div class="modal fade" id="validateModel" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-warning">
+                                <label>Enter secret code/රහස් අංකය</label>
+                                <input id="secretCode" type="text" class="form-control" placeholder="රහස් අංකය" maxlength="10" style="width: 100%">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Enter</button>
                         </div>
                     </div>
 

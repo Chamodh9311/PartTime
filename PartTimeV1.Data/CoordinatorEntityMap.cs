@@ -55,7 +55,7 @@ namespace PartTimeV1.Data
             Property(t => t.FreelancerOther).HasMaxLength(500).IsOptional();
             Property(t => t.IsSelfemployed);
             Property(t => t.Selfemployed).HasMaxLength(200).IsOptional();
-            Property(t => t.Designation).HasMaxLength(200).IsOptional();
+            Property(t => t.SelfemployedOther).HasMaxLength(200).IsOptional();
             Property(t => t.PartTimePromoter);
             Property(t => t.EnglishA);
             Property(t => t.EnglishB);
@@ -80,6 +80,8 @@ namespace PartTimeV1.Data
             Property(t => t.BankBranch).HasMaxLength(200).IsRequired();
 
 
+            Property(t => t.UserId).HasMaxLength(200).IsRequired();
+            Property(t => t.Role).HasMaxLength(20).IsRequired();
             Property(t => t.Approved).IsRequired();
             Property(t => t.Deleted).IsRequired();
             Property(t => t.Banned).IsRequired();

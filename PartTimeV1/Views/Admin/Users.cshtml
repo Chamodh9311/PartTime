@@ -173,7 +173,47 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <div class="row">
-                                    <div style="width:90%; margin:0 auto;">
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Name :<span class="bh-required"></span> </label>
+                                        <br />
+                                        <input id="userList" name="userId" class="form-control" style="width:100%" ng-hide="true" />
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">NIC :<span class="bh-required"></span> </label>
+                                        <br />
+                                        <input id="userList" name="userId" class="form-control" style="width:100%" ng-hide="true" />
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Age :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="cpdmrId" style="width: 80%;" placeholder="CPDMR ID" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Current City :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="cpdmrId" style="width: 80%;" placeholder="CPDMR ID" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Home Town :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="cpdmrId" style="width: 80%;" placeholder="CPDMR ID" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Sales Promotion Experience :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="headerNotes" style="width: 80%;" placeholder="Notes" type="text">
+                                    </div>
+
+                                    <div class="col-md-12 form-group" style="margin-bottom: 15px;">
+                                        <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchData();"><span aria-hidden="true"></span>Search </button>
+                                        <button type="button" class="btn btn-link pull-left" style="margin-right: 15px;" onclick="javascript:return ClearData();"><span aria-hidden="true"></span>Clear Search</button>
+                                    </div>
+
+                                    <hr />
+
+                                    <div style="width:100%; margin:0 auto;">
                                         <table id="myTable">
                                             <thead>
                                                 <tr>
@@ -218,7 +258,6 @@
             <!-- Control sidebar content goes here -->
         </aside>
         <!-- /.control-sidebar -->
-
     </div>
 
     @*<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>*@

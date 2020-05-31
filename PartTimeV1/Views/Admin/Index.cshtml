@@ -446,7 +446,7 @@
                                                         <ul>
                                                             <li>
                                                                 <select id="freelancerdetailsdrp" style="height: 32px;width: 70%;">
-                                                                    <option>-Select-</option>
+                                                                    <option></option>
                                                                     <option>Graphic/Video designer</option>
                                                                     <option>Book keeping or Accounting</option>
                                                                     <option>Logo designer</option>
@@ -468,7 +468,7 @@
                                                         <ul>
                                                             <li>
                                                                 <select id="professionaldetailsdrp" style="height: 32px;width: 70%;">
-                                                                    <option>-Select-</option>
+                                                                    <option></option>
                                                                     <option>Lawyer</option>
                                                                     <option>Compere</option>
                                                                     <option>Actor/Actress</option>
@@ -495,11 +495,11 @@
                                             <div class="form-group">
                                                 <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                                 <div class="form-check">
-                                                    <input type='radio' id='englishA' value='yes' name="tsize" />
+                                                    <input type='radio' id='englishA' value='yes' name="english" />
                                                     <span style="width:100px;display:inline-block;">Fluent</span>
-                                                    <input type="radio" id="englishB" value="yes" name="tsize" />
+                                                    <input type="radio" id="englishB" value="yes" name="english" />
                                                     <span style="width:100px;display:inline-block;">Normal</span>
-                                                    <input type='radio' id='englishC' value='yes' name="tsize" />
+                                                    <input type='radio' id='englishC' value='yes' name="english" />
                                                     <span style="width:100px;display:inline-block;">Can`t</span>
                                                 </div>
                                             </div>
@@ -507,11 +507,11 @@
                                             <div class="form-group">
                                                 <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                                 <div class="form-check">
-                                                    <input type='radio' id='tamilA' value='yes' name="tsize" />
+                                                    <input type='radio' id='tamilA' value='yes' name="tmail" />
                                                     <span style="width:100px;display:inline-block;">Fluent</span>
-                                                    <input type="radio" id="tamilB" value="yes" name="tsize" />
+                                                    <input type="radio" id="tamilB" value="yes" name="tmail" />
                                                     <span style="width:100px;display:inline-block;">Normal</span>
-                                                    <input type='radio' id='tamilC' value='yes' name="tsize" />
+                                                    <input type='radio' id='tamilC' value='yes' name="tmail" />
                                                     <span style="width:100px;display:inline-block;">Can`t</span>
                                                 </div>
                                             </div>
@@ -525,7 +525,7 @@
                                                         <label class="form-check-label">No exprience/අත්දැකීම් නැත</label>
                                                     </div>
                                                     <div id="exprienceYes">
-                                                        <input value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
+                                                        <input id="experienceYes" value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
                                                         <label class="form-check-label">Have experience/අත්දැකීම් ඇත</label>
                                                     </div>
 
@@ -764,7 +764,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-danger">
-                            <strong>Success!</strong> Changes not saved!.
+                            <strong>ERROR!</strong> Changes not saved!.
                         </div>
                     </div>
                     <div class="modal-footer">

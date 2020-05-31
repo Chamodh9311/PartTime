@@ -29,5 +29,18 @@ namespace PartTimeV1.Data.RepositoryManager
                 return this.userProfileRepository;
             }
         }
+
+        private CoordinatorProfileRepository coordinatorProfileRepository = null;
+        public CoordinatorProfileRepository CoordinatorProfileRepository
+        {
+            get
+            {
+                if (this.coordinatorProfileRepository == null)
+                {
+                    this.coordinatorProfileRepository = new CoordinatorProfileRepository(this.dbContext);
+                }
+                return this.coordinatorProfileRepository;
+            }
+        }
     }
 }

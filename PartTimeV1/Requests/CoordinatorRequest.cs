@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
 
-namespace PartTimeV1.Data
+namespace PartTimeV1.Requests
 {
-    public class UserProfileEntity : Entity
+    public class CoordinatorRequest
     {
         public string FullName { get; set; }
         public string ShortName { get; set; }
@@ -22,12 +21,12 @@ namespace PartTimeV1.Data
         public string Mobile3 { get; set; }
         public bool Mobile3Whatsapp { get; set; }
         public bool Mobile3Viber { get; set; }
-        public DateTime DOB { get; set; }
+        public string DOB { get; set; }
         public string Age { get; set; }
-
-
         public bool GenderMale { get; set; }
         public bool GenderFemale { get; set; }
+
+
         public string CurrentDistrict { get; set; }
         public string CurrentTown { get; set; }
         public string HomeDistrict { get; set; }
@@ -58,37 +57,20 @@ namespace PartTimeV1.Data
         public bool TamilA { get; set; }
         public bool TamilB { get; set; }
         public bool TamilC { get; set; }
-        public bool SalesExperienceNo  { get; set; }
+        public bool SalesExperienceNo { get; set; }
         public bool SalesExperienceYes { get; set; }
         public string SalesExperienceYears { get; set; }
-        public string Brands { get; set; }
+        public List<string> Brands { get; set; }
         public string BrandsOther { get; set; }
-        public string OtherExperience { get; set; }
-        public string OtherExperienceOther { get; set; }
-        public bool Facebook { get; set; }
-        public bool Instagram { get; set; }
-        public bool PartTimelkStaff { get; set; }
-        public string PartTimelkStafName { get; set; }
-        public bool Cordinator { get; set; }
-        public string CordinatorName { get; set; }
-        public bool Friend { get; set; }
-        public bool Google { get; set; }
+        public List<string> OtherExperience { get; set; }
+        public string OtherExperienceOther { get; set; }   
+        public string PreviousAdvertisingCompany { get; set; }
+        public string PreviousAdvertisingSupervisors { get; set; }
 
-        //Bank Details
+
         public string AccountHolder { get; set; }
         public string AccountNumber { get; set; }
         public string Bank { get; set; }
         public string BankBranch { get; set; }
-
-
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
-        public string UserId { get; set; }
-        public string Role { get; set; }
-        public bool Approved { get; set; }
-        public bool Deleted { get; set; }
-        public bool Banned { get; set; }
-        public DateTime CreateOn { get; set; }
-        public int Version { get; set; }
     }
 }

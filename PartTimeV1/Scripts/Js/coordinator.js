@@ -7,6 +7,15 @@
 
 });
 
+$(window).on('load', function () {
+    $('#validateModel').modal('show');
+});
+
+$("#validateModel").on("hidden.bs.modal", function () {
+    if ($('#secretCode').val() == "Part2019@") {
+        $("#sumbitprofile").removeAttr('disabled');
+    }
+});
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////// Coordinator //////////////////////////////////////////////////////////////////////////////////////////
@@ -120,6 +129,9 @@ $(document).ready(function () {
         }
         else {
             $('#studentdetails').fadeOut('slow');
+            document.getElementById('studentdetails1').value = "";
+            document.getElementById('studentdetails2').value = "";
+            document.getElementById('studentdetails3').value = "";
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
             $("#parttime").removeAttr('disabled');
@@ -145,6 +157,9 @@ $(document).ready(function () {
         }
         else {
             $('#employeedetails').fadeOut('slow');
+            document.getElementById('employeedetails1').value = "";
+            document.getElementById('employeedetails2').value = "";
+            document.getElementById('employeedetails3').value = "";
             $("#student").removeAttr('disabled');
             $("#studentdetails").removeAttr('disabled');
             $("#parttime").removeAttr('disabled');
@@ -244,9 +259,9 @@ function experiencehandleClick(value) {
     else {
         $('#experiencecheck').fadeOut('slow');
         document.getElementById('promoexperience').value = "";
-        $("#brandnames").select2("val", "");
+        $("#brandnames").val('').change();
         document.getElementById('otherbrandnames').value = "";
-        $("#otherpromoexperience").select2("val", "");
+        $("#otherpromoexperience").val('').change();
         document.getElementById('otherexperience').value = "";
     }
 }
@@ -299,209 +314,265 @@ function submitFunction() {
 
     $("#sumbitprofile").attr("disabled", "disabled").off('click');
 
-    var profileRequest = {};
-    profileRequest.FullName = $('#fullname').val();
-    profileRequest.ShortName = $('#shortname').val();
-    profileRequest.NIC = $('#nicno').val();
+    var coordinatorRequest = {};
+    coordinatorRequest.FullName = $('#fullname').val();
+    coordinatorRequest.ShortName = $('#shortname').val();
+    coordinatorRequest.NIC = $('#nicno').val();
 
 
-    profileRequest.Photo1 = document.getElementById("Image1").innerHTML;
-    profileRequest.Photo2 = document.getElementById("Image2").innerHTML;
-    profileRequest.Photo3 = document.getElementById("Image3").innerHTML;
-    profileRequest.Photo4 = document.getElementById("Image4").innerHTML;
-    profileRequest.Photo5 = document.getElementById("Image5").innerHTML;
+    coordinatorRequest.Photo1 = document.getElementById("Image1").innerHTML;
+    coordinatorRequest.Photo2 = document.getElementById("Image2").innerHTML;
+    coordinatorRequest.Photo3 = document.getElementById("Image3").innerHTML;
+    coordinatorRequest.Photo4 = document.getElementById("Image4").innerHTML;
+    coordinatorRequest.Photo5 = document.getElementById("Image5").innerHTML;
 
 
-    profileRequest.Mobile1 = $('#mobile01').val();
+    coordinatorRequest.Mobile1 = $('#mobile01').val();
     if (document.getElementById('whatsApp1').checked) {
-        profileRequest.Mobile1Whatsapp = true;
+        coordinatorRequest.Mobile1Whatsapp = true;
     }
     else {
-        profileRequest.Mobile1Whatsapp = false;
+        coordinatorRequest.Mobile1Whatsapp = false;
     }
 
     if (document.getElementById('viber1').checked) {
-        profileRequest.Mobile1Viber = true;
+        coordinatorRequest.Mobile1Viber = true;
     }
     else {
-        profileRequest.Mobile1Viber = false;
+        coordinatorRequest.Mobile1Viber = false;
     }
 
-    profileRequest.Mobiel2 = $('#mobile02').val();
+    coordinatorRequest.Mobile2 = $('#mobile02').val();
     if (document.getElementById('whatsApp2').checked) {
-        profileRequest.Mobile2Whatsapp = true;
+        coordinatorRequest.Mobile2Whatsapp = true;
     }
     else {
-        profileRequest.Mobile2Whatsapp = false;
+        coordinatorRequest.Mobile2Whatsapp = false;
     }
 
     if (document.getElementById('viber2').checked) {
-        profileRequest.Mobile2Viber = true;
+        coordinatorRequest.Mobile2Viber = true;
     }
     else {
-        profileRequest.Mobile2Viber = false;
+        coordinatorRequest.Mobile2Viber = false;
     }
 
-    profileRequest.Mobiel3 = $('#mobile03').val();
+    coordinatorRequest.Mobile3 = $('#mobile03').val();
     if (document.getElementById('whatsApp3').checked) {
-        profileRequest.Mobile3Whatsapp = true;
+        coordinatorRequest.Mobile3Whatsapp = true;
     }
     else {
-        profileRequest.Mobile3Whatsapp = false;
+        coordinatorRequest.Mobile3Whatsapp = false;
     }
 
     if (document.getElementById('viber3').checked) {
-        profileRequest.Mobile3Viber = true;
+        coordinatorRequest.Mobile3Viber = true;
     }
     else {
-        profileRequest.Mobile3Viber = false;
+        coordinatorRequest.Mobile3Viber = false;
     }
 
-    profileRequest.DOB = $('#dob').val();
-    profileRequest.Age = $('#age').val();
+    coordinatorRequest.DOB = $('#dob').val();
+    coordinatorRequest.Age = $('#age').val();
 
     if (document.getElementById('genderM').checked) {
-        profileRequest.GenderMale = true;
+        coordinatorRequest.GenderMale = true;
     }
     else {
-        profileRequest.GenderMale = false;
+        coordinatorRequest.GenderMale = false;
     }
 
     if (document.getElementById('genderF').checked) {
-        profileRequest.GenderFemale = true;
+        coordinatorRequest.GenderFemale = true;
     }
     else {
-        profileRequest.GenderFemale = false;
+        coordinatorRequest.GenderFemale = false;
     }
 
-    profileRequest.CurrentDistrict = $('#currentdistrict').val();
-    profileRequest.CurrentTown = $('#currentcity').val();
-    profileRequest.HomeDistrict = $('#homedistrict').val();
-    profileRequest.HomeTown = $('#hometown').val();
+    coordinatorRequest.CurrentDistrict = $('#currentdistrict').val();
+    coordinatorRequest.CurrentTown = $('#currentcity').val();
+    coordinatorRequest.HomeDistrict = $('#homedistrict').val();
+    coordinatorRequest.HomeTown = $('#hometown').val();
 
 
     if (document.getElementById('tsizeS').checked) {
-        profileRequest.ShirtSizeS = true;
+        coordinatorRequest.ShirtSizeS = true;
     }
     else {
-        profileRequest.ShirtSizeS = false;
+        coordinatorRequest.ShirtSizeS = false;
     }
 
     if (document.getElementById('tsizeM').checked) {
-        profileRequest.ShirtSizeM = true;
+        coordinatorRequest.ShirtSizeM = true;
     }
     else {
-        profileRequest.ShirtSizeM = false;
+        coordinatorRequest.ShirtSizeM = false;
     }
 
     if (document.getElementById('tsizeL').checked) {
-        profileRequest.ShirtSizeL = true;
+        coordinatorRequest.ShirtSizeL = true;
     }
     else {
-        profileRequest.ShirtSizeL = false;
+        coordinatorRequest.ShirtSizeL = false;
     }
 
     if (document.getElementById('tsizeXS').checked) {
-        profileRequest.ShirtSizeXS = true;
+        coordinatorRequest.ShirtSizeXS = true;
     }
     else {
-        profileRequest.ShirtSizeXS = false;
+        coordinatorRequest.ShirtSizeXS = false;
     }
 
+    //
+    //12. I am SECTION - START
+    //
     if (document.getElementById('student').checked) {
-        profileRequest.Student = true;
+        coordinatorRequest.Student = true;
     }
     else {
-        profileRequest.Student = false;
+        coordinatorRequest.Student = false;
     }
 
-    profileRequest.University = $('#studentdetails1').val();
-    profileRequest.Course = $('#studentdetails2').val();
-    profileRequest.UniYear = $('#studentdetails3').val();
+    coordinatorRequest.University = $('#studentdetails1').val();
+    coordinatorRequest.Course = $('#studentdetails2').val();
+    coordinatorRequest.UniYear = $('#studentdetails3').val();
 
     if (document.getElementById('employee').checked) {
-        profileRequest.Employeed = true;
+        coordinatorRequest.Employeed = true;
     }
     else {
-        profileRequest.Employeed = false;
+        coordinatorRequest.Employeed = false;
     }
 
-    profileRequest.Company = $('#employeedetails1').val();
-    profileRequest.Branch = $('#employeedetails2').val();
-    profileRequest.Designation = $('#employeedetails3').val();
+    coordinatorRequest.Company = $('#employeedetails1').val();
+    coordinatorRequest.Branch = $('#employeedetails2').val();
+    coordinatorRequest.Designation = $('#employeedetails3').val();
 
     if (document.getElementById('parttime').checked) {
-        profileRequest.FullTimePromoter = true;
+        coordinatorRequest.FullTimePromoter = true;
     }
     else {
-        profileRequest.FullTimePromoter = false;
+        coordinatorRequest.FullTimePromoter = false;
     }
+
+    if (document.getElementById('freelanceYes').checked) {
+        coordinatorRequest.IsFreelancer = true;
+    }
+    else {
+        coordinatorRequest.IsFreelancer = false;
+    }
+
+    coordinatorRequest.Freelancer = $('#freelancerdetailsdrp').val();
+    coordinatorRequest.FreelancerOther = $('#otherExp').val();
+
+
+    if (document.getElementById('professionalYes').checked) {
+        coordinatorRequest.IsSelfemployed = true;
+    }
+    else {
+        coordinatorRequest.IsSelfemployed = false;
+    }
+
+    coordinatorRequest.Selfemployed = $('#professionaldetailsdrp').val();
+    coordinatorRequest.SelfemployedOther = $('#professionalexp').val();
 
     if (document.getElementById('freelance').checked) {
-        profileRequest.PartTimePromoter = true;
+        coordinatorRequest.PartTimePromoter = true;
     }
     else {
-        profileRequest.PartTimePromoter = false;
+        coordinatorRequest.PartTimePromoter = false;
     }
+    //
+    //12. I am SECTION -END
+    //
 
     if (document.getElementById('englishA').checked) {
-        profileRequest.EnglishA = true;
+        coordinatorRequest.EnglishA = true;
     }
     else {
-        profileRequest.EnglishA = false;
+        coordinatorRequest.EnglishA = false;
     }
 
     if (document.getElementById('englishB').checked) {
-        profileRequest.EnglishB = true;
+        coordinatorRequest.EnglishB = true;
     }
     else {
-        profileRequest.EnglishB = false;
+        coordinatorRequest.EnglishB = false;
     }
 
     if (document.getElementById('englishC').checked) {
-        profileRequest.EnglishC = true;
+        coordinatorRequest.EnglishC = true;
     }
     else {
-        profileRequest.EnglishC = false;
+        coordinatorRequest.EnglishC = false;
     }
 
     if (document.getElementById('tamilA').checked) {
-        profileRequest.TamilA = true;
+        coordinatorRequest.TamilA = true;
     }
     else {
-        profileRequest.TamilA = false;
+        coordinatorRequest.TamilA = false;
     }
 
     if (document.getElementById('tamilB').checked) {
-        profileRequest.TamilB = true;
+        coordinatorRequest.TamilB = true;
     }
     else {
-        profileRequest.TamilB = false;
+        coordinatorRequest.TamilB = false;
     }
 
     if (document.getElementById('tamilC').checked) {
-        profileRequest.TamilC = true;
+        coordinatorRequest.TamilC = true;
     }
     else {
-        profileRequest.TamilC = false;
+        coordinatorRequest.TamilC = false;
     }
 
-    profileRequest.SalesExperience = $('#promoexperience').val();
-    profileRequest.Brands = $('#brandnames').select2("val"),
-        profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),
+    if (document.getElementById('experienceno').checked) {
+        coordinatorRequest.SalesExperienceNo = true;
+    }
+    else {
+        coordinatorRequest.SalesExperienceYes = false;
+    }
+
+    if (document.getElementById('experienceYes').checked) {
+        coordinatorRequest.SalesExperienceYes = true;
+    }
+    else {
+        coordinatorRequest.SalesExperienceNo = false;
+    }
+
+    coordinatorRequest.SalesExperienceYears = $('#promoexperience').val();
+    coordinatorRequest.Brands = $('#brandnames').select2("val");
+    coordinatorRequest.BrandsOther = $('#otherbrandnames').val();
+    coordinatorRequest.OtherExperience = $('#otherpromoexperience').select2("val");
+    coordinatorRequest.OtherExperienceOther = $('#otherexperience').val();
+    coordinatorRequest.PreviousAdvertisingCompany = $('#company').val();
+    coordinatorRequest.PreviousAdvertisingSupervisors = $('#peoplenames').val();
+
+    coordinatorRequest.AccountHolder = $('#accountholder').val();
+    coordinatorRequest.AccountNumber = $('#accountnumber').val();
+    coordinatorRequest.Bank = $('#bank').val();
+    coordinatorRequest.BankBranch = $('#branch').val();
+
 
         $.ajax({
             type: "POST",
-            url: '/Admin/ProfileSubmit',
-            data: '{profileRequest: ' + JSON.stringify(profileRequest) + '}',
+            url: '/Admin/CoordinatorProfileSubmit',
+            data: '{coordinatorRequest: ' + JSON.stringify(coordinatorRequest) + '}',
             dataType: "json",
             contentType: "application/json; charset=utf-8",
 
             success: function (result) {
-                $("#sumbitprofile").removeAttr('disabled');
-                $("#successModel").modal()
-                //alert('ok');
-                //$('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+
+                if (result != "Error") {
+                    $("#sumbitprofile").attr("disabled", "disabled").off('click');
+                    $("#successModel").modal()
+                }
+                else {
+                    $("#sumbitprofile").removeAttr('disabled');
+                    $("#failModel").modal()
+                }
             },
             error: function (result) {
                 $("#sumbitprofile").removeAttr('disabled');

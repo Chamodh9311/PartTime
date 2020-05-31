@@ -120,6 +120,9 @@ $(document).ready(function () {
         }
         else {
             $('#studentdetails').fadeOut('slow');
+            document.getElementById('studentdetails1').value = "";
+            document.getElementById('studentdetails2').value = "";
+            document.getElementById('studentdetails3').value = "";
             $("#employee").removeAttr('disabled');
             $("#employeedetails").removeAttr('disabled');
             $("#parttime").removeAttr('disabled');
@@ -145,6 +148,9 @@ $(document).ready(function () {
         }
         else {
             $('#employeedetails').fadeOut('slow');
+            document.getElementById('employeedetails1').value = "";
+            document.getElementById('employeedetails2').value = "";
+            document.getElementById('employeedetails3').value = "";
             $("#student").removeAttr('disabled');
             $("#studentdetails").removeAttr('disabled');
             $("#parttime").removeAttr('disabled');
@@ -289,6 +295,7 @@ $(document).ready(function () {
         }
         else {
             $('#fstaffname').fadeOut('slow');
+            document.getElementById('fstaffname').value = "";
             $('#ffacebook').removeAttr('disabled');
             $("#finstagram").removeAttr('disabled');
             $('#fcordinator').removeAttr('disabled');
@@ -310,6 +317,7 @@ $(document).ready(function () {
         }
         else {
             $('#fcordinatorname').fadeOut('slow');
+            document.getElementById('fcordinatorname').value = "";
             $('#ffacebook').removeAttr('disabled');
             $("#finstagram").removeAttr('disabled');
             $('#fstaff').removeAttr('disabled');
@@ -365,10 +373,9 @@ function experiencehandleClick(value) {
     else {
         $('#experiencecheck').fadeOut('slow');
         document.getElementById('promoexperience').value = "";
-        $("select").val('').change();
-        $("#brandnames").select2("val", ""),
+        $("#brandnames").val('').change();
         document.getElementById('otherbrandnames').value = "";
-        $("#otherpromoexperience").select2("val", ""),
+        $("#otherpromoexperience").val('').change();
         document.getElementById('otherexperience').value = "";
     }
 }
@@ -449,7 +456,7 @@ function submitFunction() {
         profileRequest.Mobile1Viber = false;
     }
 
-    profileRequest.Mobiel2 = $('#mobile02').val();
+    profileRequest.Mobile2 = $('#mobile02').val();
     if (document.getElementById('whatsApp2').checked) {
         profileRequest.Mobile2Whatsapp = true;
     }
@@ -464,7 +471,7 @@ function submitFunction() {
         profileRequest.Mobile2Viber = false;
     }
 
-    profileRequest.Mobiel3 = $('#mobile03').val();
+    profileRequest.Mobile3 = $('#mobile03').val();
     if (document.getElementById('whatsApp3').checked) {
         profileRequest.Mobile3Whatsapp = true;
     }
@@ -530,6 +537,9 @@ function submitFunction() {
         profileRequest.ShirtSizeXS = false;
     }
 
+    //
+    //12. I am SECTION - START
+    //
     if (document.getElementById('student').checked) {
         profileRequest.Student = true;
     }
@@ -559,12 +569,36 @@ function submitFunction() {
         profileRequest.FullTimePromoter = false;
     }
 
+    if (document.getElementById('freelanceYes').checked) {
+        profileRequest.IsFreelancer = true;
+    }
+    else {
+        profileRequest.IsFreelancer = false;
+    }
+
+    profileRequest.Freelancer = $('#freelancerdetailsdrp').val();
+    profileRequest.FreelancerOther = $('#otherExp').val();
+
+
+    if (document.getElementById('professionalYes').checked) {
+        profileRequest.IsSelfemployed = true;
+    }
+    else {
+        profileRequest.IsSelfemployed = false;
+    }
+
+    profileRequest.Selfemployed = $('#professionaldetailsdrp').val();
+    profileRequest.SelfemployedOther = $('#professionalexp').val();
+
     if (document.getElementById('freelance').checked) {
         profileRequest.PartTimePromoter = true;
     }
     else {
         profileRequest.PartTimePromoter = false;
     }
+    //
+    //12. I am SECTION -END
+    //
 
     if (document.getElementById('englishA').checked) {
         profileRequest.EnglishA = true;
@@ -608,22 +642,93 @@ function submitFunction() {
         profileRequest.TamilC = false;
     }
 
-    profileRequest.SalesExperience = $('#promoexperience').val();
-    profileRequest.Brands = $('#brandnames').select2("val"),
-    profileRequest.OtherExperience = $('#otherpromoexperience').select2("val"),
+    if (document.getElementById('experienceno').checked) {
+        profileRequest.SalesExperienceNo = true;
+    }
+    else {
+        profileRequest.SalesExperienceYes = false;
+    }
+
+    if (document.getElementById('experienceYes').checked) {
+        profileRequest.SalesExperienceYes = true;
+    }
+    else {
+        profileRequest.SalesExperienceNo = false;
+    }
+
+    profileRequest.SalesExperienceYears = $('#promoexperience').val();
+    profileRequest.Brands = $('#brandnames').select2("val");
+    profileRequest.BrandsOther = $('#otherbrandnames').val();
+    profileRequest.OtherExperience = $('#otherpromoexperience').select2("val");
+    profileRequest.OtherExperienceOther = $('#otherexperience').val();
+
+
+    if (document.getElementById('ffacebook').checked) {
+        profileRequest.Facebook = true;
+    }
+    else {
+        profileRequest.Facebook = false;
+    }
+
+    if (document.getElementById('finstagram').checked) {
+        profileRequest.Instagram = true;
+    }
+    else {
+        profileRequest.Instagram = false;
+    }
+
+    if (document.getElementById('fstaff').checked) {
+        profileRequest.PartTimelkStaff = true;
+    }
+    else {
+        profileRequest.PartTimelkStaff = false;
+    }
+    profileRequest.PartTimelkStafName = $('#fstaffname').val();
+
+    if (document.getElementById('fcordinator').checked) {
+        profileRequest.Cordinator = true;
+    }
+    else {
+        profileRequest.Cordinator = false;
+    }
+    profileRequest.CordinatorName = $('#fcordinatorname').val();
+
+    if (document.getElementById('ffriend').checked) {
+        profileRequest.Friend = true;
+    }
+    else {
+        profileRequest.Friend = false;
+    }
+
+    if (document.getElementById('fgoogle').checked) {
+        profileRequest.Google = true;
+    }
+    else {
+        profileRequest.Google = false;
+    }
+
+    profileRequest.AccountHolder = $('#accountholder').val();
+    profileRequest.AccountNumber = $('#accountnumber').val();
+    profileRequest.Bank = $('#bank').val();
+    profileRequest.BankBranch = $('#branch').val();
 
     $.ajax({
         type: "POST",
-        url: '/Admin/ProfileSubmit',
+        url: '/Admin/UserProfileSubmit',
         data: '{profileRequest: ' + JSON.stringify(profileRequest) + '}',
         dataType: "json",
         contentType: "application/json; charset=utf-8",
 
         success: function (result) {
-            $("#sumbitprofile").removeAttr('disabled');
-            $("#successModel").modal()
-            //alert('ok');
-            //$('body').append('<div id="over" style="position: absolute;top:0;left:0;width: 100%;height:100%;z-index:2;opacity:0.4;filter: alpha(opacity = 50)"></div>');
+
+            if (result != "Error") {
+                $("#sumbitprofile").attr("disabled", "disabled").off('click');
+                $("#successModel").modal()
+            }
+            else {
+                $("#sumbitprofile").removeAttr('disabled');
+                $("#failModel").modal()
+            }
         },
         error: function (result) {
             $("#sumbitprofile").removeAttr('disabled');
