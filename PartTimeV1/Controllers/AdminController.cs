@@ -6,9 +6,7 @@ using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
 {
-
-    //[Authorize(Roles = "SuperAdmin , Admin , User")]
-    //[Authorize]
+    [Authorize]
     public class AdminController : BaseController
     {
 
@@ -17,6 +15,7 @@ namespace PartTimeV1.Controllers
             return View();
         }
 
+        //[Authorize(Roles = "Coordinator , User")]
         public ActionResult Coordinator()
         {
             return View();

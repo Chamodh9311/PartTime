@@ -503,10 +503,10 @@ function submitFunction() {
         profileRequest.GenderFemale = false;
     }
 
-    profileRequest.CurrentDistrict = $('#currentdistrict').val();
-    profileRequest.CurrentTown = $('#currentcity').val();
-    profileRequest.HomeDistrict = $('#homedistrict').val();
-    profileRequest.HomeTown = $('#hometown').val();
+    profileRequest.CurrentDistrict = $('#currentdistrict option:selected').text();
+    profileRequest.CurrentTown = $('#currentcity option:selected').text();
+    profileRequest.HomeDistrict = $('#homedistrict option:selected').text();
+    profileRequest.HomeTown = $('#hometown option:selected').text();
 
 
     if (document.getElementById('tsizeS').checked) {
