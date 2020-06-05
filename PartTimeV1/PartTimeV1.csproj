@@ -213,9 +213,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Properties\PublishProfiles\parttime - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\parttime - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\parttime - Web Deploy.pubxml" />

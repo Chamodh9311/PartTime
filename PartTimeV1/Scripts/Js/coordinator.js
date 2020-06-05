@@ -389,10 +389,10 @@ function submitFunction() {
         coordinatorRequest.GenderFemale = false;
     }
 
-    profileRequest.CurrentDistrict = $('#currentdistrict option:selected').text();
-    profileRequest.CurrentTown = $('#currentcity option:selected').text();
-    profileRequest.HomeDistrict = $('#homedistrict option:selected').text();
-    profileRequest.HomeTown = $('#hometown option:selected').text();
+    coordinatorRequest.CurrentDistrict = $('#currentdistrict option:selected').text();
+    coordinatorRequest.CurrentTown = $('#currentcity option:selected').text();
+    coordinatorRequest.HomeDistrict = $('#homedistrict option:selected').text();
+    coordinatorRequest.HomeTown = $('#hometown option:selected').text();
 
     if (document.getElementById('tsizeS').checked) {
         coordinatorRequest.ShirtSizeS = true;
