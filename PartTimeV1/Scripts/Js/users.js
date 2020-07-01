@@ -1,5 +1,8 @@
 ﻿$(document).ready(function () {
-    $('#myTable').DataTable({
+
+
+
+    $('#userTable').DataTable({
         "ajax": {
             "url": "/Search/GetUserProfileData",
             "type": "GET",

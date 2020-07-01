@@ -208,16 +208,16 @@
 
                                     <div class="col-md-12 form-group" style="margin-bottom: 15px;">
                                         <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchData();"><span aria-hidden="true"></span>Search </button>
-                                        <button type="button" class="btn btn-link pull-left" style="margin-right: 15px;" onclick="javascript:return ClearData();"><span aria-hidden="true"></span>Clear Search</button>
+                                       @* <button type="button" class="btn btn-link pull-left" style="margin-right: 15px;" onclick="javascript:return ClearData();"><span aria-hidden="true"></span>Clear Search</button>*@
                                     </div>
 
                                     <hr />
 
                                     <div style="width:100%; margin:0 auto;">
-                                        <table id="myTable">
+                                        <table id="userTable">
                                             <thead>
                                                 <tr>
-                                                    <th>Employee Name</th>
+                                                    <th>Full Name</th>
                                                     <th>NIC</th>
                                                     <th>DOB</th>
                                                     <th>Mobile</th>
@@ -301,7 +301,7 @@
     <!-- PAGE SCRIPTS -->
     @*<script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>*@
 
-    @Scripts.Render("~/Scripts/Js/users.js")
+    @Scripts.Render("~/Scripts/Js/users.js?v=20200605")
 
 </body>
 </html>
