@@ -175,40 +175,77 @@
                                 <div class="row">
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Name :<span class="bh-required"></span> </label>
+                                        <label class="control-label">Full Name :<span class="bh-required"></span> </label>
                                         <br />
-                                        <input id="userList" class="form-control" style="width:100%" ng-hide="true" />
+                                        <input id="" class="form-control" style="width:100%" ng-hide="true" />
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
                                         <label class="control-label">NIC :<span class="bh-required"></span> </label>
                                         <br />
-                                        <input id="userList" class="form-control" style="width:100%" ng-hide="true" />
+                                        <input id="" class="form-control" style="width:100%" ng-hide="true" />
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
                                         <label class="control-label">Age :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="cpdmrId" style="width: 80%;" placeholder="" type="text">
+                                        <input class="form-control" id="" style="width: 80%;" placeholder="" type="text">
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label"> Current City :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="cpdmrId" style="width: 80%;" placeholder="" type="text">
+                                        <label class="control-label"> Current District :<span class="bh-required"></span> </label>
+                                        <select id="currentdistrict" style="height: 32px;width: 100%;"></select>
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Current Town :<span class="bh-required"></span> </label>
+                                        <select id="currentcity" style="height: 32px;width: 100%;"></select>
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Home District :<span class="bh-required"></span> </label>
+                                        <select id="homedistrict" style="height: 32px;width: 100%;"></select>
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
                                         <label class="control-label">Home Town :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="cpdmrId" style="width: 80%;" placeholder="" type="text">
+                                        <select id="hometown" style="height: 32px;width: 100%;"> </select>
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Gender :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="" style="width: 80%;" placeholder="" type="text">
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
                                         <label class="control-label">Sales Promotion Experience :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="headerNotes" style="width: 80%;" placeholder="" type="text">
+                                        <input class="form-control" id="" style="width: 80%;" placeholder="" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">I am :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="" style="width: 80%;" placeholder="" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> English Speaking :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="" style="width: 80%;" placeholder="" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Tamil Speaking:<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="" style="width: 80%;" placeholder="" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label>Brands:</label>
+                                        <div class="select2-blue">
+                                            <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
+                                        </div>
                                     </div>
 
                                     <div class="col-md-12 form-group" style="margin-bottom: 15px;">
                                         <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchData();"><span aria-hidden="true"></span>Search </button>
-                                       @* <button type="button" class="btn btn-link pull-left" style="margin-right: 15px;" onclick="javascript:return ClearData();"><span aria-hidden="true"></span>Clear Search</button>*@
+                                        @* <button type="button" class="btn btn-link pull-left" style="margin-right: 15px;" onclick="javascript:return ClearData();"><span aria-hidden="true"></span>Clear Search</button>*@
                                     </div>
 
                                     <hr />
@@ -225,6 +262,7 @@
                                                     <th>Current City</th>
                                                     <th>Home Town</th>
                                                     <th>Role</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                         </table>
