@@ -14,7 +14,7 @@ namespace PartTimeV1.Data.Repository
         public List<DtoUserProfileEntity> GetAllActive()
         {
             var query = from t in this.dbSet
-                        where t.Banned != true & t.Deleted != true
+                        //where t.Banned != true & t.Deleted != true
                         orderby t.CreateOn
                         select new DtoUserProfileEntity
                         {

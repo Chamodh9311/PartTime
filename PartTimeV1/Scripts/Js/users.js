@@ -31,6 +31,13 @@ $(document).ready(function () {
             "data": 'Approved',
             "render": function (data, type, full, meta) {
                 var rtnvalue = "";
+                if (full.Role == "Promoter") {
+                    rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Index/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
+                }
+                else {
+                    rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Coordinator/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
+                }
+
                 if (data == "False") {
                     rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-primary btn-xs" data-id=' + full.UserId + ' onclick="javascript: approveUser(this);">Approve</a> &nbsp;&nbsp;';
                 }

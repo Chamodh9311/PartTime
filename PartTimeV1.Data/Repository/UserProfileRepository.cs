@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.SqlServer;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace PartTimeV1.Data.Repository
@@ -16,7 +17,7 @@ namespace PartTimeV1.Data.Repository
         public List<DtoUserProfileEntity> GetAllActive()
         {
             var query = from t in this.dbSet
-                        where t.Banned != true & t.Deleted != true
+                        //where t.Banned != true & t.Deleted != true
                         orderby t.CreateOn
                         select new DtoUserProfileEntity
                         {
@@ -36,7 +37,15 @@ namespace PartTimeV1.Data.Repository
 
         public UserProfileEntity SelectUser(string userId)
         {
-            var query = this.dbSet.FirstOrDefault(a => a.UserId == userId);
+            var query = this.dbSet.FirstOrDefault(a => a.UserId == userId );
+            return query;
+        }
+
+        public UserProfileEntity SelectUserProfile(string userId)
+        {
+            SqlParameter param;
+            param = new SqlParameter("@value", userId);
+            var query = this.dbContext.Database.SqlQuery<UserProfileEntity>("SELECT FORMAT(dob,'dd/MM/yyyy') as 'DOBNEW', * FROM UserProfile WHERE UserId = @value order by Id", param).FirstOrDefault();
             return query;
         }
     }

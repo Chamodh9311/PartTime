@@ -50,6 +50,13 @@ namespace PartTimeV1.Controllers
         }
 
         [HttpPost]
+        public JsonResult GetUser(string userId)
+        {
+            var userProfile = this.manager.UserProfileRepository.SelectUserProfile(userId);
+            return Json(userProfile, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
         public JsonResult UserProfileSubmit(ProfileRequest profileRequest)
         {
             try
@@ -68,9 +75,11 @@ namespace PartTimeV1.Controllers
                     Mobile1Whatsapp = profileRequest.Mobile1Whatsapp,
                     Mobile1Viber = profileRequest.Mobile1Viber,
                     Mobile2 = profileRequest.Mobile2,
-                    Mobile3Whatsapp = profileRequest.Mobile2Whatsapp,
-                    Mobile3Viber = profileRequest.Mobile2Viber,
+                    Mobile2Whatsapp = profileRequest.Mobile2Whatsapp,
+                    Mobile2Viber = profileRequest.Mobile2Viber,
                     Mobile3 = profileRequest.Mobile3,
+                    Mobile3Whatsapp = profileRequest.Mobile3Whatsapp,
+                    Mobile3Viber = profileRequest.Mobile3Viber,
                     DOB = DateTime.ParseExact(profileRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Age = profileRequest.Age,
 
@@ -174,9 +183,11 @@ namespace PartTimeV1.Controllers
                     Mobile1Whatsapp = coordinatorRequest.Mobile1Whatsapp,
                     Mobile1Viber = coordinatorRequest.Mobile1Viber,
                     Mobile2 = coordinatorRequest.Mobile2,
-                    Mobile3Whatsapp = coordinatorRequest.Mobile2Whatsapp,
-                    Mobile3Viber = coordinatorRequest.Mobile2Viber,
+                    Mobile2Whatsapp = coordinatorRequest.Mobile2Whatsapp,
+                    Mobile2Viber = coordinatorRequest.Mobile2Viber,
                     Mobile3 = coordinatorRequest.Mobile3,
+                    Mobile3Whatsapp = coordinatorRequest.Mobile3Whatsapp,
+                    Mobile3Viber = coordinatorRequest.Mobile3Viber,
                     DOB = DateTime.ParseExact(coordinatorRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Age = coordinatorRequest.Age,
 
