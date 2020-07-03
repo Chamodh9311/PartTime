@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using PartTimeV1.Data;
 using PartTimeV1.Requests;
 using System;
+using System.Web;
 using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
@@ -9,13 +11,48 @@ namespace PartTimeV1.Controllers
     [Authorize]
     public class AdminController : BaseController
     {
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+        public AdminController()
+        {
+        }
+
+        public AdminController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
 
         public ActionResult Index()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Coordinator , User")]
         public ActionResult Coordinator()
         {
             return View();
@@ -26,6 +63,7 @@ namespace PartTimeV1.Controllers
             return View();
         }
 
+        //[Authorize(Roles = "Admin , Coordinator")]
         public ActionResult Users()
         {
             return View();
@@ -169,6 +207,15 @@ namespace PartTimeV1.Controllers
         {
             try
             {
+                var userId = User.Identity.GetUserId();
+                var user = UserManager.FindById(userId);
+
+                if (UserManager.IsInRole(user.Id, "User"))
+                {
+                    UserManager.RemoveFromRole(userId, "User");
+                    UserManager.AddToRole(userId, "Coordinator");
+                }
+
                 CoordinatorEntity coordinatorEntity = new CoordinatorEntity()
                 {
                     FullName = coordinatorRequest.FullName,
@@ -238,7 +285,7 @@ namespace PartTimeV1.Controllers
                     Bank = coordinatorRequest.Bank,
                     BankBranch = coordinatorRequest.BankBranch,
 
-                    UserId = User.Identity.GetUserId(),
+                    UserId = userId,
                     Role = "Coordinator",
                     Approved = false,
                     Deleted = false,

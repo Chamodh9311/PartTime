@@ -1,4 +1,5 @@
 ﻿using PartTimeV1.Data;
+using PartTimeV1.Requests;
 using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
@@ -56,6 +57,16 @@ namespace PartTimeV1.Controllers
             this.manager.Commit();
 
             return Json("Success");
+        }
+
+        public JsonResult searchUsers(SearchRequest searchRequest)
+        {
+            var profiles = this.manager.UserProfileRepository.GetAllActive();
+            var coordinatorProfiles = this.manager.CoordinatorProfileRepository.GetAllActive();
+
+            profiles.AddRange(coordinatorProfiles);
+
+            return Json(new { data = profiles }, JsonRequestBehavior.AllowGet);
         }
     }
 }

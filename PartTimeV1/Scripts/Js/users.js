@@ -161,3 +161,63 @@ $(function () {
         alert(error.StatusText);
     });
 });
+
+function searchUsers() {
+
+    var searchRequest = {};
+
+    searchRequest.FullName = $('#name').val();
+    searchRequest.NIC = $('#nic').val();
+    searchRequest.Age = $('#age').val();
+    searchRequest.CurrentDistrict = $('#currentdistrict option:selected').text();
+    searchRequest.CurrentTown  = $('#currentcity option:selected').text();
+    searchRequest.HomeDistrict = $('#homedistrict option:selected').text();
+    searchRequest.HomeTown  = $('#hometown option:selected').text();
+    searchRequest.Gender = $('#gender option:selected').val();
+    searchRequest.Age = $('#years').val();
+    searchRequest.Iam = $('#iam option:selected').text();
+    searchRequest.English = $('#gender option:selected').val();
+    searchRequest.Tamil = $('#gender option:selected').val();
+    searchRequest.Calendar = $('#looking option:selected').val();
+    searchRequest.Look = $('#looking option:selected').val();
+    searchRequest.Brands = $('#brandnames').select2("val");
+
+    $('#userTable').DataTable({
+        "ajax": {
+            "url": "/Search/searchUsers",
+            "data": '{searchRequest: ' + JSON.stringify(searchRequest) + '}',
+            "type": "GET",
+            "datatype": "json"
+        },
+        "columns": [
+            { "data": "FullName", "autoWidth": true },
+            { "data": "NIC", "autoWidth": true },
+            { "data": "DOB", "autoWidth": true },
+            { "data": "Mobile", "autoWidth": true },
+            { "data": "Age", "autoWidth": true },
+            { "data": "CurrentCity", "autoWidth": true },
+            { "data": "HomeTown", "autoWidth": true },
+            { "data": "Role", "autoWidth": true },
+            { "data": "Approved", "autoWidth": true }
+        ],
+        "columnDefs": [{
+            "targets": 8,
+            "data": 'Approved',
+            "render": function (data, type, full, meta) {
+                var rtnvalue = "";
+                if (full.Role == "Promoter") {
+                    rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Index/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
+                }
+                else {
+                    rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Coordinator/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
+                }
+
+                if (data == "False") {
+                    rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-primary btn-xs" data-id=' + full.UserId + ' onclick="javascript: approveUser(this);">Approve</a> &nbsp;&nbsp;';
+                }
+                rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-danger btn-xs" data-id=' + full.UserId + ' onclick="javascript: banUser(this);">Ban</a>';
+                return rtnvalue;
+            }
+        }]
+    });
+}
