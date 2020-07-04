@@ -21,6 +21,5 @@ namespace PartTimeV1.Requests
         public string Tamil { get; set; }
         public string Calendar { get; set; }
         public string Look { get; set; }
-        public List<string> Brands { get; set; }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity.SqlServer;
+﻿using System.Data.Entity.SqlServer;
 using System.Data.SqlClient;
 using System.Linq;
 
@@ -14,7 +11,7 @@ namespace PartTimeV1.Data.Repository
         {
         }
 
-        public List<DtoUserProfileEntity> GetAllActive()
+        public IQueryable<DtoUserProfileEntity> GetAllActive()
         {
             var query = from t in this.dbSet
                         //where t.Banned != true & t.Deleted != true
@@ -26,13 +23,13 @@ namespace PartTimeV1.Data.Repository
                             DOB = SqlFunctions.DateName("day", t.DOB) + "/" + SqlFunctions.DateName("month", t.DOB) + "/" + SqlFunctions.DateName("year", t.DOB),
                             Mobile = t.Mobile1,
                             Age = t.Age,
-                            CurrentCity = t.CurrentDistrict,
+                            CurrentCity = t.CurrentTown,
                             HomeTown = t.HomeTown,
                             Role = t.Role == "User" ? "Promoter" : t.Role,
                             Approved = t.Approved.ToString(),
                             UserId = t.UserId
                         };
-            return query.ToList();
+            return query;
         }
 
         public UserProfileEntity SelectUser(string userId)
@@ -57,8 +54,10 @@ namespace PartTimeV1.Data.Repository
         public string DOB { get; set; }
         public string Mobile { get; set; }
         public string Age { get; set; }
+        public string CurrentDisctrict { get; set; }
         public string CurrentCity { get; set; }
         public string HomeTown { get; set; }
+        public string HomeDisctrict { get; set; }
         public string Role { get; set; }
         public string Approved  { get; set; }
         public string UserId { get; set; }

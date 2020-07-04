@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity.SqlServer;
+﻿using System.Data.Entity.SqlServer;
 using System.Linq;
 
 namespace PartTimeV1.Data.Repository
@@ -11,10 +10,10 @@ namespace PartTimeV1.Data.Repository
         {
         }
 
-        public List<DtoUserProfileEntity> GetAllActive()
+        public IQueryable<DtoUserProfileEntity> GetAllActive()
         {
             var query = from t in this.dbSet
-                        //where t.Banned != true & t.Deleted != true
+                            //where t.Banned != true & t.Deleted != true
                         orderby t.CreateOn
                         select new DtoUserProfileEntity
                         {
@@ -29,7 +28,7 @@ namespace PartTimeV1.Data.Repository
                             Approved = t.Approved.ToString(),
                             UserId = t.UserId
                         };
-            return query.ToList();
+            return query;
         }
 
         public CoordinatorEntity SelectUser(string userId)

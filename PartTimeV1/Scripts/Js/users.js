@@ -174,20 +174,22 @@ function searchUsers() {
     searchRequest.HomeDistrict = $('#homedistrict option:selected').text();
     searchRequest.HomeTown  = $('#hometown option:selected').text();
     searchRequest.Gender = $('#gender option:selected').val();
-    searchRequest.Age = $('#years').val();
+    searchRequest.SalesYears = $('#years').val();
     searchRequest.Iam = $('#iam option:selected').text();
-    searchRequest.English = $('#gender option:selected').val();
-    searchRequest.Tamil = $('#gender option:selected').val();
-    searchRequest.Calendar = $('#looking option:selected').val();
+    searchRequest.English = $('#english option:selected').val();
+    searchRequest.Tamil = $('#tamil option:selected').val();
+    searchRequest.Calendar = $('#calender').val();
     searchRequest.Look = $('#looking option:selected').val();
     searchRequest.Brands = $('#brandnames').select2("val");
 
     $('#userTable').DataTable({
+        destroy: true,
         "ajax": {
-            "url": "/Search/searchUsers",
-            "data": '{searchRequest: ' + JSON.stringify(searchRequest) + '}',
             "type": "GET",
-            "datatype": "json"
+            "url": "/Search/searchUsers/?brands=" + encodeURIComponent(searchRequest.Brands),
+            data: searchRequest,
+            "datatype": "json",
+            "contentType": "application/json; charset=utf-8",
         },
         "columns": [
             { "data": "FullName", "autoWidth": true },
