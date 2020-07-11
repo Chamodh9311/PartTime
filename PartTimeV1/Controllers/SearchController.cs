@@ -1,6 +1,7 @@
 ﻿using PartTimeV1.Data;
 using PartTimeV1.Data.Repository;
 using PartTimeV1.Requests;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -81,49 +82,120 @@ namespace PartTimeV1.Controllers
                 profiles = profiles.Where(p => searchRequest.Age.Contains(p.Age));
             }
 
-            //if (searchRequest.CurrentDistrict != null)
-            //{
-            //    profiles = profiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
-            //}
+            if (searchRequest.CurrentDistrict != null)
+            {
+                profiles = profiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDisctrict));
+            }
 
-            //if (searchRequest.CurrentTown != null)
-            //{
-            //    profiles = profiles.Where(p => searchRequest.CurrentTown.Contains(p.CurrentTown));
-            //}
+            if (searchRequest.CurrentTown != null)
+            {
+                profiles = profiles.Where(p => searchRequest.CurrentTown.Contains(p.CurrentCity));
+            }
 
-            //if (searchRequest.HomeDistrict != null)
-            //{
-            //    profiles = profiles.Where(p => searchRequest.HomeDistrict.Contains(p.HomeDistrict));
-            //}
+            if (searchRequest.HomeDistrict != null)
+            {
+                profiles = profiles.Where(p => searchRequest.HomeDistrict.Contains(p.HomeDisctrict));
+            }
 
             if (searchRequest.HomeTown != null)
             {
                 profiles = profiles.Where(p => searchRequest.HomeTown.Contains(p.HomeTown));
             }
 
-            //if (searchRequest.Gender != null)
-            //{
-            //    profiles = profiles.Where(p => searchRequest.Gender.Contains(p.CurrentDistrict));
-            //}
+            if (searchRequest.Gender != null)
+            {
+                if (searchRequest.Gender == "1")
+                {
+                    profiles = profiles.Where(p => p.GenderMale == true);
+                }
+                if (searchRequest.Gender == "2")
+                {
+                    profiles = profiles.Where(p => p.GenderFemale == true);
+                }
+            }
 
-            //if (searchRequest.Age != null)
-            //{
-            //    profiles = profiles.Where(p => searchRequest.Age.Contains(p.Age));
-            //}
+            if (searchRequest.SalesYears != null)
+            {
+                profiles = profiles.Where(p => searchRequest.SalesYears.Contains(p.YearsOfSales));
+            }
 
-            //if (searchRequest.CurrentDistrict != null)
+            if (searchRequest.English != null)
+            {
+                if (searchRequest.English == "1")
+                {
+                    profiles = profiles.Where(p => p.EnglishSpeakingA == true);
+                }
+                if (searchRequest.English == "2")
+                {
+                    profiles = profiles.Where(p => p.EnglishSpeakingB == true);
+                }
+                if (searchRequest.English == "3")
+                {
+                    profiles = profiles.Where(p => p.EnglishSpeakingC == true);
+                }
+            }
+
+            if (searchRequest.Tamil != null)
+            {
+                if (searchRequest.English == "1")
+                {
+                    profiles = profiles.Where(p => p.TamilSpeakinA == true);
+                }
+                if (searchRequest.English == "2")
+                {
+                    profiles = profiles.Where(p => p.TamilSpeakinB == true);
+                }
+                if (searchRequest.English == "3")
+                {
+                    profiles = profiles.Where(p => p.TamilSpeakinC == true);
+                }
+            }
+
+            if (searchRequest.Iam != null)
+            {
+                if (searchRequest.Iam == "1")
+                {
+                    profiles = profiles.Where(p => p.Student == true);
+                }
+                if(searchRequest.Iam == "2")
+                {
+                    profiles = profiles.Where(p => p.FullTimeEmployed == true);
+                }
+                if(searchRequest.Iam == "3")
+                {
+                    profiles = profiles.Where(p => p.FullTimePromotor == true);
+                }
+                if(searchRequest.Iam == "4")
+                {
+                    profiles = profiles.Where(p => p.Freelancer == true);
+                }
+                if(searchRequest.Iam == "5")
+                {
+                    profiles = profiles.Where(p => p.Professional == true);
+                }
+                if (searchRequest.Iam == "6")
+                {
+                    profiles = profiles.Where(p => p.SearchForParttime == true);
+                }
+            }
+
+            //if (searchRequest.Calendar != null)
             //{
             //    profiles = profiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
             //}
 
-            //if (searchRequest.CurrentDistrict != null)
+            //if (searchRequest.Look != null)
             //{
             //    profiles = profiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
             //}
 
-            var profiles1 = profiles.ToList();
+            if (brands != null)
+            {
+                //var brandsNames = brands.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                profiles = profiles.Where(p => brands.Contains(p.Brands));;
+            }
 
-
+            var profilesFilterd = profiles.ToList();
 
 
 
@@ -139,13 +211,130 @@ namespace PartTimeV1.Controllers
                 coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.NIC.Contains(p.NIC));
             }
 
-            var coordinatorProfiles1 = coordinatorProfiles.ToList();
+            if (searchRequest.Age != null)
+            {
+                coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.Age.Contains(p.Age));
+            }
 
-            profiles1.AddRange(coordinatorProfiles1);
+            if (searchRequest.CurrentDistrict != null)
+            {
+                coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDisctrict));
+            }
+
+            if (searchRequest.CurrentTown != null)
+            {
+                coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentTown.Contains(p.CurrentCity));
+            }
+
+            if (searchRequest.HomeDistrict != null)
+            {
+                coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.HomeDistrict.Contains(p.HomeDisctrict));
+            }
+
+            if (searchRequest.HomeTown != null)
+            {
+                coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.HomeTown.Contains(p.HomeTown));
+            }
+
+            if (searchRequest.Gender != null)
+            {
+                if (searchRequest.Gender == "1")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.GenderMale == true);
+                }
+                if (searchRequest.Gender == "2")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.GenderFemale == true);
+                }
+            }
+
+            if (searchRequest.SalesYears != null)
+            {
+                coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.SalesYears.Contains(p.YearsOfSales));
+            }
+
+            if (searchRequest.English != null)
+            {
+                if (searchRequest.English == "1")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.EnglishSpeakingA == true);
+                }
+                if (searchRequest.English == "2")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.EnglishSpeakingB == true);
+                }
+                if (searchRequest.English == "3")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.EnglishSpeakingC == true);
+                }
+            }
+
+            if (searchRequest.Tamil != null)
+            {
+                if (searchRequest.English == "1")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.TamilSpeakinA == true);
+                }
+                if (searchRequest.English == "2")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.TamilSpeakinB == true);
+                }
+                if (searchRequest.English == "3")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.TamilSpeakinC == true);
+                }
+            }
+
+            if (searchRequest.Iam != null)
+            {
+                if (searchRequest.Iam == "1")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.Student == true);
+                }
+                if (searchRequest.Iam == "2")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.FullTimeEmployed == true);
+                }
+                if (searchRequest.Iam == "3")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.FullTimePromotor == true);
+                }
+                if (searchRequest.Iam == "4")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.Freelancer == true);
+                }
+                if (searchRequest.Iam == "5")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.Professional == true);
+                }
+                if (searchRequest.Iam == "6")
+                {
+                    coordinatorProfiles = coordinatorProfiles.Where(p => p.SearchForParttime == true);
+                }
+            }
+
+            //if (searchRequest.Calendar != null)
+            //{
+            //    coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
+            //}
+
+            //if (searchRequest.Look != null)
+            //{
+            //    coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
+            //}
+
+            if (brands != null)
+            {
+                //var brandsNames = brands.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                coordinatorProfiles = coordinatorProfiles.Where(p => brands.Contains(p.Brands)); ;
+            }
+
+            var coordinatorProfilesFiltred = coordinatorProfiles.ToList();
+
+            profilesFilterd.AddRange(coordinatorProfilesFiltred);
 
 
-
-            return Json(new { data = profiles1 }, JsonRequestBehavior.AllowGet);
+            return Json(new { data = profilesFilterd }, JsonRequestBehavior.AllowGet);
         }
     }
 }
