@@ -175,7 +175,7 @@ function searchUsers() {
     searchRequest.HomeTown  = $('#hometown option:selected').text();
     searchRequest.Gender = $('#gender option:selected').val();
     searchRequest.SalesYears = $('#years').val();
-    searchRequest.Iam = $('#iam option:selected').text();
+    searchRequest.Iam = $('#iam option:selected').val();
     searchRequest.English = $('#english option:selected').val();
     searchRequest.Tamil = $('#tamil option:selected').val();
     searchRequest.Calendar = $('#calender').val();

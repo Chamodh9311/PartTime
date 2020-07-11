@@ -82,7 +82,7 @@ namespace PartTimeV1.Controllers
                 profiles = profiles.Where(p => searchRequest.Age.Contains(p.Age));
             }
 
-            if (searchRequest.CurrentDistrict != null)
+            if (searchRequest.CurrentDistrict != "-Select District-")
             {
                 profiles = profiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDisctrict));
             }
@@ -92,7 +92,7 @@ namespace PartTimeV1.Controllers
                 profiles = profiles.Where(p => searchRequest.CurrentTown.Contains(p.CurrentCity));
             }
 
-            if (searchRequest.HomeDistrict != null)
+            if (searchRequest.HomeDistrict != "-Select District-")
             {
                 profiles = profiles.Where(p => searchRequest.HomeDistrict.Contains(p.HomeDisctrict));
             }
@@ -189,7 +189,7 @@ namespace PartTimeV1.Controllers
             //    profiles = profiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
             //}
 
-            if (brands != null)
+            if (brands[0] != "")
             {
                 //var brandsNames = brands.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 profiles = profiles.Where(p => brands.Contains(p.Brands));;
@@ -216,7 +216,7 @@ namespace PartTimeV1.Controllers
                 coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.Age.Contains(p.Age));
             }
 
-            if (searchRequest.CurrentDistrict != null)
+            if (searchRequest.CurrentDistrict != "-Select District-")
             {
                 coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDisctrict));
             }
@@ -226,7 +226,7 @@ namespace PartTimeV1.Controllers
                 coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentTown.Contains(p.CurrentCity));
             }
 
-            if (searchRequest.HomeDistrict != null)
+            if (searchRequest.HomeDistrict != "-Select District-")
             {
                 coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.HomeDistrict.Contains(p.HomeDisctrict));
             }
@@ -323,7 +323,7 @@ namespace PartTimeV1.Controllers
             //    coordinatorProfiles = coordinatorProfiles.Where(p => searchRequest.CurrentDistrict.Contains(p.CurrentDistrict));
             //}
 
-            if (brands != null)
+            if (brands[0] != "")
             {
                 //var brandsNames = brands.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                 coordinatorProfiles = coordinatorProfiles.Where(p => brands.Contains(p.Brands)); ;

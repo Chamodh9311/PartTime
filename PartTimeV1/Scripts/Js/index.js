@@ -776,8 +776,52 @@ window.onload = function () {
                 document.getElementById("genderF").checked = response.GenderFemale;
 
                 $('#currentdistrict option:selected').text(response.CurrentDistrict);
-                $('#currentcity option:selected').text(response.CurrentTown);
+                //$('#currentcity option:selected').text(response.CurrentTown);
                 $('#homedistrict option:selected').text(response.HomeDistrict);
+                //$('#hometown option:selected').text(response.HomeTown);
+
+
+                $('#currentdistrict').trigger('change');
+
+                //$('#currentdistrict').on("change", function () {
+                //    var town = response.CurrentDistrict;
+                //    var obj = { districtId: town };
+                //    AjaxCall('/Admin/GetTowns', JSON.stringify(obj), 'POST').done(function (response) {
+                //        if (response.length > 0) {
+                //            $('#currentcity').html('');
+                //            var options = '';
+                //            options += '<option value="Select">-Select Town-</option>';
+                //            for (var i = 0; i < response.length; i++) {
+                //                options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
+                //            }
+                //            $('#currentcity').append(options);
+                //        }
+                //    }).fail(function (error) {
+                //        alert(error.StatusText);
+                //    });
+                //});
+
+                //$('#homedistrict').on("change", function () {
+                //    var town = response.HomeDistrict;
+                //    var obj = { districtId: town };
+                //    AjaxCall('/Admin/GetTowns', JSON.stringify(obj), 'POST').done(function (response) {
+                //        if (response.length > 0) {
+                //            $('#hometown').html('');
+                //            var options = '';
+                //            options += '<option value="Select">-Select Town-</option>';
+                //            for (var i = 0; i < response.length; i++) {
+                //                options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
+                //            }
+                //            $('#hometown').append(options);
+                //        }
+                //    }).fail(function (error) {
+                //        alert(error.StatusText);
+                //    });
+                //});
+
+                //$('#currentdistrict option:selected').text(response.CurrentDistrict);
+                $('#currentcity option:selected').text(response.CurrentTown);
+                //$('#homedistrict option:selected').text(response.HomeDistrict);
                 $('#hometown option:selected').text(response.HomeTown);
 
                 document.getElementById("tsizeS").checked = response.ShirtSizeS;

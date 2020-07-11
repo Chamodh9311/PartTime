@@ -61,7 +61,7 @@ namespace PartTimeV1.Data.Repository
         {
             SqlParameter param;
             param = new SqlParameter("@value", userId);
-            var query = this.dbContext.Database.SqlQuery<UserProfileEntity>("SELECT FORMAT(dob,'dd/MM/yyyy') as 'DOBNEW', * FROM UserProfile WHERE UserId = @value order by Id", param).FirstOrDefault();
+            var query = this.dbContext.Database.SqlQuery<UserProfileEntity>("SELECT TOP 1 * FROM PromoterProfile WHERE UserId = @value order by CreateOn DESC", param).FirstOrDefault();
             return query;
         }
     }

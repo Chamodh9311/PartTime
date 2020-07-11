@@ -214,9 +214,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\parttime - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\parttime - ReadOnly - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\parttime - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\parttime-dinuka - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\parttime-dinuka - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\parttime-dinuka - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\CSS\index.css" />
     <Content Include="Scripts\jquery-3.3.1.js" />
