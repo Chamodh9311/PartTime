@@ -50,7 +50,6 @@ namespace PartTimeV1.Controllers
 
         public ActionResult Index()
         {
-
             return View();
         }
 
@@ -91,7 +90,12 @@ namespace PartTimeV1.Controllers
         [HttpPost]
         public JsonResult GetUser(string userId)
         {
+            if (userId == null)
+            {
+                userId = User.Identity.GetUserId();
+            }
             var userProfile = this.manager.UserProfileRepository.SelectUserProfile(userId);
+
             return Json(userProfile, JsonRequestBehavior.AllowGet);
         }
 
@@ -100,6 +104,8 @@ namespace PartTimeV1.Controllers
         {
             try
             {
+                //updatePromotorProfile(ProfileRequest profileRequest);
+
                 UserProfileEntity userProfileEntity = new UserProfileEntity()
                 {
                     FullName = profileRequest.FullName,

@@ -739,7 +739,7 @@ function submitFunction() {
 
 
 window.onload = function () {
-    if (window.location.href.indexOf("#") > -1) {
+    //if (window.location.href.indexOf("#") > -1) {
 
         var obj = { userId: window.location.href.split('#')[1] };
         AjaxCall('/Admin/GetUser', JSON.stringify(obj), 'POST').done(function (response) {
@@ -780,44 +780,7 @@ window.onload = function () {
                 $('#homedistrict option:selected').text(response.HomeDistrict);
                 //$('#hometown option:selected').text(response.HomeTown);
 
-
-                $('#currentdistrict').trigger('change');
-
-                //$('#currentdistrict').on("change", function () {
-                //    var town = response.CurrentDistrict;
-                //    var obj = { districtId: town };
-                //    AjaxCall('/Admin/GetTowns', JSON.stringify(obj), 'POST').done(function (response) {
-                //        if (response.length > 0) {
-                //            $('#currentcity').html('');
-                //            var options = '';
-                //            options += '<option value="Select">-Select Town-</option>';
-                //            for (var i = 0; i < response.length; i++) {
-                //                options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
-                //            }
-                //            $('#currentcity').append(options);
-                //        }
-                //    }).fail(function (error) {
-                //        alert(error.StatusText);
-                //    });
-                //});
-
-                //$('#homedistrict').on("change", function () {
-                //    var town = response.HomeDistrict;
-                //    var obj = { districtId: town };
-                //    AjaxCall('/Admin/GetTowns', JSON.stringify(obj), 'POST').done(function (response) {
-                //        if (response.length > 0) {
-                //            $('#hometown').html('');
-                //            var options = '';
-                //            options += '<option value="Select">-Select Town-</option>';
-                //            for (var i = 0; i < response.length; i++) {
-                //                options += '<option value="' + response[i].Id + '">' + response[i].Name + '</option>';
-                //            }
-                //            $('#hometown').append(options);
-                //        }
-                //    }).fail(function (error) {
-                //        alert(error.StatusText);
-                //    });
-                //});
+                //$('#currentdistrict').trigger('change');       
 
                 //$('#currentdistrict option:selected').text(response.CurrentDistrict);
                 $('#currentcity option:selected').text(response.CurrentTown);
@@ -828,26 +791,28 @@ window.onload = function () {
                 document.getElementById("tsizeM").checked = response.ShirtSizeM;
                 document.getElementById("tsizeL").checked = response.ShirtSizeL;
                 document.getElementById("tsizeXS").checked = response.ShirtSizeXS;
-                document.getElementById("student").checked = response.Student;
+
+                document.getElementById("student").checked = response.IamStudent;
                 document.getElementById("studentdetails1").value = response.University;
                 document.getElementById("studentdetails2").value = response.Course;
                 document.getElementById("studentdetails3").value = response.UniYear;
-                document.getElementById("employee").checked = response.Employeed;
+
+                document.getElementById("employee").checked = response.IamFullTimeEmployeed;
                 document.getElementById("employeedetails1").value = response.Company;
                 document.getElementById("employeedetails2").value = response.Branch;
                 document.getElementById("employeedetails3").value = response.Designation;
 
-                document.getElementById("parttime").checked = response.FullTimePromoter;
+                document.getElementById("parttime").checked = response.IamFullTimePromoter;
 
-                document.getElementById("freelanceYes").checked = response.IsFreelancer;
+                document.getElementById("freelanceYes").checked = response.IamFreelancer;
 
-                document.getElementById("freelancerdetailsdrp").value = response.FreelancerOther;
-                document.getElementById("otherExp").value = response.FullName;
+                document.getElementById("freelancerdetailsdrp").value = response.FreelancerJobs;
+                document.getElementById("otherExp").value = response.FreelancerOtherJobs;
 
-                document.getElementById("professionalYes").value = response.FullName;
+                document.getElementById("professionalYes").value = response.IamProfessionalSelfemployed;
 
-                document.getElementById("professionaldetailsdrp").value = response.FullName;
-                document.getElementById("professionalexp").value = response.FullName;
+                document.getElementById("professionaldetailsdrp").value = response.SelfemployedJobs;
+                document.getElementById("professionalexp").value = response.SelfemployedOtherJobs;
 
                 document.getElementById("englishA").checked = response.EnglishA;
                 document.getElementById("englishB").checked = response.EnglishB;
@@ -860,12 +825,11 @@ window.onload = function () {
                 document.getElementById("experienceYes").checked = response.SalesExperienceYes;
                 document.getElementById("promoexperience").value = response.SalesExperienceYears;
 
-                document.getElementById("brandnames").value = response.Brands;
-                document.getElementById("otherbrandnames").value = response.BrandsOther
+                document.getElementById("brandnames").value = response.MainBrands;
+                document.getElementById("otherbrandnames").value = response.MainBrandsOthers
 
-
-                document.getElementById("otherpromoexperience").value = response.OtherExperience;
-                document.getElementById("otherexperience").value = response.OtherExperienceOther;
+                document.getElementById("otherpromoexperience").value = response.OtherBrandExperience;
+                document.getElementById("otherexperience").value = response.OtherBarndExperienceOther;
 
                 document.getElementById("ffacebook").checked = response.Facebook;
                 document.getElementById("finstagram").checked = response.Instagram;
@@ -878,12 +842,12 @@ window.onload = function () {
 
                 document.getElementById("accountholder").value = response.AccountHolder;
                 document.getElementById("accountnumber").value = response.AccountNumber;
-                document.getElementById("bank").value = response.Bank;
+                document.getElementById("bank").value = response.BankName;
                 document.getElementById("branch").value = response.BankBranch;
                 window.UserId = response.UserId;
             }
         }).fail(function (error) {
             alert(error);
         });
-    };
+    //};
 }
