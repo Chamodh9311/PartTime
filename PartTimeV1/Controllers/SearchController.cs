@@ -63,7 +63,7 @@ namespace PartTimeV1.Controllers
             return Json("Success");
         }
 
-        public JsonResult searchUsers(SearchRequest searchRequest , List<string> brands)
+        public JsonResult SearchUsers(SearchRequest searchRequest , List<string> brands)
         {
             IQueryable<DtoUserProfileEntity> profiles = this.manager.UserProfileRepository.GetAllActive();
 

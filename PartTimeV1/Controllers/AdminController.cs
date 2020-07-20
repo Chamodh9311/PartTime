@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.Owin;
 using PartTimeV1.Data;
 using PartTimeV1.Requests;
 using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 
@@ -49,6 +50,11 @@ namespace PartTimeV1.Controllers
         }
 
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Schedule()
         {
             return View();
         }
@@ -229,7 +235,7 @@ namespace PartTimeV1.Controllers
                 {
                     FullName = coordinatorRequest.FullName,
                     ShortName = coordinatorRequest.ShortName,
-                    NIC = coordinatorRequest.NIC.Replace("_",""),
+                    NIC = coordinatorRequest.NIC.Replace("_", ""),
                     Photo1 = coordinatorRequest.Photo1,
                     Photo2 = coordinatorRequest.Photo2,
                     Photo3 = coordinatorRequest.Photo3,

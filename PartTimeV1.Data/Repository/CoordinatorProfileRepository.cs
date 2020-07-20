@@ -14,7 +14,7 @@ namespace PartTimeV1.Data.Repository
         {
             var query = from t in this.dbSet
                             //where t.Banned != true & t.Deleted != true
-                        orderby t.CreateOn
+                        orderby t.CreateOn descending
                         select new DtoUserProfileEntity
                         {
                             FullName = t.FullName,

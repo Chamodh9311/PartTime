@@ -42,5 +42,18 @@ namespace PartTimeV1.Data.RepositoryManager
                 return this.coordinatorProfileRepository;
             }
         }
+
+        private SchedulerRepository schedulerRepository = null;
+        public SchedulerRepository SchedulerRepository
+        {
+            get
+            {
+                if (this.schedulerRepository == null)
+                {
+                    this.schedulerRepository = new SchedulerRepository(this.dbContext);
+                }
+                return this.schedulerRepository;
+            }
+        }
     }
 }

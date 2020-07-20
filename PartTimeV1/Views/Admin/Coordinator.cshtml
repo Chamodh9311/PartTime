@@ -138,6 +138,12 @@
                                     Users
                                 </p>
                             </a>
+                            <a href="@Url.Action("Schedule", "Admin")" class="nav-link">
+                                <i class="nav-icon fas fa-file-alt"></i>
+                                <p>
+                                    schedule
+                                </p>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -161,10 +167,8 @@
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item">
-                                        <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
-                                        <a href="@Url.Action("Users", "Admin")" class="nav-link active">Search</a>
-                                    </li>
+                                    <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
+                                    <a href="@Url.Action("Schedule", "Admin")" class="nav-link active">Scheduler</a>
                                 </ol>
                             </div>
                         </div>
