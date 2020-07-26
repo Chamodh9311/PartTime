@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PartTimeV1.Data
 {
-    public class UserProfileEntity : Entity
+    public class PromoterProfileEntity : Entity
     {
         public string FullName { get; set; }
         public string ShortName { get; set; }

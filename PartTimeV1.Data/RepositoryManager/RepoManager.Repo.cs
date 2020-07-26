@@ -17,16 +17,16 @@ namespace PartTimeV1.Data.RepositoryManager
             }
         }
 
-        private UserProfileRepository userProfileRepository = null;
-        public UserProfileRepository UserProfileRepository
+        private PromoterProfileRepository promoterProfileRepository = null;
+        public PromoterProfileRepository PromoterProfileRepository
         {
             get
             {
-                if (this.userProfileRepository == null)
+                if (this.promoterProfileRepository == null)
                 {
-                    this.userProfileRepository = new UserProfileRepository(this.dbContext);
+                    this.promoterProfileRepository = new PromoterProfileRepository(this.dbContext);
                 }
-                return this.userProfileRepository;
+                return this.promoterProfileRepository;
             }
         }
 

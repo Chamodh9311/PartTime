@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace PartTimeV1.Data.Repository
 {
-    public class UserProfileRepository : EFRepository<UserProfileEntity>
+    public class PromoterProfileRepository : EFRepository<PromoterProfileEntity>
     {
-        public UserProfileRepository(EFDbContext dbContext)
+        public PromoterProfileRepository(EFDbContext dbContext)
              : base(dbContext)
         {
         }
@@ -51,17 +51,17 @@ namespace PartTimeV1.Data.Repository
             return query;
         }
 
-        public UserProfileEntity SelectUser(string userId)
+        public PromoterProfileEntity SelectUser(string userId)
         {
             var query = this.dbSet.FirstOrDefault(a => a.UserId == userId );
             return query;
         }
 
-        public UserProfileEntity SelectUserProfile(string userId)
+        public PromoterProfileEntity SelectUserProfile(string userId)
         {
             SqlParameter param;
             param = new SqlParameter("@value", userId);
-            var query = this.dbContext.Database.SqlQuery<UserProfileEntity>("SELECT TOP 1 * FROM PromoterProfile WHERE UserId = @value order by CreateOn DESC", param).FirstOrDefault();
+            var query = this.dbContext.Database.SqlQuery<PromoterProfileEntity>("SELECT TOP 1 * FROM PromoterProfile WHERE UserId = @value order by CreateOn DESC", param).FirstOrDefault();
             return query;
         }
     }

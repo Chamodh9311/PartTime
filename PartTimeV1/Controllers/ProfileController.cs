@@ -12,27 +12,38 @@ namespace PartTimeV1.Controllers
     {
         public ActionResult Index()
         {
-            var userProfile = this.manager.UserProfileRepository.SelectUserProfile(User.Identity.GetUserId());
+            var userProfile = this.manager.PromoterProfileRepository.SelectUserProfile(User.Identity.GetUserId());
 
             if (userProfile != null)
             {
-                return RedirectToAction("Promoter");
+                var coordinatorProfile = this.manager.CoordinatorProfileRepository.SelectCoordinatorProfile(User.Identity.GetUserId());
+
+                if (coordinatorProfile != null)
+                {
+                    return RedirectToAction("Profile");
+                }
+
+                return RedirectToAction("Profile");
             }
 
-            var coordinatorProfile = this.manager.CoordinatorProfileRepository.SelectCoordinatorProfile(User.Identity.GetUserId());
-
-            return RedirectToAction("Coordinator");
+            else
+            {
+                return RedirectToAction("Promoter");
+            }
         }
 
         public ActionResult Promoter()
         {
-
             return View();
         }
 
         public ActionResult Coordinator()
         {
+            return View();
+        }
 
+        public ActionResult Profile()
+        {
             return View();
         }
     }

@@ -13,7 +13,7 @@ namespace PartTimeV1.Controllers
     {
         public JsonResult GetUserProfileData()
         {
-            var profiles = this.manager.UserProfileRepository.GetAllActive().ToList();
+            var profiles = this.manager.PromoterProfileRepository.GetAllActive().ToList();
             var coordinatorProfiles = this.manager.CoordinatorProfileRepository.GetAllActive().ToList();
 
             profiles.AddRange(coordinatorProfiles);
@@ -23,12 +23,12 @@ namespace PartTimeV1.Controllers
 
         public JsonResult ApproveUser(string userId)
         {
-            UserProfileEntity currentUserProfile = this.manager.UserProfileRepository.SelectUser(userId);
+            PromoterProfileEntity currentUserProfile = this.manager.PromoterProfileRepository.SelectUser(userId);
 
             if (currentUserProfile != null)
             {
                 currentUserProfile.Approved = true;
-                this.manager.UserProfileRepository.Update(currentUserProfile);
+                this.manager.PromoterProfileRepository.Update(currentUserProfile);
             }
             else
             {
@@ -44,12 +44,12 @@ namespace PartTimeV1.Controllers
 
         public JsonResult BanUser(string userId)
         {
-            UserProfileEntity currentUserProfile = this.manager.UserProfileRepository.SelectUser(userId);
+            PromoterProfileEntity currentUserProfile = this.manager.PromoterProfileRepository.SelectUser(userId);
 
             if (currentUserProfile != null)
             {
                 currentUserProfile.Banned = true;
-                this.manager.UserProfileRepository.Update(currentUserProfile);
+                this.manager.PromoterProfileRepository.Update(currentUserProfile);
             }
             else
             {
@@ -65,7 +65,7 @@ namespace PartTimeV1.Controllers
 
         public JsonResult SearchUsers(SearchRequest searchRequest , List<string> brands)
         {
-            IQueryable<DtoUserProfileEntity> profiles = this.manager.UserProfileRepository.GetAllActive();
+            IQueryable<DtoUserProfileEntity> profiles = this.manager.PromoterProfileRepository.GetAllActive();
 
             if (searchRequest.FullName != null)
             {

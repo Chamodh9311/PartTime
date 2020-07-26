@@ -2,9 +2,9 @@
 
 namespace PartTimeV1.Data
 {
-    public class UserProfileEntityMap : EntityTypeConfiguration<UserProfileEntity>
+    public class PromoterProfileEntityMap : EntityTypeConfiguration<PromoterProfileEntity>
     {
-        public UserProfileEntityMap()
+        public PromoterProfileEntityMap()
         {
             HasKey(t => t.Id);
 

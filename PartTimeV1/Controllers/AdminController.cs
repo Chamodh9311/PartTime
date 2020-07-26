@@ -105,10 +105,29 @@ namespace PartTimeV1.Controllers
             {
                 userId = User.Identity.GetUserId();
             }
-            var userProfile = this.manager.UserProfileRepository.SelectUserProfile(userId);
+            var userProfile = this.manager.PromoterProfileRepository.SelectUserProfile(userId);
 
             return Json(userProfile, JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult GetUserProfile(string userId)
+        {
+            if (userId == null)
+            {
+                userId = User.Identity.GetUserId();
+            }
+
+            var userProfile = this.manager.PromoterProfileRepository.SelectUserProfile(userId);
+
+            if (userProfile == null)
+            {
+                var coordinatorProfile = this.manager.PromoterProfileRepository.SelectUserProfile(userId);
+            }
+
+            return Json(userProfile, JsonRequestBehavior.AllowGet);
+        }
+
 
         [HttpPost]
         public JsonResult UserProfileSubmit(ProfileRequest profileRequest)
@@ -117,7 +136,7 @@ namespace PartTimeV1.Controllers
             {
                 //updatePromotorProfile(ProfileRequest profileRequest);
 
-                UserProfileEntity userProfileEntity = new UserProfileEntity()
+                PromoterProfileEntity promoterProfileEntity = new PromoterProfileEntity()
                 {
                     FullName = profileRequest.FullName,
                     ShortName = profileRequest.ShortName,
@@ -205,7 +224,7 @@ namespace PartTimeV1.Controllers
 
                 manager.BeginTransaction();
 
-                manager.UserProfileRepository.Add(userProfileEntity);
+                manager.PromoterProfileRepository.Add(promoterProfileEntity);
 
                 manager.Commit();
             }
