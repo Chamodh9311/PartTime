@@ -189,6 +189,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SchedulerController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,6 +234,7 @@
     <Content Include="Scripts\Js\calendar.js" />
     <Content Include="Scripts\Js\coordinator.js" />
     <Content Include="Scripts\Js\schedule.js" />
+    <Content Include="Scripts\Js\profile.js" />
     <Content Include="Scripts\Js\users.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SiteImages\CoverV1.jpg" />
@@ -740,7 +742,7 @@
     <Content Include="TemplateAssets\WebSite\assets\vendor\venobox\venobox.min.js" />
     <Content Include="TemplateAssets\WebSite\forms\contact.php" />
     <Content Include="TemplateAssets\WebSite\forms\Readme.txt" />
-    <Content Include="Scripts\Js\index.js" />
+    <Content Include="Scripts\Js\promoter.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -800,7 +802,7 @@
     <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="TemplateAssets\WebSite\assets\vendor\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Profile\Promoter.cshtml" />
     <Content Include="TemplateAssets\DashBord\dist\js\adminlte.js.map" />
     <Content Include="TemplateAssets\DashBord\dist\js\adminlte.min.js.map" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.eot" />
@@ -818,9 +820,10 @@
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\bower.json" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="Views\Admin\Users.cshtml" />
-    <Content Include="Views\Admin\Coordinator.cshtml" />
+    <Content Include="Views\Profile\Coordinator.cshtml" />
     <Content Include="Views\Admin\Calendar.cshtml" />
     <Content Include="Views\Admin\Schedule.cshtml" />
+    <Content Include="Views\Profile\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

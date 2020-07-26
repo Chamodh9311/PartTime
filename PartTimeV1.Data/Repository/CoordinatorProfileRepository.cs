@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity.SqlServer;
+using System.Data.SqlClient;
 using System.Linq;
 
 namespace PartTimeV1.Data.Repository
@@ -51,6 +52,14 @@ namespace PartTimeV1.Data.Repository
         public CoordinatorEntity SelectUser(string userId)
         {
             var query = this.dbSet.FirstOrDefault(a => a.UserId == userId);
+            return query;
+        }
+
+        public CoordinatorEntity SelectCoordinatorProfile(string userId)
+        {
+            SqlParameter param;
+            param = new SqlParameter("@value", userId);
+            var query = this.dbContext.Database.SqlQuery<CoordinatorEntity>("SELECT TOP 1 * FROM CoordinatoProfile WHERE UserId = @value order by CreateOn DESC", param).FirstOrDefault();
             return query;
         }
     }

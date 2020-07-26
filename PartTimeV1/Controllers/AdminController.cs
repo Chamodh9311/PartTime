@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 using PartTimeV1.Data;
 using PartTimeV1.Requests;
 using System;
-using System.Collections.Generic;
+using System.Net;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace PartTimeV1.Controllers
 {
@@ -23,6 +26,14 @@ namespace PartTimeV1.Controllers
         {
             UserManager = userManager;
             SignInManager = signInManager;
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
         }
 
         public ApplicationSignInManager SignInManager
@@ -49,22 +60,16 @@ namespace PartTimeV1.Controllers
             }
         }
 
-        public ActionResult Index()
+        public ActionResult LogOut()
         {
-            return View();
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            //FormsAuthentication.SignOut();
+            //Session.Abandon(); 
+            //HttpContext.User = new GenericPrincipal(new GenericIdentity(string.Empty), null);
+            return RedirectToAction("Login", "Account");
         }
 
         public ActionResult Schedule()
-        {
-            return View();
-        }
-
-        public ActionResult Coordinator()
-        {
-            return View();
-        }
-
-        public ActionResult Calendar()
         {
             return View();
         }
