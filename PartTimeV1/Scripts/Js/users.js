@@ -10,6 +10,10 @@
 $(document).ready(function () {
 
     $('#userTable').DataTable({
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
         "ajax": {
             "url": "/Search/GetUserProfileData",
             "type": "GET",
@@ -184,6 +188,10 @@ function searchUsers() {
 
     $('#userTable').DataTable({
         destroy: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
         "ajax": {
             "type": "GET",
             "url": "/Search/searchUsers/?brands=" + encodeURIComponent(searchRequest.Brands),

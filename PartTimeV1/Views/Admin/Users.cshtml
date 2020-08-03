@@ -27,12 +27,20 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/select2/css/select2.min.css">
 
-    <link href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Scripts/CSS/index.css">
 
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
+
+    <div id="loading"></div>
 
     <div class="wrapper">
         <!-- Navbar -->
@@ -70,31 +78,31 @@
 
                 <!-- Notifications Dropdown Menu -->
                 @*<li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-item dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> 8 friend requests
-                        <span class="float-right text-muted text-sm">12 hours</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> 3 new reports
-                        <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                </div>
-            </li>*@
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+                            <i class="far fa-bell"></i>
+                            <span class="badge badge-warning navbar-badge">15</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <span class="dropdown-item dropdown-header">15 Notifications</span>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-envelope mr-2"></i> 4 new messages
+                                <span class="float-right text-muted text-sm">3 mins</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-users mr-2"></i> 8 friend requests
+                                <span class="float-right text-muted text-sm">12 hours</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item">
+                                <i class="fas fa-file mr-2"></i> 3 new reports
+                                <span class="float-right text-muted text-sm">2 days</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                        </div>
+                    </li>*@
 
             </ul>
         </nav>
@@ -156,11 +164,11 @@
                                 <h1>User Search</h1>
                             </div>
                             @*<div class="col-sm-6">
-                                <ol class="breadcrumb float-sm-right">
-                                    <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
-                                    <a href="@Url.Action("Schedule", "Admin")" class="nav-link active">Scheduler</a>
-                                </ol>
-                            </div>*@
+                                    <ol class="breadcrumb float-sm-right">
+                                        <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
+                                        <a href="@Url.Action("Schedule", "Admin")" class="nav-link active">Scheduler</a>
+                                    </ol>
+                                </div>*@
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
@@ -286,7 +294,7 @@
 
                                     <hr />
 
-                                    <div style="width:100%; margin:0 auto;">
+                                    <div class="table-responsive" style="width:100%; margin:0 auto;">
                                         <table id="userTable">
                                             <thead>
                                                 <tr>
@@ -358,7 +366,11 @@
     @*<script src="~/TemplateAssets/DashBord/plugins/moment/moment.min.js"></script>*@
     <script src="~/TemplateAssets/DashBord/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
 
-    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js"></script>
 
     <!-- OPTIONAL SCRIPTS -->
     @*<script src="~/TemplateAssets/DashBord/dist/js/demo.js"></script>*@

@@ -1810,4 +1810,10 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
+
+
+  jQuery(document).ready(function () {
+        jQuery('#loading').fadeOut(3000);
+        });
+
 //# sourceMappingURL=adminlte.js.map

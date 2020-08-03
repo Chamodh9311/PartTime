@@ -10,6 +10,10 @@
 $(document).ready(function () {
 
     $('#SchedulerTable').DataTable({
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
         "ajax": {
             "url": "/Scheduler/GetActiveEvents",
             "type": "GET",
@@ -183,6 +187,10 @@ function SaveEvent() {
 
     $('#SchedulerTable').DataTable({
         destroy: true,
+        rowReorder: {
+            selector: 'td:nth-child(2)'
+        },
+        responsive: true,
         "ajax": {
             "type": "GET",
             "url": "/Scheduler/EventSchedulerSave?brands=" + encodeURIComponent(schedulerRequest.Brands),
