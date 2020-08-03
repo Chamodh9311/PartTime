@@ -27,43 +27,27 @@ $(document).ready(function () {
             { "data": "PromoterCount", "autoWidth": true },
             { "data": "District", "autoWidth": true },
             { "data": "Town", "autoWidth": true },
+            { "data": "Time", "autoWidth": true },
+            { "data": "Payment", "autoWidth": true },
             { "data": "Comments", "autoWidth": true }
         ],
-        //"columnDefs": [{
-        //    "targets": 8,
-        //    "data": 'Approved',
-        //    "render": function (data, type, full, meta) {
-        //        var rtnvalue = "";
-        //        if (full.Role == "Promoter") {
-        //            rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Index/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
-        //        }
-        //        else {
-        //            rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Coordinator/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
-        //        }
+        "columnDefs": [{
+            "targets": 10,
+            "data": 'Id',
+            "render": function (data, type, full, meta) {
+                var rtnvalue = "";
 
-        //        if (data == "False") {
-        //            rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-primary btn-xs" data-id=' + full.UserId + ' onclick="javascript: approveUser(this);">Approve</a> &nbsp;&nbsp;';
-        //        }
-        //        rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-danger btn-xs" data-id=' + full.UserId + ' onclick="javascript: banUser(this);">Ban</a>';
-        //        return rtnvalue;
-        //    }
-        //}]
+                rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-danger btn-xs" data-id=' + full.Id + ' onclick="javascript: cancleEvent(this);">Cancel</a>';
+                return rtnvalue;
+            }
+        }]
     });
 });
 
 
-function approveUser(element) {
-    var obj = { userId: $(element).data('id') };
-    AjaxCall('/Search/ApproveUser', JSON.stringify(obj), 'POST').done(function (response) {
-        location.reload();
-    }).fail(function (error) {
-        alert(error.StatusText);
-    });
-}
-
-function banUser(element) {
-    var obj = { userId: $(element).data('id') };
-    AjaxCall('/Search/BanUser', JSON.stringify(obj), 'POST').done(function (response) {
+function cancleEvent(element) {
+    var obj = { Id: $(element).data('id') };
+    AjaxCall('/Scheduler/CancleUser', JSON.stringify(obj), 'POST').done(function (response) {
         location.reload();
     }).fail(function (error) {
         alert(error.StatusText);
@@ -177,8 +161,10 @@ function SaveEvent() {
     schedulerRequest.District = $('#currentdistrict option:selected').text();
     schedulerRequest.Town = $('#currentcity option:selected').text();
     schedulerRequest.Comments = $('#comments').val();
-    //schedulerRequest.SalesYears = $('#years').val();
-    //schedulerRequest.Iam = $('#iam option:selected').val();
+
+    schedulerRequest.Time = $('#time').val();
+    schedulerRequest.Payment = $('#payment').val();
+
     //schedulerRequest.English = $('#english option:selected').val();
     //schedulerRequest.Tamil = $('#tamil option:selected').val();
     //schedulerRequest.Calendar = $('#calender').val();
@@ -206,27 +192,20 @@ function SaveEvent() {
             { "data": "PromoterCount", "autoWidth": true },
             { "data": "District", "autoWidth": true },
             { "data": "Town", "autoWidth": true },
+            { "data": "Time", "autoWidth": true },
+            { "data": "Payment", "autoWidth": true },
             { "data": "Comments", "autoWidth": true }
         ],
-        //"columnDefs": [{
-        //    "targets": 8,
-        //    "data": 'Approved',
-        //    "render": function (data, type, full, meta) {
-        //        var rtnvalue = "";
-        //        if (full.Role == "Promoter") {
-        //            rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Index/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
-        //        }
-        //        else {
-        //            rtnvalue = '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Admin/Coordinator/#' + full.UserId + '" role="button" class="btn btn-success btn-xs">View</a> &nbsp;&nbsp;  ';
-        //        }
+        "columnDefs": [{
+            "targets": 10,
+            "data": 'Id',
+            "render": function (data, type, full, meta) {
+                var rtnvalue = "";
 
-        //        if (data == "False") {
-        //            rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-primary btn-xs" data-id=' + full.UserId + ' onclick="javascript: approveUser(this);">Approve</a> &nbsp;&nbsp;';
-        //        }
-        //        rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-danger btn-xs" data-id=' + full.UserId + ' onclick="javascript: banUser(this);">Ban</a>';
-        //        return rtnvalue;
-        //    }
-        //}]
+                rtnvalue = rtnvalue + '<a href="javascript: void(0);" class="btn btn-danger btn-xs" data-id=' + full.Id + ' onclick="javascript: cancleEvent(this);">Cancel</a>';
+                return rtnvalue;
+            }
+        }]
     });
 
     location.reload();

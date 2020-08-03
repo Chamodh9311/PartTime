@@ -160,7 +160,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Event Scheduler</h1>
+                                <h1><strong>Event Scheduler</strong></h1>
                             </div>
                             @*<div class="col-sm-6">
                                     <ol class="breadcrumb float-sm-right">
@@ -181,9 +181,9 @@
                                 <div class="row">
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Gig Name :<span class="bh-required"></span> </label>
+                                        <label class="control-label">Event Name :<span class="bh-required"></span> </label>
                                         <br />
-                                        <input id="name" class="form-control" style="width:100%" ng-hide="true" />
+                                        <input id="name" placeholder="name your event" class="form-control" style="width:100%" ng-hide="true" />
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
@@ -219,17 +219,26 @@
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Time :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="time" style="width: 80%;" placeholder="7AM To 5PM" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Payment :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="payment" style="width: 80%;" placeholder="1000 per hour" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
                                         <label class="control-label">Comments :<span class="bh-required"></span> </label>
                                         <br />
-                                        <input id="comments" class="form-control" style="width:100%" ng-hide="true" />
+                                        <input id="comments" class="form-control" placeholder="speical notes for promoters" style="width:100%" ng-hide="true" />
                                     </div>
 
 
                                     <div class="col-md-12 form-group" style="margin-bottom: 15px;">
                                         <button type="button" class="btn btn-info pull-left" style="margin-right: 15px;" onclick="javascript: return SaveEvent();"><span aria-hidden="true"></span>Save </button>
 
-                                        <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchEvents();"><span aria-hidden="true"></span>Search </button>
-
+                                      @*  <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchEvents();"><span aria-hidden="true"></span>Search </button>*@
                                     </div>
 
                                     <hr />
@@ -238,14 +247,17 @@
                                         <table id="SchedulerTable">
                                             <thead>
                                                 <tr>
-                                                    <th>Gig Name</th>
+                                                    <th>Name</th>
                                                     <th>Brands</th>
                                                     <th>From Date</th>
                                                     <th>To Date</th>
-                                                    <th>Promoter Count</th>
+                                                    <th>Required Promoter Count</th>
                                                     <th>City</th>
                                                     <th>Town</th>
+                                                    <th>Time</th>
+                                                    <th>Payment</th>
                                                     <th>Comments</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -311,20 +323,6 @@
 
     <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js"></script>
 
-    <!-- OPTIONAL SCRIPTS -->
-    @*<script src="~/TemplateAssets/DashBord/dist/js/demo.js"></script>*@
-
-    <!-- PAGE PLUGINS -->
-    <!-- jQuery Mapael -->
-    @*<script src="~/TemplateAssets/DashBord/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-        <script src="~/TemplateAssets/DashBord/plugins/raphael/raphael.min.js"></script>
-        <script src="~/TemplateAssets/DashBord/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-        <script src="~/TemplateAssets/DashBord/plugins/jquery-mapael/maps/usa_states.min.js"></script>*@
-    <!-- ChartJS -->
-    @*<script src="~/TemplateAssets/DashBord/plugins/chart.js/Chart.min.js"></script>*@
-
-    <!-- PAGE SCRIPTS -->
-    @*<script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>*@
 
     @Scripts.Render("~/Scripts/Js/schedule.js?v=20200605")
 

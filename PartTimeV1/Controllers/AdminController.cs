@@ -128,7 +128,6 @@ namespace PartTimeV1.Controllers
             return Json(userProfile, JsonRequestBehavior.AllowGet);
         }
 
-
         [HttpPost]
         public JsonResult UserProfileSubmit(ProfileRequest profileRequest)
         {

@@ -13,6 +13,8 @@ namespace PartTimeV1.Data
         public string District { get; set; }
         public string Town { get; set; }
         public string Comments { get; set; }
+        public string Time { get; set; }
+        public string Payment { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }

@@ -12,8 +12,8 @@ namespace PartTimeV1.Requests
         public string District { get; set; }
         public string Town { get; set; }
         public string Comments { get; set; }
-        //public long Id { get; set; }
-        //public string CreatedId { get; set; }
+        public string Time { get; set; }
+        public string Payment { get; set; }
         //public string ApprovedId { get; set; }
         //public bool Approved { get; set; }
         //public bool Deleted { get; set; }
