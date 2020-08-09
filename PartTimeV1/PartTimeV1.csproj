@@ -239,8 +239,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SiteImages\CoverV1.jpg" />
     <Content Include="SiteImages\favicon.jpg" />
-    <Content Include="SiteImages\JPEG1011.jpg" />
+    <Content Include="SiteImages\JPEG1-02.jpg" />
     <Content Include="SiteImages\Logo.jpg" />
+    <Content Include="SiteImages\LogoTitle.png" />
     <Content Include="SiteImages\P_20160911_145111_BF.jpg" />
     <Content Include="SiteImages\P_20160911_153349.jpg" />
     <Content Include="SiteImages\P_20160917_094654.jpg" />
@@ -254,6 +255,7 @@
     <Content Include="SiteImages\P_20161120_140648.jpg" />
     <Content Include="SiteImages\P_20161210_145534_BF.jpg" />
     <Content Include="SiteImages\P_20170214_135105.jpg" />
+    <Content Include="SiteImages\Transparency-01.png" />
     <Content Include="TemplateAssets\DashBord\dist\css\adminlte.min.css" />
     <Content Include="TemplateAssets\DashBord\dist\img\AdminLTELogo.png" />
     <Content Include="TemplateAssets\DashBord\dist\img\avatar.png" />
