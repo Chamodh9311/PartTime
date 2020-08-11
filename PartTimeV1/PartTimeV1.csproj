@@ -239,6 +239,13 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SiteImages\CoverV1.jpg" />
     <Content Include="SiteImages\favicon.jpg" />
+    <Content Include="SiteImages\IMG-20200421-WA0029%281%29.jpg" />
+    <Content Include="SiteImages\IMG-20200421-WA0035.jpg" />
+    <Content Include="SiteImages\IMG_1517.JPG" />
+    <Content Include="SiteImages\IMG_1551.JPG" />
+    <Content Include="SiteImages\IMG_1566.JPG" />
+    <Content Include="SiteImages\IMG_7358.JPG" />
+    <Content Include="SiteImages\IMG_7482.JPG" />
     <Content Include="SiteImages\JPEG1-02.jpg" />
     <Content Include="SiteImages\Logo.jpg" />
     <Content Include="SiteImages\LogoTitle.png" />
