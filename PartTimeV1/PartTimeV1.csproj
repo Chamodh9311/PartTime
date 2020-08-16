@@ -311,6 +311,7 @@
     <Content Include="TemplateAssets\DashBord\plugins\chart.js\Chart.js" />
     <Content Include="TemplateAssets\DashBord\plugins\chart.js\Chart.min.css" />
     <Content Include="TemplateAssets\DashBord\plugins\chart.js\Chart.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\bower.json" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\daterangepicker.css" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\daterangepicker.js" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\drp.png" />
@@ -320,6 +321,7 @@
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\bundle.js" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\index.html" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\moment.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\package.js" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\website.css" />
@@ -823,8 +825,6 @@
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.ttf" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.woff2" />
-    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\bower.json" />
-    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
     <Content Include="Views\Admin\Users.cshtml" />
     <Content Include="Views\Profile\Coordinator.cshtml" />
     <Content Include="Views\Admin\Calendar.cshtml" />

@@ -26,7 +26,10 @@ $(document).ready(function () {
             { "data": "FromDate", "autoWidth": true },
             { "data": "ToDate", "autoWidth": true },
             { "data": "PromoterCount", "autoWidth": true },
+            { "data": "District", "autoWidth": true },
             { "data": "Town", "autoWidth": true },
+            { "data": "Time", "autoWidth": true },
+            { "data": "Payment", "autoWidth": true },
             { "data": "Comments", "autoWidth": true }
         ]
     });
@@ -49,7 +52,7 @@ window.onload = function () {
             }
             else {
                 $('a[href*="profileView"]').attr('href', '/Profile/Coordinator');
-            }
+            } 
 
             window.UserId = response.UserId;
         }
