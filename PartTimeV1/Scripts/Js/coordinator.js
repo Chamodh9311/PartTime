@@ -579,3 +579,111 @@ function submitFunction() {
             }
         });
 }
+
+window.onload = function () {
+    //if (window.location.href.indexOf("#") > -1) {
+
+    var obj = { userId: window.location.href.split('#')[1] };
+    AjaxCall('/Admin/GetUser', JSON.stringify(obj), 'POST').done(function (response) {
+        if (response != null) {
+            document.getElementById("fullname").value = response.FullName;
+            document.getElementById("shortname").value = response.ShortName;
+            document.getElementById("nicno").value = response.NIC;
+            document.getElementById("Image1").innerHTML = response.Photo1;
+            document.getElementById("Image2").innerHTML = response.Photo2;
+            document.getElementById("Image3").innerHTML = response.Photo3;
+            document.getElementById("Image4").innerHTML = response.Photo4;
+            document.getElementById("Image5").innerHTML = response.Photo5;
+            document.getElementById("mobile01").value = response.Mobile1;
+            document.getElementById("mobile02").value = response.Mobile2;
+            document.getElementById("mobile03").value = response.Mobile2;
+            document.getElementById("whatsApp1").checked = response.Mobile1Whatsapp;
+            document.getElementById("viber1").checked = response.Mobile1Viber;
+            document.getElementById("whatsApp2").checked = response.Mobile2Whatsapp;
+            document.getElementById("viber2").checked = response.Mobile2Viber;
+            document.getElementById("whatsApp3").checked = response.Mobile3Whatsapp;
+            document.getElementById("viber3").checked = response.Mobile3Viber;
+
+            //var date1 = response.DOB.split('(').pop().split(')')[0];
+            //console.log(date1);
+            ////document.getElementById("dob").value = 
+            //var myDate = new Date(date1);
+            //alert(myDate.getFullYear() + '-' + ('0' + (myDate.getMonth() + 1)).slice(-2) + '-' + ('0' + myDate.getDate()).slice(-2));
+            //console.log(d);
+
+            document.getElementById("age").value = response.Age;
+
+
+            document.getElementById("genderM").checked = response.GenderMale;
+            document.getElementById("genderF").checked = response.GenderFemale;
+
+            $('#currentdistrict option:selected').text(response.CurrentDistrict);
+            //$('#currentcity option:selected').text(response.CurrentTown);
+            $('#homedistrict option:selected').text(response.HomeDistrict);
+            //$('#hometown option:selected').text(response.HomeTown);
+
+            //$('#currentdistrict').trigger('change');       
+
+            //$('#currentdistrict option:selected').text(response.CurrentDistrict);
+            $('#currentcity option:selected').text(response.CurrentTown);
+            //$('#homedistrict option:selected').text(response.HomeDistrict);
+            $('#hometown option:selected').text(response.HomeTown);
+
+            document.getElementById("tsizeS").checked = response.ShirtSizeS;
+            document.getElementById("tsizeM").checked = response.ShirtSizeM;
+            document.getElementById("tsizeL").checked = response.ShirtSizeL;
+            document.getElementById("tsizeXS").checked = response.ShirtSizeXS;
+
+            document.getElementById("student").checked = response.IamStudent;
+            document.getElementById("studentdetails1").value = response.University;
+            document.getElementById("studentdetails2").value = response.Course;
+            document.getElementById("studentdetails3").value = response.UniYear;
+
+            document.getElementById("employee").checked = response.IamFullTimeEmployeed;
+            document.getElementById("employeedetails1").value = response.Company;
+            document.getElementById("employeedetails2").value = response.Branch;
+            document.getElementById("employeedetails3").value = response.Designation;
+
+            document.getElementById("parttime").checked = response.IamFullTimePromoter;
+
+            document.getElementById("freelanceYes").checked = response.IamFreelancer;
+
+            document.getElementById("freelancerdetailsdrp").value = response.FreelancerJobs;
+            document.getElementById("otherExp").value = response.FreelancerOtherJobs;
+
+            document.getElementById("professionalYes").value = response.IamProfessionalSelfemployed;
+
+            document.getElementById("professionaldetailsdrp").value = response.SelfemployedJobs;
+            document.getElementById("professionalexp").value = response.SelfemployedOtherJobs;
+
+            document.getElementById("englishA").checked = response.EnglishA;
+            document.getElementById("englishB").checked = response.EnglishB;
+            document.getElementById("englishC").checked = response.EnglishC;
+            document.getElementById("tamilA").checked = response.TamilA;
+            document.getElementById("tamilB").checked = response.TamilB;
+            document.getElementById("tamilC").checked = response.TamilC;
+
+            document.getElementById("experienceno").checked = response.SalesExperienceNo;
+            document.getElementById("experienceYes").checked = response.SalesExperienceYes;
+            document.getElementById("promoexperience").value = response.SalesExperienceYears;
+
+            document.getElementById("brandnames").value = response.MainBrands;
+            document.getElementById("otherbrandnames").value = response.MainBrandsOthers
+
+            document.getElementById("otherpromoexperience").value = response.OtherBrandExperience;
+            document.getElementById("otherexperience").value = response.OtherBarndExperienceOther;
+
+            document.getElementById("company").checked = response.PreviousAdvertisingCompany;
+            document.getElementById("peoplenames").checked = response.PreviousAdvertisingSupervisors;
+
+            document.getElementById("accountholder").value = response.AccountHolder;
+            document.getElementById("accountnumber").value = response.AccountNumber;
+            document.getElementById("bank").value = response.BankName;
+            document.getElementById("branch").value = response.BankBranch;
+            window.UserId = response.UserId;
+        }
+    }).fail(function (error) {
+        alert(error);
+    });
+    //};
+}

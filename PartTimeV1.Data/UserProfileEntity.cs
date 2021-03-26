@@ -25,7 +25,6 @@ namespace PartTimeV1.Data
         public DateTime DOB { get; set; }
         public string Age { get; set; }
 
-
         public bool GenderMale { get; set; }
         public bool GenderFemale { get; set; }
         public string CurrentDistrict { get; set; }
@@ -36,22 +35,22 @@ namespace PartTimeV1.Data
         public bool ShirtSizeM { get; set; }
         public bool ShirtSizeL { get; set; }
         public bool ShirtSizeXS { get; set; }
-        public bool Student { get; set; }
+        public bool IamStudent { get; set; }
         public string University { get; set; }
         public string Course { get; set; }
         public string UniYear { get; set; }
-        public bool Employeed { get; set; }
+        public bool IamFullTimeEmployeed { get; set; }
         public string Company { get; set; }
         public string Branch { get; set; }
         public string Designation { get; set; }
-        public bool FullTimePromoter { get; set; }
-        public bool IsFreelancer { get; set; }
-        public string Freelancer { get; set; }
-        public string FreelancerOther { get; set; }
-        public bool IsSelfemployed { get; set; }
-        public string Selfemployed { get; set; }
-        public string SelfemployedOther { get; set; }
-        public bool PartTimePromoter { get; set; }
+        public bool IamFullTimePromoter { get; set; }
+        public bool IamFreelancer { get; set; }
+        public string FreelancerJobs { get; set; }
+        public string FreelancerOtherJobs { get; set; }
+        public bool IamProfessionalSelfemployed { get; set; }
+        public string SelfemployedJobs { get; set; }
+        public string SelfemployedOtherJobs { get; set; }
+        public bool IamLookingForPartTimePromotes { get; set; }
         public bool EnglishA { get; set; }
         public bool EnglishB { get; set; }
         public bool EnglishC { get; set; }
@@ -61,10 +60,10 @@ namespace PartTimeV1.Data
         public bool SalesExperienceNo  { get; set; }
         public bool SalesExperienceYes { get; set; }
         public string SalesExperienceYears { get; set; }
-        public string Brands { get; set; }
-        public string BrandsOther { get; set; }
-        public string OtherExperience { get; set; }
-        public string OtherExperienceOther { get; set; }
+        public string MainBrands { get; set; }
+        public string MainBrandsOthers { get; set; }
+        public string OtherBrandExperience { get; set; }
+        public string OtherBarndExperienceOther { get; set; }
         public bool Facebook { get; set; }
         public bool Instagram { get; set; }
         public bool PartTimelkStaff { get; set; }
@@ -77,9 +76,8 @@ namespace PartTimeV1.Data
         //Bank Details
         public string AccountHolder { get; set; }
         public string AccountNumber { get; set; }
-        public string Bank { get; set; }
+        public string BankName { get; set; }
         public string BankBranch { get; set; }
-
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
@@ -90,5 +88,7 @@ namespace PartTimeV1.Data
         public bool Banned { get; set; }
         public DateTime CreateOn { get; set; }
         public int Version { get; set; }
+
+        public string ProfilePictureComments { get; set; }
     }
 }

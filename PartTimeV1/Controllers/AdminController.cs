@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using PartTimeV1.Data;
 using PartTimeV1.Requests;
 using System;
+using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
@@ -9,13 +12,53 @@ namespace PartTimeV1.Controllers
     [Authorize]
     public class AdminController : BaseController
     {
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+        public AdminController()
+        {
+        }
+
+        public AdminController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        {
+            UserManager = userManager;
+            SignInManager = signInManager;
+        }
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
 
         public ActionResult Index()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Coordinator , User")]
+        public ActionResult Schedule()
+        {
+            return View();
+        }
+
         public ActionResult Coordinator()
         {
             return View();
@@ -26,6 +69,7 @@ namespace PartTimeV1.Controllers
             return View();
         }
 
+        //[Authorize(Roles = "Admin , Coordinator")]
         public ActionResult Users()
         {
             return View();
@@ -50,10 +94,24 @@ namespace PartTimeV1.Controllers
         }
 
         [HttpPost]
+        public JsonResult GetUser(string userId)
+        {
+            if (userId == null)
+            {
+                userId = User.Identity.GetUserId();
+            }
+            var userProfile = this.manager.UserProfileRepository.SelectUserProfile(userId);
+
+            return Json(userProfile, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
         public JsonResult UserProfileSubmit(ProfileRequest profileRequest)
         {
             try
             {
+                //updatePromotorProfile(ProfileRequest profileRequest);
+
                 UserProfileEntity userProfileEntity = new UserProfileEntity()
                 {
                     FullName = profileRequest.FullName,
@@ -68,9 +126,11 @@ namespace PartTimeV1.Controllers
                     Mobile1Whatsapp = profileRequest.Mobile1Whatsapp,
                     Mobile1Viber = profileRequest.Mobile1Viber,
                     Mobile2 = profileRequest.Mobile2,
-                    Mobile3Whatsapp = profileRequest.Mobile2Whatsapp,
-                    Mobile3Viber = profileRequest.Mobile2Viber,
+                    Mobile2Whatsapp = profileRequest.Mobile2Whatsapp,
+                    Mobile2Viber = profileRequest.Mobile2Viber,
                     Mobile3 = profileRequest.Mobile3,
+                    Mobile3Whatsapp = profileRequest.Mobile3Whatsapp,
+                    Mobile3Viber = profileRequest.Mobile3Viber,
                     DOB = DateTime.ParseExact(profileRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Age = profileRequest.Age,
 
@@ -84,22 +144,22 @@ namespace PartTimeV1.Controllers
                     ShirtSizeM = profileRequest.ShirtSizeM,
                     ShirtSizeL = profileRequest.ShirtSizeL,
                     ShirtSizeXS = profileRequest.ShirtSizeXS,
-                    Student = profileRequest.Student,
+                    IamStudent = profileRequest.Student,
                     University = profileRequest.University,
                     Course = profileRequest.Course,
                     UniYear = profileRequest.UniYear,
-                    Employeed = profileRequest.Employeed,
+                    IamFullTimeEmployeed = profileRequest.Employeed,
                     Company = profileRequest.Company,
                     Branch = profileRequest.Branch,
                     Designation = profileRequest.Designation,
-                    FullTimePromoter = profileRequest.FullTimePromoter,
-                    IsFreelancer = profileRequest.IsFreelancer,
-                    Freelancer = profileRequest.Freelancer,
-                    FreelancerOther = profileRequest.FreelancerOther,
-                    IsSelfemployed = profileRequest.IsSelfemployed,
-                    Selfemployed = profileRequest.Selfemployed,
-                    SelfemployedOther = profileRequest.SelfemployedOther,
-                    PartTimePromoter = profileRequest.PartTimePromoter,
+                    IamFullTimePromoter = profileRequest.FullTimePromoter,
+                    IamFreelancer = profileRequest.IsFreelancer,
+                    FreelancerJobs = profileRequest.Freelancer,
+                    FreelancerOtherJobs = profileRequest.FreelancerOther,
+                    IamProfessionalSelfemployed = profileRequest.IsSelfemployed,
+                    SelfemployedJobs = profileRequest.Selfemployed,
+                    SelfemployedOtherJobs = profileRequest.SelfemployedOther,
+                    IamLookingForPartTimePromotes = profileRequest.PartTimePromoter,
                     EnglishA = profileRequest.EnglishA,
                     EnglishB = profileRequest.EnglishB,
                     EnglishC = profileRequest.EnglishC,
@@ -109,10 +169,10 @@ namespace PartTimeV1.Controllers
                     SalesExperienceNo = profileRequest.SalesExperienceNo,
                     SalesExperienceYes = profileRequest.SalesExperienceYes,
                     SalesExperienceYears = profileRequest.SalesExperienceYears == null ? null : profileRequest.SalesExperienceYears.Replace("_", ""),
-                    Brands = profileRequest.Brands == null ? null : string.Join(",", profileRequest.Brands),
-                    BrandsOther = profileRequest.BrandsOther,
-                    OtherExperience = profileRequest.OtherExperience == null ? null : string.Join(",", profileRequest.OtherExperience),
-                    OtherExperienceOther = profileRequest.OtherExperienceOther,
+                    MainBrands = profileRequest.Brands == null ? null : string.Join(",", profileRequest.Brands),
+                    MainBrandsOthers = profileRequest.BrandsOther,
+                    OtherBrandExperience = profileRequest.OtherExperience == null ? null : string.Join(",", profileRequest.OtherExperience),
+                    OtherBarndExperienceOther = profileRequest.OtherExperienceOther,
                     Facebook = profileRequest.Facebook,
                     Instagram = profileRequest.Instagram,
                     PartTimelkStaff = profileRequest.PartTimelkStaff,
@@ -124,8 +184,10 @@ namespace PartTimeV1.Controllers
 
                     AccountHolder = profileRequest.AccountHolder,
                     AccountNumber = profileRequest.AccountNumber,
-                    Bank = profileRequest.Bank,
+                    BankName = profileRequest.Bank,
                     BankBranch = profileRequest.BankBranch,
+
+                    ProfilePictureComments = profileRequest.ProfilePictureComments,
 
                     UserId = User.Identity.GetUserId(),
                     Role = "User",
@@ -160,11 +222,20 @@ namespace PartTimeV1.Controllers
         {
             try
             {
+                var userId = User.Identity.GetUserId();
+                var user = UserManager.FindById(userId);
+
+                if (UserManager.IsInRole(user.Id, "User"))
+                {
+                    UserManager.RemoveFromRole(userId, "User");
+                    UserManager.AddToRole(userId, "Coordinator");
+                }
+
                 CoordinatorEntity coordinatorEntity = new CoordinatorEntity()
                 {
                     FullName = coordinatorRequest.FullName,
                     ShortName = coordinatorRequest.ShortName,
-                    NIC = coordinatorRequest.NIC.Replace("_",""),
+                    NIC = coordinatorRequest.NIC.Replace("_", ""),
                     Photo1 = coordinatorRequest.Photo1,
                     Photo2 = coordinatorRequest.Photo2,
                     Photo3 = coordinatorRequest.Photo3,
@@ -174,9 +245,11 @@ namespace PartTimeV1.Controllers
                     Mobile1Whatsapp = coordinatorRequest.Mobile1Whatsapp,
                     Mobile1Viber = coordinatorRequest.Mobile1Viber,
                     Mobile2 = coordinatorRequest.Mobile2,
-                    Mobile3Whatsapp = coordinatorRequest.Mobile2Whatsapp,
-                    Mobile3Viber = coordinatorRequest.Mobile2Viber,
+                    Mobile2Whatsapp = coordinatorRequest.Mobile2Whatsapp,
+                    Mobile2Viber = coordinatorRequest.Mobile2Viber,
                     Mobile3 = coordinatorRequest.Mobile3,
+                    Mobile3Whatsapp = coordinatorRequest.Mobile3Whatsapp,
+                    Mobile3Viber = coordinatorRequest.Mobile3Viber,
                     DOB = DateTime.ParseExact(coordinatorRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Age = coordinatorRequest.Age,
 
@@ -190,22 +263,22 @@ namespace PartTimeV1.Controllers
                     ShirtSizeM = coordinatorRequest.ShirtSizeM,
                     ShirtSizeL = coordinatorRequest.ShirtSizeL,
                     ShirtSizeXS = coordinatorRequest.ShirtSizeXS,
-                    Student = coordinatorRequest.Student,
+                    IamStudent = coordinatorRequest.Student,
                     University = coordinatorRequest.University,
                     Course = coordinatorRequest.Course,
                     UniYear = coordinatorRequest.UniYear,
-                    Employeed = coordinatorRequest.Employeed,
+                    IamFullTimeEmployeed = coordinatorRequest.Employeed,
                     Company = coordinatorRequest.Company,
                     Branch = coordinatorRequest.Branch,
                     Designation = coordinatorRequest.Designation,
-                    FullTimePromoter = coordinatorRequest.FullTimePromoter,
-                    IsFreelancer = coordinatorRequest.IsFreelancer,
-                    Freelancer = coordinatorRequest.Freelancer,
-                    FreelancerOther = coordinatorRequest.FreelancerOther,
-                    IsSelfemployed = coordinatorRequest.IsSelfemployed,
-                    Selfemployed = coordinatorRequest.Selfemployed,
-                    SelfemployedOther = coordinatorRequest.SelfemployedOther,
-                    PartTimePromoter = coordinatorRequest.PartTimePromoter,
+                    IamFullTimePromoter = coordinatorRequest.FullTimePromoter,
+                    IamFreelancer = coordinatorRequest.IsFreelancer,
+                    FreelancerJobs = coordinatorRequest.Freelancer,
+                    FreelancerOtherJobs = coordinatorRequest.FreelancerOther,
+                    IamProfessionalSelfemployed = coordinatorRequest.IsSelfemployed,
+                    SelfemployedJobs = coordinatorRequest.Selfemployed,
+                    SelfemployedOtherJobs = coordinatorRequest.SelfemployedOther,
+                    IamLookingForPartTimePromotes = coordinatorRequest.PartTimePromoter,
                     EnglishA = coordinatorRequest.EnglishA,
                     EnglishB = coordinatorRequest.EnglishB,
                     EnglishC = coordinatorRequest.EnglishC,
@@ -215,19 +288,21 @@ namespace PartTimeV1.Controllers
                     SalesExperienceNo = coordinatorRequest.SalesExperienceNo,
                     SalesExperienceYes = coordinatorRequest.SalesExperienceYes,
                     SalesExperienceYears = coordinatorRequest.SalesExperienceYears == null ? null : coordinatorRequest.SalesExperienceYears.Replace("_", ""),
-                    Brands = coordinatorRequest.Brands == null ? null : string.Join(",", coordinatorRequest.Brands),
-                    BrandsOther = coordinatorRequest.BrandsOther,
-                    OtherExperience = coordinatorRequest.OtherExperience == null ? null : string.Join(",", coordinatorRequest.OtherExperience),
-                    OtherExperienceOther = coordinatorRequest.OtherExperienceOther,
+                    MainBrands = coordinatorRequest.Brands == null ? null : string.Join(",", coordinatorRequest.Brands),
+                    MainBrandsOthers = coordinatorRequest.BrandsOther,
+                    OtherBrandExperience = coordinatorRequest.OtherExperience == null ? null : string.Join(",", coordinatorRequest.OtherExperience),
+                    OtherBarndExperienceOther = coordinatorRequest.OtherExperienceOther,
                     PreviousAdvertisingCompany = coordinatorRequest.PreviousAdvertisingCompany,
                     PreviousAdvertisingSupervisors = coordinatorRequest.PreviousAdvertisingSupervisors,
 
                     AccountHolder = coordinatorRequest.AccountHolder,
                     AccountNumber = coordinatorRequest.AccountNumber,
-                    Bank = coordinatorRequest.Bank,
+                    BankName = coordinatorRequest.Bank,
                     BankBranch = coordinatorRequest.BankBranch,
 
-                    UserId = User.Identity.GetUserId(),
+                    ProfilePictureComments = coordinatorRequest.ProfilePictureComments,
+
+                    UserId = userId,
                     Role = "Coordinator",
                     Approved = false,
                     Deleted = false,

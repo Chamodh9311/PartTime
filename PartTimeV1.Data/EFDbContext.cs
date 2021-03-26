@@ -16,6 +16,7 @@ namespace PartTimeV1.Data
             modelBuilder.Configurations.Add(new UserProfileEntityMap());
             modelBuilder.Configurations.Add(new CoordinatorEntityMap());
             modelBuilder.Configurations.Add(new BrandsListsEntityMap());
+            modelBuilder.Configurations.Add(new SchedulerEntityMap());
 
             base.OnModelCreating(modelBuilder);
         }

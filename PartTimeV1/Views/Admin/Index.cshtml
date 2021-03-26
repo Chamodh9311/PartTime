@@ -46,14 +46,24 @@
 
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+     
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    @Html.ActionLink("Hi " + User.Identity.GetUserName() + "-", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>
+                                <li>
+                                    <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-power-off"></i></a>
+                                </li>
+                            </ul>
+                        }
+                    }
+         
             </form>
 
             <!-- Right navbar links -->
@@ -87,24 +97,7 @@
                         </div>
                     </li>*@
 
-                <li class="nav-item dropdown">
-                    @if (Request.IsAuthenticated)
-                    {
-                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                        {
-                            @Html.AntiForgeryToken()
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    @Html.ActionLink("Hi " + User.Identity.GetUserName() + "-", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                </li>
-                                <li>
-                                    <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-power-off"></i></a>
-                                </li>
-                            </ul>
-                        }
-                    }
-                </li>
+         
 
             </ul>
         </nav>
@@ -138,6 +131,12 @@
                                     Users
                                 </p>
                             </a>
+                            <a href="@Url.Action("Schedule", "Admin")" class="nav-link">
+                                <i class="nav-icon fas fa-file-alt"></i>
+                                <p>
+                                    Schedule
+                                </p>
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -162,7 +161,7 @@
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item">
-                                        @*<a href="#">Home</a>*@
+                                        <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
                                     </li>
                                 </ol>
                             </div>

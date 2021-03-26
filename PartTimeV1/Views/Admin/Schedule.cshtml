@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Part Time | Search</title>
+    <title>Part Time | Scheduler</title>
 
     <!-- Favicons -->
     <link href="~/SiteImages/favicon.jpg" rel="icon">
@@ -130,13 +130,13 @@
                                     Registration
                                 </p>
                             </a>
-                            <a href="@Url.Action("Users", "Admin")" class="nav-link active">
+                            <a href="@Url.Action("Users", "Admin")" class="nav-link">
                                 <i class="nav-icon fas fa-cloud-download-alt"></i>
                                 <p>
                                     Users
                                 </p>
                             </a>
-                            <a href="@Url.Action("Schedule", "Admin")" class="nav-link">
+                            <a href="@Url.Action("Schedule", "Admin")" class="nav-link active">
                                 <i class="nav-icon fas fa-file-alt"></i>
                                 <p>
                                     Schedule
@@ -161,12 +161,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>User Search</h1>
+                                <h1>Event Scheduler</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
-                                    <a href="@Url.Action("Schedule", "Admin")" class="nav-link active">Scheduler</a>
+                                    <a href="@Url.Action("Users", "Admin")" class="nav-link active">Search</a>
                                 </ol>
                             </div>
                         </div>
@@ -182,126 +182,71 @@
                                 <div class="row">
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Full Name :<span class="bh-required"></span> </label>
+                                        <label class="control-label">Gig Name :<span class="bh-required"></span> </label>
                                         <br />
                                         <input id="name" class="form-control" style="width:100%" ng-hide="true" />
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">NIC :<span class="bh-required"></span> </label>
-                                        <br />
-                                        <input id="nic" class="form-control" style="width:100%" ng-hide="true" />
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Age :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="age" style="width: 80%;" placeholder="" type="text">
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label"> Current District :<span class="bh-required"></span> </label>
-                                        <select id="currentdistrict" style="height: 32px;width: 100%;" ></select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Current Town :<span class="bh-required"></span> </label>
-                                        <select id="currentcity" style="height: 32px;width: 100%;"></select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label"> Home District :<span class="bh-required"></span> </label>
-                                        <select id="homedistrict" style="height: 32px;width: 100%;"></select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Home Town :<span class="bh-required"></span> </label>
-                                        <select id="hometown" style="height: 32px;width: 100%;"> </select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Gender :<span class="bh-required"></span> </label>
-                                        <select id="gender" style="height: 32px;width: 100%;">
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Sales Promotion Experience (years) :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="years" style="width: 80%;" placeholder="" type="text">
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">I am :<span class="bh-required"></span> </label>
-                                        <select id="iam" style="height: 32px;width: 100%;">
-                                            <option value="1">Student</option>
-                                            <option value="2">Full Time Employed</option>
-                                            <option value="3">Full Time Promoter</option>
-                                            <option value="4">Freelancer</option>
-                                            <option value="5">Professional/Self employed</option>
-                                            <option value="6">Searching for part time work on weekends or selected days</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label"> English Speaking :<span class="bh-required"></span> </label>
-                                        <select id="english" style="height: 32px;width: 100%;">
-                                            <option value="1">Fluent</option>
-                                            <option value="2">Normal</option>
-                                            <option value="3">Can`t</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Tamil Speaking:<span class="bh-required"></span> </label>
-                                        <select id="tamil" style="height: 32px;width: 100%;">
-                                            <option value="1">Fluent</option>
-                                            <option value="2">Normal</option>
-                                            <option value="3">Can`t</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Calendar :<span class="bh-required"></span> </label>
-                                        <input class="form-control" id="calender" style="width: 80%;" placeholder="" type="text">
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Look:<span class="bh-required"></span> </label>
-                                        <select id="looking" style="height: 32px;width: 100%;">
-                                            <option value="1">Good</option>
-                                            <option value="2">Average</option>
-                                            <option value="3">Normal</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label>Brands:</label>
+                                        <label>Brands :</label>
                                         <div class="select2-blue">
                                             <select id="brandnames" class="select2" multiple="multiple" data-placeholder="-Select Brands-" data-dropdown-css-class="select2-blue" style="width: 100%;"></select>
                                         </div>
                                     </div>
 
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label>From Date :</label>
+                                        <input id="fromDate" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label>To Date :</label>
+                                        <input id="toDate" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Required Promoter Count :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="promoterCount" style="width: 80%;" placeholder="" type="number">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> District :<span class="bh-required"></span> </label>
+                                        <select id="currentdistrict" style="height: 32px;width: 100%;"></select>
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Town :<span class="bh-required"></span> </label>
+                                        <select id="currentcity" style="height: 32px;width: 100%;"></select>
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label">Comments :<span class="bh-required"></span> </label>
+                                        <br />
+                                        <input id="comments" class="form-control" style="width:100%" ng-hide="true" />
+                                    </div>
+
+
                                     <div class="col-md-12 form-group" style="margin-bottom: 15px;">
-                                        <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return searchUsers();"><span aria-hidden="true"></span>Search </button>
-                                        @* <button type="button" class="btn btn-link pull-left" style="margin-right: 15px;" onclick="javascript:return ClearData();"><span aria-hidden="true"></span>Clear Search</button>*@
+                                        <button type="button" class="btn btn-info pull-left" style="margin-right: 15px;" onclick="javascript: return SaveEvent();"><span aria-hidden="true"></span>Save </button>
+
+                                        <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchEvents();"><span aria-hidden="true"></span>Search </button>
+
                                     </div>
 
                                     <hr />
 
                                     <div style="width:100%; margin:0 auto;">
-                                        <table id="userTable">
+                                        <table id="SchedulerTable">
                                             <thead>
                                                 <tr>
-                                                    <th>Full Name</th>
-                                                    <th>NIC</th>
-                                                    <th>DOB</th>
-                                                    <th>Mobile</th>
-                                                    <th>Age</th>
-                                                    <th>Current City</th>
-                                                    <th>Home Town</th>
-                                                    <th>Role</th>
-                                                    <th></th>
+                                                    <th>Gig Name</th>
+                                                    <th>Brands</th>
+                                                    <th>From Date</th>
+                                                    <th>To Date</th>
+                                                    <th>Promoter Count</th>
+                                                    <th>City</th>
+                                                    <th>Town</th>
+                                                    <th>Comments</th>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -378,7 +323,7 @@
     <!-- PAGE SCRIPTS -->
     @*<script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>*@
 
-    @Scripts.Render("~/Scripts/Js/users.js?v=20200605")
+    @Scripts.Render("~/Scripts/Js/schedule.js?v=20200605")
 
 </body>
 </html>

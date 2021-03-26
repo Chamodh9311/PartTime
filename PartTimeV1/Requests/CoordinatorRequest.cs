@@ -72,5 +72,6 @@ namespace PartTimeV1.Requests
         public string AccountNumber { get; set; }
         public string Bank { get; set; }
         public string BankBranch { get; set; }
+        public string ProfilePictureComments { get; set; }
     }
 }
