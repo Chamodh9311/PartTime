@@ -118,14 +118,19 @@ namespace PartTimeV1.Controllers
                 userId = User.Identity.GetUserId();
             }
 
-            var userProfile = this.manager.PromoterProfileRepository.SelectUserProfile(userId);
+            var userProfile = this.manager.PromoterProfileRepository.SelectUserProfile(userId);          
 
-            if (userProfile == null)
+            if (userProfile != null)
             {
-                var coordinatorProfile = this.manager.PromoterProfileRepository.SelectUserProfile(userId);
+                return Json(userProfile, JsonRequestBehavior.AllowGet); 
+            }
+            else
+            {
+                var coordinatorProfile = this.manager.CoordinatorProfileRepository.SelectCoordinatorProfile(userId);
+                return Json(coordinatorProfile, JsonRequestBehavior.AllowGet);
             }
 
-            return Json(userProfile, JsonRequestBehavior.AllowGet);
+            //return Json(userProfile, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

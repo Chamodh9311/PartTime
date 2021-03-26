@@ -21,18 +21,24 @@ $(document).ready(function () {
         },
         "columns": [
             { "data": "GigName", "autoWidth": true },
-            { "data": "Brands", "autoWidth": true },
+            //{ "data": "Brands", "autoWidth": true },
+            { "data": "CoordinatorName", "autoWidth": true },
             { "data": "FromDate", "autoWidth": true },
             { "data": "ToDate", "autoWidth": true },
-            { "data": "PromoterCount", "autoWidth": true },
-            { "data": "District", "autoWidth": true },
-            { "data": "Town", "autoWidth": true },
+            { "data": "Location", "autoWidth": true },
+            //{ "data": "PromoterCount", "autoWidth": true },
+            //{ "data": "District", "autoWidth": true },
+            //{ "data": "Town", "autoWidth": true },
             { "data": "Time", "autoWidth": true },
+            { "data": "NumberOfDays", "autoWidth": true },
             { "data": "Payment", "autoWidth": true },
-            { "data": "Comments", "autoWidth": true }
+            { "data": "PromoterCount", "autoWidth": true },
+            //{ "data": "Time", "autoWidth": true },
+            { "data": "Comments", "autoWidth": true },
+            { "data": "Mobile", "autoWidth": true }
         ],
         "columnDefs": [{
-            "targets": 10,
+            "targets": 11,
             "data": 'Id',
             "render": function (data, type, full, meta) {
                 var rtnvalue = "";
@@ -165,6 +171,10 @@ function SaveEvent() {
     schedulerRequest.Time = $('#time').val();
     schedulerRequest.Payment = $('#payment').val();
 
+    schedulerRequest.Location = $('#location').val();
+    schedulerRequest.Mobile = $('#mobileNumber').val();
+    schedulerRequest.Gender = $('#gender option:selected').val();
+
     //schedulerRequest.English = $('#english option:selected').val();
     //schedulerRequest.Tamil = $('#tamil option:selected').val();
     //schedulerRequest.Calendar = $('#calender').val();
@@ -186,18 +196,24 @@ function SaveEvent() {
         },
         "columns": [
             { "data": "GigName", "autoWidth": true },
-            { "data": "Brands", "autoWidth": true },
+            //{ "data": "Brands", "autoWidth": true },
+            { "data": "CoordinatorName", "autoWidth": true },
             { "data": "FromDate", "autoWidth": true },
             { "data": "ToDate", "autoWidth": true },
-            { "data": "PromoterCount", "autoWidth": true },
-            { "data": "District", "autoWidth": true },
-            { "data": "Town", "autoWidth": true },
+            { "data": "Location", "autoWidth": true },
+            //{ "data": "PromoterCount", "autoWidth": true },
+            //{ "data": "District", "autoWidth": true },
+            //{ "data": "Town", "autoWidth": true },
             { "data": "Time", "autoWidth": true },
+            { "data": "NumberOfDays", "autoWidth": true },
             { "data": "Payment", "autoWidth": true },
-            { "data": "Comments", "autoWidth": true }
+            { "data": "PromoterCount", "autoWidth": true },
+            //{ "data": "Time", "autoWidth": true },
+            { "data": "Comments", "autoWidth": true },
+            { "data": "Mobile", "autoWidth": true }
         ],
         "columnDefs": [{
-            "targets": 10,
+            "targets": 11,
             "data": 'Id',
             "render": function (data, type, full, meta) {
                 var rtnvalue = "";

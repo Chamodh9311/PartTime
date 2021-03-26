@@ -204,12 +204,12 @@
                                         <h3><label for="fullname" style="vertical-align: central;"></label></h3>
 
                                         <ul class="list-group list-group-unbordered mb-3">
-                                            <li class="list-group-item">
+                                            @*<li class="list-group-item">
                                                 <b>Completed Jobs</b> <a class="float-right">1,322</a>
                                             </li>
                                             <li class="list-group-item">
                                                 <b>Ratings</b> <a class="float-right">4/5</a>
-                                            </li>
+                                            </li>*@
                                             @*<li class="list-group-item">
                                                     <b>Friends</b> <a class="float-right">13,287 Profile/Coordinator </a>
                                                 </li>*@
@@ -227,6 +227,12 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
+                                        <strong><i class="fas fa-book mr-1"></i> Registration</strong>
+
+                                        <p class="text-muted">
+                                            <label for="registration" style="vertical-align: central;"></label>
+                                        </p>
+
                                         <strong><i class="fas fa-book mr-1"></i> NIC</strong>
 
                                         <p class="text-muted">
@@ -274,17 +280,21 @@
                                                             <table id="SchedulerTable">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>Name</th>
-                                                                        <th>Brands</th>
-                                                                        <th>From Date</th>
-                                                                        <th>To Date</th>
-                                                                        <th>Promoter Count</th>
-                                                                        <th>City</th>
-                                                                        <th>Town</th>
+                                                                        <th>Event </th>
+                                                                        @*<th>Brands</th>*@
+                                                                        <th>Coordinator </th>
+                                                                        <th>Start </th>
+                                                                        <th>End </th>
+                                                                        <th>Location </th>
+                                                                        @*<th>City</th>
+                                                                        <th>Town</th>*@
                                                                         <th>Time</th>
+                                                                        <th>Days</th>
                                                                         <th>Payment</th>
+                                                                        <th>Promoter count</th>
                                                                         <th>Comments</th>
-                                                                        <th></th>
+                                                                        <th>Mobile</th>
+                                                                        <th>Gender</th>
                                                                     </tr>
                                                                 </thead>
                                                             </table>
@@ -396,7 +406,7 @@
 
     <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js"></script>
 
-    @Scripts.Render("~/Scripts/Js/profile.js?v=20200607")
+    @Scripts.Render("~/Scripts/Js/profile.js?v=20210327")
 
 
 </body>
