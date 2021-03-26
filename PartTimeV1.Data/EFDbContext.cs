@@ -5,7 +5,7 @@ namespace PartTimeV1.Data
     public class EFDbContext : DbContext
     {
         public EFDbContext() :
-          base("Name=DefaultConnection")
+          base("Name=DbConnection")
         {
             Database.SetInitializer<EFDbContext>(null);
             this.Configuration.LazyLoadingEnabled = false;
@@ -13,7 +13,8 @@ namespace PartTimeV1.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            _ = modelBuilder.Configurations.Add(new UserProfileEntityMap());
+            modelBuilder.Configurations.Add(new UserProfileEntityMap());
+            modelBuilder.Configurations.Add(new BrandsListsEntityMap());
 
             base.OnModelCreating(modelBuilder);
         }

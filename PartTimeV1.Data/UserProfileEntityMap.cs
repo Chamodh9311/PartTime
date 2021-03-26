@@ -10,58 +10,61 @@ namespace PartTimeV1.Data
 
             ToTable("UserProfile");
 
-            Property(t => t.FullName);
-            Property(t => t.ShortName);
-            Property(t => t.NIC);
-            Property(t => t.Photo1);
-            Property(t => t.Photo2);
-            Property(t => t.Photo3);
+            Property(t => t.FullName).HasMaxLength(500).IsRequired();
+            Property(t => t.ShortName).HasMaxLength(500).IsRequired();
+            Property(t => t.NIC).HasMaxLength(20).IsRequired();
+            Property(t => t.Photo1).IsRequired();
+            Property(t => t.Photo2).IsRequired();
+            Property(t => t.Photo3).IsRequired();
             Property(t => t.Photo4).IsOptional();
             Property(t => t.Photo5).IsOptional();
-            Property(t => t.FullName);
-            Property(t => t.Mobile1);
+            Property(t => t.Mobile1).HasMaxLength(20).IsRequired();
             Property(t => t.Mobile1Whatsapp);
             Property(t => t.Mobile1Viber);
-            Property(t => t.Mobile2).IsOptional();
-            Property(t => t.Mobile2Whatsapp).IsOptional();
-            Property(t => t.Mobile2Viber).IsOptional();
-            Property(t => t.Mobile3).IsOptional();
-            Property(t => t.Mobile3Whatsapp).IsOptional();
-            Property(t => t.Mobile3Viber).IsOptional();
+            Property(t => t.Mobile2).HasMaxLength(20).IsOptional();
+            Property(t => t.Mobile2Whatsapp);
+            Property(t => t.Mobile2Viber);
+            Property(t => t.Mobile3).HasMaxLength(20).IsOptional();
+            Property(t => t.Mobile3Whatsapp);
+            Property(t => t.Mobile3Viber);
 
             Property(t => t.DOB);
-            Property(t => t.Age);
+            Property(t => t.Age).HasMaxLength(10).IsRequired();
             Property(t => t.GenderMale);
             Property(t => t.GenderFemale);
-            Property(t => t.CurrentDistrict);
-            Property(t => t.CurrentTown);
-            Property(t => t.HomeDistrict);
-            Property(t => t.HomeTown);
+            Property(t => t.CurrentDistrict).HasMaxLength(200);
+            Property(t => t.CurrentTown).HasMaxLength(200);
+            Property(t => t.HomeDistrict).HasMaxLength(200);
+            Property(t => t.HomeTown).HasMaxLength(200);
             Property(t => t.ShirtSizeS);
             Property(t => t.ShirtSizeM);
             Property(t => t.ShirtSizeL);
             Property(t => t.ShirtSizeXS);
-            Property(t => t.Student).IsOptional();
-            Property(t => t.University).IsOptional();
-            Property(t => t.Course).IsOptional();
-            Property(t => t.UniYear).IsOptional();
-            Property(t => t.Employeed).IsOptional();
-            Property(t => t.Company).IsOptional();
-            Property(t => t.Branch).IsOptional();
-            Property(t => t.Designation).IsOptional();
-            Property(t => t.FullTimePromoter).IsOptional();
-            Property(t => t.PartTimePromoter).IsOptional();
-            Property(t => t.EnglishSpeaking).IsOptional();
-            Property(t => t.TamilSpeaking).IsOptional();
-            Property(t => t.SalesExperience).IsOptional();
+            Property(t => t.Student);
+            Property(t => t.University).HasMaxLength(200).IsOptional();
+            Property(t => t.Course).HasMaxLength(200).IsOptional();
+            Property(t => t.UniYear).HasMaxLength(20).IsOptional();
+            Property(t => t.Employeed);
+            Property(t => t.Company).HasMaxLength(200).IsOptional();
+            Property(t => t.Branch).HasMaxLength(200).IsOptional();
+            Property(t => t.Designation).HasMaxLength(200).IsOptional();
+            Property(t => t.FullTimePromoter);
+            Property(t => t.PartTimePromoter);
+            Property(t => t.EnglishA);
+            Property(t => t.EnglishB);
+            Property(t => t.EnglishC);
+            Property(t => t.TamilA);
+            Property(t => t.TamilB);
+            Property(t => t.TamilC);
+            Property(t => t.SalesExperience).HasMaxLength(10).IsOptional();
             Property(t => t.Brands).IsOptional();
             Property(t => t.OtherExperience).IsOptional();
 
-            Property(t => t.Approved).IsOptional();
-            Property(t => t.Deleted).IsOptional();
-            Property(t => t.Banned).IsOptional();
-            Property(t => t.Version).IsOptional();
-
+            Property(t => t.Approved);
+            Property(t => t.Deleted);
+            Property(t => t.Banned);
+            Property(t => t.CreateOn);
+            Property(t => t.Version);
         }
     }
 }

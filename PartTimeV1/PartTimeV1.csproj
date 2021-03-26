@@ -64,6 +64,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Runtime.Serialization" />
@@ -130,6 +131,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.7\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.7\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
@@ -183,10 +190,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\ProfileRequest.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +216,7 @@
     <None Include="Properties\PublishProfiles\parttimers - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\parttimers - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\CSS\index.css" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -216,8 +226,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Js\coordinator.js" />
+    <Content Include="Scripts\Js\users.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SiteImages\CoverV1.jpg" />
+    <Content Include="SiteImages\favicon.jpg" />
     <Content Include="SiteImages\JPEG1011.jpg" />
     <Content Include="SiteImages\Logo.jpg" />
     <Content Include="SiteImages\P_20160911_145111_BF.jpg" />
@@ -313,6 +326,28 @@
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.svg" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\bindings\inputmask.binding.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\dependencyLibs\inputmask.dependencyLib.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\global\window.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\inputmask.date.extensions.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\inputmask.extensions.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\inputmask.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\inputmask.numeric.extensions.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\inputmask\jquery.inputmask.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\jquery.inputmask.bundle.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\bindings\inputmask.binding.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\dependencyLibs\inputmask.dependencyLib.jqlite.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\dependencyLibs\inputmask.dependencyLib.jquery.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\dependencyLibs\inputmask.dependencyLib.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\global\window.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\inputmask.date.extensions.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\inputmask.extensions.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\inputmask.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\inputmask.numeric.extensions.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\inputmask\jquery.inputmask.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\inputmask\min\jquery.inputmask.bundle.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\css\OverlayScrollbars.css" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\css\OverlayScrollbars.min.css" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\js\jquery.overlayScrollbars.js" />
@@ -533,10 +568,11 @@
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\bower.json" />
     <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
+    <Content Include="Views\Admin\Users.cshtml" />
+    <Content Include="Views\Admin\Coordinator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -550,6 +586,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PartTimeV1.Data\PartTimeV1.Data.csproj">
+      <Project>{EAE9D0CF-435F-436F-8DAE-96115296DEDE}</Project>
+      <Name>PartTimeV1.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
