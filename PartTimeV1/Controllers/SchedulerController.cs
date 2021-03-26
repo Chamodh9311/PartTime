@@ -10,10 +10,10 @@ namespace PartTimeV1.Controllers
 {
     public class SchedulerController : BaseController
     {
-
         public JsonResult GetActiveEvents()
         {
             var events = this.manager.SchedulerRepository.GetAllActiveEvents().ToList();
+
             return Json(new { data = events }, JsonRequestBehavior.AllowGet);
         }
 
@@ -21,24 +21,32 @@ namespace PartTimeV1.Controllers
         {
             try
             {
+                var FromDate = DateTime.ParseExact(schedulerRequest.FromDate, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                var ToDate = DateTime.ParseExact(schedulerRequest.ToDate, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                int dateDiffernce = (ToDate - FromDate).Days;
+
                 SchedulerEntity schedulerEntity = new SchedulerEntity()
                 {
                     GigName = schedulerRequest.GigName,
                     Brands = schedulerRequest.Brands,
-                    FromDate = DateTime.ParseExact(schedulerRequest.FromDate, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
-                    ToDate = DateTime.ParseExact(schedulerRequest.ToDate, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                    FromDate = FromDate, 
+                    ToDate = ToDate, 
                     PromoterCount = schedulerRequest.PromoterCount,
                     District = schedulerRequest.District,
                     Town = schedulerRequest.Town,
                     Comments = schedulerRequest.Comments,
-                    CreatedId = User.Identity.GetUserId(),
+                    CreatedId = this.manager.CoordinatorProfileRepository.SelectCoordinatorProfile(User.Identity.GetUserId()).FullName,
                     ApprovedId = User.Identity.GetUserId(),
                     Time = schedulerRequest.Time,
                     Payment = schedulerRequest.Payment,
                     Approved = true,
                     Deleted = false,
                     Finished = false,
-                    CreateOn = DateTime.Now
+                    CreateOn = DateTime.Now,
+                    Mobile = schedulerRequest.Mobile,
+                    Location = schedulerRequest.Location,
+                    NumberOfDays = dateDiffernce,
+                    Gender = schedulerRequest.Gender
                 };
 
                 manager.BeginTransaction();
@@ -50,10 +58,9 @@ namespace PartTimeV1.Controllers
                 return Json(new { data = events }, JsonRequestBehavior.AllowGet);
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                logger.Error(ex);
             }
 
             return Json("Error", JsonRequestBehavior.AllowGet);
@@ -70,6 +77,7 @@ namespace PartTimeV1.Controllers
 
                 this.manager.Commit();
             }
+
             return Json("Success");
         }
 
