@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -112,20 +132,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -169,6 +177,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +200,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\parttimers - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\parttimers - ReadOnly - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\parttimers - Web Deploy.pubxml" />
@@ -268,6 +280,22 @@
     <Content Include="TemplateAssets\DashBord\plugins\chart.js\Chart.js" />
     <Content Include="TemplateAssets\DashBord\plugins\chart.js\Chart.min.css" />
     <Content Include="TemplateAssets\DashBord\plugins\chart.js\Chart.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\daterangepicker.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\daterangepicker.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\drp.png" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\amd\index.html" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\amd\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\amd\require.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\bundle.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\index.html" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\main.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\moment.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\package.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\website.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\website.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\website\index.html" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\website\website.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\website\website.js" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\css\all.css" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\css\all.min.css" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\css\brands.css" />
@@ -285,44 +313,78 @@
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.svg" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-regular-400.svg" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.svg" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\jquery.mapael.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\jquery.mapael.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\france_departments.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\france_departments.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\README.txt" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\usa_states.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\usa_states.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\world_countries.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\world_countries.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\world_countries_mercator.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\world_countries_mercator.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\world_countries_miller.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mapael\maps\world_countries_miller.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mousewheel\jquery.mousewheel.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\jquery-mousewheel\LICENSE.txt" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\css\OverlayScrollbars.css" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\css\OverlayScrollbars.min.css" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\js\jquery.overlayScrollbars.js" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\js\jquery.overlayScrollbars.min.js" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\js\OverlayScrollbars.js" />
     <Content Include="TemplateAssets\DashBord\plugins\overlayScrollbars\js\OverlayScrollbars.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\.eslintrc.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\banner.txt" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\raphael.amd.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\raphael.core.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\raphael.svg.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\raphael.vml.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\raphaelTest.html" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\test\index.html" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\test\svg\dom.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\dev\test\vml\dom.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\Gruntfile.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\license.txt" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\raphael.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\raphael.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\raphael.no-deps.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\raphael.no-deps.min.js" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\webpack.config.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\css\select2.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\css\select2.min.css" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\af.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ar.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\az.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\bg.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\bn.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\bs.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\build.txt" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ca.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\cs.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\da.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\de.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\dsb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\el.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\en.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\es.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\et.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\eu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\fa.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\fi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\fr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\gl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\he.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\hi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\hr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\hsb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\hu.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\hy.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\id.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\is.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\it.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ja.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ka.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\km.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ko.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\lt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\lv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\mk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ms.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\nb.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ne.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\nl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\pl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ps.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\pt-BR.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\pt.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ro.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\ru.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\sk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\sl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\sq.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\sr-Cyrl.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\sr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\sv.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\th.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\tk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\tr.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\uk.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\vi.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\zh-CN.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\i18n\zh-TW.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\select2.full.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\select2.full.min.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\select2.js" />
+    <Content Include="TemplateAssets\DashBord\plugins\select2\js\select2.min.js" />
     <Content Include="TemplateAssets\WebSite\assets\css\style.css" />
     <Content Include="TemplateAssets\WebSite\assets\img\about-img.jpg" />
     <Content Include="TemplateAssets\WebSite\assets\img\apple-touch-icon.png" />
@@ -394,6 +456,7 @@
     <Content Include="TemplateAssets\WebSite\assets\vendor\venobox\venobox.min.js" />
     <Content Include="TemplateAssets\WebSite\forms\contact.php" />
     <Content Include="TemplateAssets\WebSite\forms\Readme.txt" />
+    <Content Include="Scripts\Js\index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -456,7 +519,6 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="TemplateAssets\DashBord\dist\js\adminlte.js.map" />
     <Content Include="TemplateAssets\DashBord\dist\js\adminlte.min.js.map" />
-    <Content Include="TemplateAssets\DashBord\plugins\raphael\bower.json" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.eot" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.ttf" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-brands-400.woff" />
@@ -469,9 +531,12 @@
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.ttf" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="TemplateAssets\DashBord\plugins\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\bower.json" />
+    <Content Include="TemplateAssets\DashBord\plugins\daterangepicker\example\browserify\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Helper\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -519,7 +584,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
