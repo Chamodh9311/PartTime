@@ -27,33 +27,49 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="~/TemplateAssets/DashBord/plugins/select2/css/select2.min.css">
 
-    <link href="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="~/Scripts/CSS/index.css">
 
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
-
+    <div id="loading"></div>
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
-            @*<ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-                    </li>
-                </ul>*@
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
 
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
+
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @Html.ActionLink("Hi " + User.Identity.GetUserName() + "-", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                            </li>
+                            <li>
+                                <a href='@Url.Action("LogOut", "Admin")'><i class="fas fa-power-off"></i></a>
+                            </li>
+                        </ul>
+                    }
+                }
+
             </form>
 
             <!-- Right navbar links -->
@@ -87,23 +103,6 @@
                         </div>
                     </li>*@
 
-
-                <li class="nav-item dropdown">
-                    @if (Request.IsAuthenticated)
-                    {
-                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "-", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                </li>
-                                <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fas fa-power-off"></i></a></li>
-                            </ul>
-                        }
-                    }
-                </li>
-
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -124,7 +123,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview menu-open">
-                            <a href="@Url.Action("Index", "Admin")" class="nav-link">
+                            <a href="@Url.Action("Index", "Profile")" class="nav-link">
                                 <i class="nav-icon fas fa-tablet-alt"></i>
                                 <p>
                                     Registration
@@ -161,14 +160,14 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Event Scheduler</h1>
+                                <h1><strong>Event Scheduler</strong></h1>
                             </div>
-                            <div class="col-sm-6">
-                                <ol class="breadcrumb float-sm-right">
-                                    <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
-                                    <a href="@Url.Action("Users", "Admin")" class="nav-link active">Search</a>
-                                </ol>
-                            </div>
+                            @*<div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <a href="@Url.Action("Index", "Admin")" class="nav-link active">Profile</a>
+                                        <a href="@Url.Action("Users", "Admin")" class="nav-link active">Search</a>
+                                    </ol>
+                                </div>*@
                         </div>
                     </div><!-- /.container-fluid -->
                 </section>
@@ -182,9 +181,9 @@
                                 <div class="row">
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
-                                        <label class="control-label">Gig Name :<span class="bh-required"></span> </label>
+                                        <label class="control-label">Event Name :<span class="bh-required"></span> </label>
                                         <br />
-                                        <input id="name" class="form-control" style="width:100%" ng-hide="true" />
+                                        <input id="name" placeholder="name your event" class="form-control" style="width:100%" ng-hide="true" />
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
@@ -220,33 +219,45 @@
                                     </div>
 
                                     <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Time :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="time" style="width: 80%;" placeholder="7AM To 5PM" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
+                                        <label class="control-label"> Payment :<span class="bh-required"></span> </label>
+                                        <input class="form-control" id="payment" style="width: 80%;" placeholder="1000 per hour" type="text">
+                                    </div>
+
+                                    <div class="col-md-4 form-group" style="margin-bottom: 15px;">
                                         <label class="control-label">Comments :<span class="bh-required"></span> </label>
                                         <br />
-                                        <input id="comments" class="form-control" style="width:100%" ng-hide="true" />
+                                        <input id="comments" class="form-control" placeholder="speical notes for promoters" style="width:100%" ng-hide="true" />
                                     </div>
 
 
                                     <div class="col-md-12 form-group" style="margin-bottom: 15px;">
                                         <button type="button" class="btn btn-info pull-left" style="margin-right: 15px;" onclick="javascript: return SaveEvent();"><span aria-hidden="true"></span>Save </button>
 
-                                        <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchEvents();"><span aria-hidden="true"></span>Search </button>
-
+                                      @*  <button type="button" class="btn btn-primary pull-left" style="margin-right: 15px;" onclick="javascript: return SearchEvents();"><span aria-hidden="true"></span>Search </button>*@
                                     </div>
 
                                     <hr />
 
-                                    <div style="width:100%; margin:0 auto;">
+                                    <div class="table-responsive" style="width:100%; margin:0 auto;">
                                         <table id="SchedulerTable">
                                             <thead>
                                                 <tr>
-                                                    <th>Gig Name</th>
+                                                    <th>Name</th>
                                                     <th>Brands</th>
                                                     <th>From Date</th>
                                                     <th>To Date</th>
                                                     <th>Promoter Count</th>
                                                     <th>City</th>
                                                     <th>Town</th>
+                                                    <th>Time</th>
+                                                    <th>Payment</th>
                                                     <th>Comments</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                         </table>
@@ -306,22 +317,12 @@
     @*<script src="~/TemplateAssets/DashBord/plugins/moment/moment.min.js"></script>*@
     <script src="~/TemplateAssets/DashBord/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
 
-    <script src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
-    <!-- OPTIONAL SCRIPTS -->
-    @*<script src="~/TemplateAssets/DashBord/dist/js/demo.js"></script>*@
+    <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
 
-    <!-- PAGE PLUGINS -->
-    <!-- jQuery Mapael -->
-    @*<script src="~/TemplateAssets/DashBord/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-        <script src="~/TemplateAssets/DashBord/plugins/raphael/raphael.min.js"></script>
-        <script src="~/TemplateAssets/DashBord/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-        <script src="~/TemplateAssets/DashBord/plugins/jquery-mapael/maps/usa_states.min.js"></script>*@
-    <!-- ChartJS -->
-    @*<script src="~/TemplateAssets/DashBord/plugins/chart.js/Chart.min.js"></script>*@
+    <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.js"></script>
 
-    <!-- PAGE SCRIPTS -->
-    @*<script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>*@
 
     @Scripts.Render("~/Scripts/Js/schedule.js?v=20200605")
 

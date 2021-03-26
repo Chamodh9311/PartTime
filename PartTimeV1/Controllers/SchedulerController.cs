@@ -33,6 +33,8 @@ namespace PartTimeV1.Controllers
                     Comments = schedulerRequest.Comments,
                     CreatedId = User.Identity.GetUserId(),
                     ApprovedId = User.Identity.GetUserId(),
+                    Time = schedulerRequest.Time,
+                    Payment = schedulerRequest.Payment,
                     Approved = true,
                     Deleted = false,
                     Finished = false,
@@ -47,6 +49,7 @@ namespace PartTimeV1.Controllers
 
                 return Json(new { data = events }, JsonRequestBehavior.AllowGet);
             }
+
             catch (Exception)
             {
 
@@ -56,11 +59,24 @@ namespace PartTimeV1.Controllers
             return Json("Error", JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public JsonResult EventSchedulerSearch(SchedulerRequest schedulerRequest, List<string> brands)
+        public JsonResult CancleUser(long Id)
         {
+            SchedulerEntity currenSchedulerEntity = this.manager.SchedulerRepository.SelecEvent(Id);
 
-            return Json("Saved", JsonRequestBehavior.AllowGet);
+            if (currenSchedulerEntity != null)
+            {
+                currenSchedulerEntity.Deleted = true;
+                this.manager.SchedulerRepository.Update(currenSchedulerEntity);
+
+                this.manager.Commit();
+            }
+            return Json("Success");
         }
+
+        //[HttpPost]
+        //public JsonResult EventSchedulerSearch(SchedulerRequest schedulerRequest, List<string> brands)
+        //{
+        //    return Json("Saved", JsonRequestBehavior.AllowGet);
+        //}
     }
 }
