@@ -3,14 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-
-    <title>Maxim Bootstrap Template - Index</title>
+    <title>PartTime | @ViewBag.Title</title>
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="~/TemplateAssets/WebSite/assets/img/favicon.png" rel="icon">
+    <link href="~/SiteImages/favicon.jpg" rel="icon">
     <link href="~/TemplateAssets/WebSite/assets/WebSite/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -19,25 +17,30 @@
     <!-- Vendor CSS Files -->
     <link href="~/TemplateAssets/WebSite/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/TemplateAssets/WebSite/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+
+    <link href="~/TemplateAssets/WebSite/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+
     <link href="~/TemplateAssets/WebSite/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="~/TemplateAssets/WebSite/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <link href="~/TemplateAssets/WebSite/assets/vendor/nivo-slider/css/nivo-slider.css" rel="stylesheet">
+
     <link href="~/TemplateAssets/WebSite/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/TemplateAssets/WebSite/assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="~/TemplateAssets/WebSite/assets/vendor/aos/aos.css" rel="stylesheet">
+
 
     <!-- Template Main CSS File -->
     <link href="~/TemplateAssets/WebSite/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
-    * Template Name: Maxim - v2.1.0
-    * Template URL: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/
+    * Template Name: eBusiness - v2.1.1
+    * Template URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex">
@@ -45,118 +48,168 @@
             <div class="logo mr-auto">
                 @*<h1 class="text-light"><a href="index.html">Part Time</a></h1>*@
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html"><img src="~/SiteImages/Logo.jpg" alt="PartTime" class="img-fluid"></a>
+                <a href="#"><img src="~/SiteImages/Logo.jpg" alt="PartTime" class="img-fluid"></a>
             </div>
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
                     <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    @*<li><a href="#team">Team</a></li>*@
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    @*<li><a href="#blog">Blog</a></li>*@
 
+                    <li><a href="#contact">Contact</a></li>
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
                 </ul>
             </nav><!-- .nav-menu -->
 
         </div>
     </header><!-- End Header -->
 
+
     <div>
         @RenderBody()
         <hr />
         <!-- ======= Footer ======= -->
-        <footer id="footer">
-            <div class="footer-top">
+        <footer>
+            <div class="footer-area">
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <div class="footer-logo">
+                                        <img src="~/SiteImages/Transparency-01.png" alt="PartTime" class="img-fluid" />
+                                    </div>
 
-                        <div class="col-lg-3 col-md-6">
-                            <div class="footer-info">
-                                <h3>Maxim</h3>
-                                <p>
-                                    A108 Adam Street <br>
-                                    NY 535022, USA<br><br>
-                                    <strong>Phone:</strong> +1 5589 55488 55<br>
-                                    <strong>Email:</strong> info@example.com<br>
-                                </p>
-                                <div class="social-links mt-3">
-                                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                    @*<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                                        <div class="footer-icons">
+                                            <ul>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-google"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>*@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-lg-2 col-md-6 footer-links">
-                            <h4>Useful Links</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                            </ul>
+                        <!-- end single footer -->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>information</h4>
+                                    <p>
+                                        @*Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.*@
+                                    </p>
+                                    <div class="footer-contacts">
+                                        <p>
+                                            <span>Tel :</span> 071 7 347 327 / 077 7 347 327 <br />
+                                            071 7 627 327 / 077 7 627 327
+                                        </p>
+                                        <p><span>Email :</span>info.parttime.lk@gmail.com</p>
+                                        <p><span>Working Hours :</span>8AM-8PM</p>
+                                    </div>
+                                    <div class="footer-icons">
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.facebook.com/www.parttime.lk/"><i class="fa fa-facebook"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-google"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://instagram.com/parttime.lk?igshid=12y7ujjwvxk06"><i class="fa fa-instagram"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="col-lg-3 col-md-6 footer-links">
-                            <h4>Our Services</h4>
-                            <ul>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                                <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                            </ul>
+                        <!-- end single footer -->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="footer-content">
+                                <div class="footer-head">
+                                    <h4>Instagram</h4>
+                                    <div class="flicker-img">
+                                        <a href="#"><img src="~/SiteImages/P_20161015_160141.jpg" alt=""></a>
+                                        @*<a href="#"><img src="~/SiteImages/P_20161120_140607.jpg" alt=""></a>*@
+                                        <a href="#"><img src="~/SiteImages/P_20160924_114144.jpg" alt=""></a>
+                                        @*<a href="#"><img src="~/SiteImages/P_20160917_094654.jpg" alt=""></a>*@
+                                        <a href="#"><img src="~/SiteImages/P_20160917_102611.jpg" alt=""></a>
+                                        @*<a href="#"><img src="~/SiteImages/P_20160911_153349.jpg" alt=""></a>*@
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-6 footer-newsletter">
-                            <h4>Our Newsletter</h4>
-                            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-                            <form action="" method="post">
-                                <input type="email" name="email"><input type="submit" value="Subscribe">
-                            </form>
-
-                        </div>
-
                     </div>
                 </div>
             </div>
-
-            <div class="container">
-                <div class="copyright">
-                    &copy; @DateTime.Now.Year <strong><span>Part Time</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/maxim-free-onepage-bootstrap-theme/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            <div class="footer-area-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="copyright text-center">
+                                <p>
+                                    &copy; Copyright <strong>PartTime</strong>. All Rights Reserved
+                                </p>
+                            </div>
+                            <div class="credits">
+                                <!--
+                                  All the links in the footer should remain intact.
+                                  You can delete the links only if you purchased the pro version.
+                                  Licensing information: https://bootstrapmade.com/license/
+                                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
+                                -->
+                                @*Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>*@
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer><!-- End Footer -->
+        </footer><!-- End  Footer -->
     </div>
 
     <!-- Vendor JS Files -->
     <script src="~/TemplateAssets/WebSite/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="~/TemplateAssets/WebSite/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="~/TemplateAssets/WebSite/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/TemplateAssets/WebSite/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
     <script src="~/TemplateAssets/WebSite/assets/vendor/php-email-form/validate.js"></script>
+
+
+    <script src="~/TemplateAssets/WebSite/assets/vendor/appear/jquery.appear.js"></script>
+    <script src="~/TemplateAssets/WebSite/assets/vendor/knob/jquery.knob.js"></script>
+    <script src="~/TemplateAssets/WebSite/assets/vendor/parallax/parallax.js"></script>
+    <script src="~/TemplateAssets/WebSite/assets/vendor/wow/wow.min.js"></script>
+
+
     <script src="~/TemplateAssets/WebSite/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <script src="~/TemplateAssets/WebSite/assets/vendor/nivo-slider/js/jquery.nivo.slider.js"></script>
+    <script src="~/TemplateAssets/WebSite/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="~/TemplateAssets/WebSite/assets/vendor/venobox/venobox.min.js"></script>
-    <script src="~/TemplateAssets/WebSite/assets/vendor/aos/aos.js"></script>
+
 
     <!-- Template Main JS File -->
     <script src="~/TemplateAssets/WebSite/assets/js/main.js"></script>
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
     @RenderSection("scripts", required: false)
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
 
 </body>
 </html>

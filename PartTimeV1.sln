@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartTimeV1", "PartTimeV1\Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartTimeV1.Tests", "PartTimeV1.Tests\PartTimeV1.Tests.csproj", "{20CC2ED5-2ADE-4DD5-9FB8-E3E1076B0CD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartTimeV1.Data", "PartTimeV1.Data\PartTimeV1.Data.csproj", "{EAE9D0CF-435F-436F-8DAE-96115296DEDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{20CC2ED5-2ADE-4DD5-9FB8-E3E1076B0CD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20CC2ED5-2ADE-4DD5-9FB8-E3E1076B0CD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20CC2ED5-2ADE-4DD5-9FB8-E3E1076B0CD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE9D0CF-435F-436F-8DAE-96115296DEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE9D0CF-435F-436F-8DAE-96115296DEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE9D0CF-435F-436F-8DAE-96115296DEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE9D0CF-435F-436F-8DAE-96115296DEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
