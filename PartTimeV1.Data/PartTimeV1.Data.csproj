@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="BrandsListsEntity.cs" />
     <Compile Include="BrandsListsEntityMap.cs" />
+    <Compile Include="CoordinatorEntity.cs" />
+    <Compile Include="CoordinatorEntityMap.cs" />
     <Compile Include="EFDbContext.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="DistrictsEntity.cs" />
     <Compile Include="RepositoryManager\RepoManager.cs" />
     <Compile Include="RepositoryManager\RepoManager.Repo.cs" />
+    <Compile Include="Repository\CoordinatorProfileRepository.cs" />
     <Compile Include="Repository\DropDownListsRepository.cs" />
     <Compile Include="Repository\EFRepository.cs" />
     <Compile Include="Repository\IEFRepository.cs" />

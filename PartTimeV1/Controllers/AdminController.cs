@@ -1,37 +1,34 @@
-﻿using PartTimeV1.Data;
+﻿using Microsoft.AspNet.Identity;
+using PartTimeV1.Data;
 using PartTimeV1.Requests;
 using System;
 using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
 {
-
-    //[Authorize(Roles = "SuperAdmin , Admin , User")]
     [Authorize]
     public class AdminController : BaseController
     {
 
         public ActionResult Index()
         {
-
             return View();
         }
 
+        //[Authorize(Roles = "Coordinator , User")]
         public ActionResult Coordinator()
         {
+            return View();
+        }
 
+        public ActionResult Calendar()
+        {
             return View();
         }
 
         public ActionResult Users()
         {
             return View();
-        }
-
-        public JsonResult GetUserProfileData()
-        {
-            var profiles = this.manager.UserProfileRepository.GetAllActive();
-            return Json(new { data = profiles }, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetDistricts()
@@ -53,7 +50,7 @@ namespace PartTimeV1.Controllers
         }
 
         [HttpPost]
-        public JsonResult ProfileSubmit(ProfileRequest profileRequest)
+        public JsonResult UserProfileSubmit(ProfileRequest profileRequest)
         {
             try
             {
@@ -61,7 +58,7 @@ namespace PartTimeV1.Controllers
                 {
                     FullName = profileRequest.FullName,
                     ShortName = profileRequest.ShortName,
-                    NIC = profileRequest.NIC,
+                    NIC = profileRequest.NIC.Replace("_", ""),
                     Photo1 = profileRequest.Photo1,
                     Photo2 = profileRequest.Photo2,
                     Photo3 = profileRequest.Photo3,
@@ -74,9 +71,9 @@ namespace PartTimeV1.Controllers
                     Mobile3Whatsapp = profileRequest.Mobile2Whatsapp,
                     Mobile3Viber = profileRequest.Mobile2Viber,
                     Mobile3 = profileRequest.Mobile3,
-
                     DOB = DateTime.ParseExact(profileRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
                     Age = profileRequest.Age,
+
                     GenderMale = profileRequest.GenderMale,
                     GenderFemale = profileRequest.GenderFemale,
                     CurrentDistrict = profileRequest.CurrentDistrict,
@@ -96,6 +93,12 @@ namespace PartTimeV1.Controllers
                     Branch = profileRequest.Branch,
                     Designation = profileRequest.Designation,
                     FullTimePromoter = profileRequest.FullTimePromoter,
+                    IsFreelancer = profileRequest.IsFreelancer,
+                    Freelancer = profileRequest.Freelancer,
+                    FreelancerOther = profileRequest.FreelancerOther,
+                    IsSelfemployed = profileRequest.IsSelfemployed,
+                    Selfemployed = profileRequest.Selfemployed,
+                    SelfemployedOther = profileRequest.SelfemployedOther,
                     PartTimePromoter = profileRequest.PartTimePromoter,
                     EnglishA = profileRequest.EnglishA,
                     EnglishB = profileRequest.EnglishB,
@@ -103,16 +106,34 @@ namespace PartTimeV1.Controllers
                     TamilA = profileRequest.TamilA,
                     TamilB = profileRequest.TamilB,
                     TamilC = profileRequest.TamilC,
-                    SalesExperience = profileRequest.SalesExperience,
+                    SalesExperienceNo = profileRequest.SalesExperienceNo,
+                    SalesExperienceYes = profileRequest.SalesExperienceYes,
+                    SalesExperienceYears = profileRequest.SalesExperienceYears == null ? null : profileRequest.SalesExperienceYears.Replace("_", ""),
                     Brands = profileRequest.Brands == null ? null : string.Join(",", profileRequest.Brands),
+                    BrandsOther = profileRequest.BrandsOther,
                     OtherExperience = profileRequest.OtherExperience == null ? null : string.Join(",", profileRequest.OtherExperience),
+                    OtherExperienceOther = profileRequest.OtherExperienceOther,
+                    Facebook = profileRequest.Facebook,
+                    Instagram = profileRequest.Instagram,
+                    PartTimelkStaff = profileRequest.PartTimelkStaff,
+                    PartTimelkStafName = profileRequest.PartTimelkStafName,
+                    Cordinator = profileRequest.Cordinator,
+                    CordinatorName = profileRequest.CordinatorName,
+                    Friend = profileRequest.Friend,
+                    Google = profileRequest.Google,
 
+                    AccountHolder = profileRequest.AccountHolder,
+                    AccountNumber = profileRequest.AccountNumber,
+                    Bank = profileRequest.Bank,
+                    BankBranch = profileRequest.BankBranch,
+
+                    UserId = User.Identity.GetUserId(),
+                    Role = "User",
                     Approved = false,
                     Deleted = false,
                     Banned = false,
                     CreateOn = DateTime.Now,
                     Version = 1
-
                 };
 
                 manager.BeginTransaction();
@@ -121,7 +142,108 @@ namespace PartTimeV1.Controllers
 
                 manager.Commit();
             }
-            catch (System.Exception exp)
+
+            catch (Exception exp)
+            {
+                manager.Rollback();
+                logger.Error(exp);
+
+                return Json("Error", JsonRequestBehavior.AllowGet);
+
+            }
+
+            return Json("Saved", JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult CoordinatorProfileSubmit(CoordinatorRequest coordinatorRequest)
+        {
+            try
+            {
+                CoordinatorEntity coordinatorEntity = new CoordinatorEntity()
+                {
+                    FullName = coordinatorRequest.FullName,
+                    ShortName = coordinatorRequest.ShortName,
+                    NIC = coordinatorRequest.NIC.Replace("_",""),
+                    Photo1 = coordinatorRequest.Photo1,
+                    Photo2 = coordinatorRequest.Photo2,
+                    Photo3 = coordinatorRequest.Photo3,
+                    Photo4 = coordinatorRequest.Photo4,
+                    Photo5 = coordinatorRequest.Photo5,
+                    Mobile1 = coordinatorRequest.Mobile1,
+                    Mobile1Whatsapp = coordinatorRequest.Mobile1Whatsapp,
+                    Mobile1Viber = coordinatorRequest.Mobile1Viber,
+                    Mobile2 = coordinatorRequest.Mobile2,
+                    Mobile3Whatsapp = coordinatorRequest.Mobile2Whatsapp,
+                    Mobile3Viber = coordinatorRequest.Mobile2Viber,
+                    Mobile3 = coordinatorRequest.Mobile3,
+                    DOB = DateTime.ParseExact(coordinatorRequest.DOB, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture),
+                    Age = coordinatorRequest.Age,
+
+                    GenderMale = coordinatorRequest.GenderMale,
+                    GenderFemale = coordinatorRequest.GenderFemale,
+                    CurrentDistrict = coordinatorRequest.CurrentDistrict,
+                    CurrentTown = coordinatorRequest.CurrentTown,
+                    HomeDistrict = coordinatorRequest.HomeDistrict,
+                    HomeTown = coordinatorRequest.HomeTown,
+                    ShirtSizeS = coordinatorRequest.ShirtSizeS,
+                    ShirtSizeM = coordinatorRequest.ShirtSizeM,
+                    ShirtSizeL = coordinatorRequest.ShirtSizeL,
+                    ShirtSizeXS = coordinatorRequest.ShirtSizeXS,
+                    Student = coordinatorRequest.Student,
+                    University = coordinatorRequest.University,
+                    Course = coordinatorRequest.Course,
+                    UniYear = coordinatorRequest.UniYear,
+                    Employeed = coordinatorRequest.Employeed,
+                    Company = coordinatorRequest.Company,
+                    Branch = coordinatorRequest.Branch,
+                    Designation = coordinatorRequest.Designation,
+                    FullTimePromoter = coordinatorRequest.FullTimePromoter,
+                    IsFreelancer = coordinatorRequest.IsFreelancer,
+                    Freelancer = coordinatorRequest.Freelancer,
+                    FreelancerOther = coordinatorRequest.FreelancerOther,
+                    IsSelfemployed = coordinatorRequest.IsSelfemployed,
+                    Selfemployed = coordinatorRequest.Selfemployed,
+                    SelfemployedOther = coordinatorRequest.SelfemployedOther,
+                    PartTimePromoter = coordinatorRequest.PartTimePromoter,
+                    EnglishA = coordinatorRequest.EnglishA,
+                    EnglishB = coordinatorRequest.EnglishB,
+                    EnglishC = coordinatorRequest.EnglishC,
+                    TamilA = coordinatorRequest.TamilA,
+                    TamilB = coordinatorRequest.TamilB,
+                    TamilC = coordinatorRequest.TamilC,
+                    SalesExperienceNo = coordinatorRequest.SalesExperienceNo,
+                    SalesExperienceYes = coordinatorRequest.SalesExperienceYes,
+                    SalesExperienceYears = coordinatorRequest.SalesExperienceYears == null ? null : coordinatorRequest.SalesExperienceYears.Replace("_", ""),
+                    Brands = coordinatorRequest.Brands == null ? null : string.Join(",", coordinatorRequest.Brands),
+                    BrandsOther = coordinatorRequest.BrandsOther,
+                    OtherExperience = coordinatorRequest.OtherExperience == null ? null : string.Join(",", coordinatorRequest.OtherExperience),
+                    OtherExperienceOther = coordinatorRequest.OtherExperienceOther,
+                    PreviousAdvertisingCompany = coordinatorRequest.PreviousAdvertisingCompany,
+                    PreviousAdvertisingSupervisors = coordinatorRequest.PreviousAdvertisingSupervisors,
+
+                    AccountHolder = coordinatorRequest.AccountHolder,
+                    AccountNumber = coordinatorRequest.AccountNumber,
+                    Bank = coordinatorRequest.Bank,
+                    BankBranch = coordinatorRequest.BankBranch,
+
+                    UserId = User.Identity.GetUserId(),
+                    Role = "Coordinator",
+                    Approved = false,
+                    Deleted = false,
+                    Banned = false,
+                    CreateOn = DateTime.Now,
+                    Version = 1
+                };
+
+                manager.BeginTransaction();
+
+                manager.CoordinatorProfileRepository.Add(coordinatorEntity);
+
+                manager.Commit();
+            }
+
+            catch (Exception exp)
             {
                 manager.Rollback();
                 logger.Error(exp);

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Part Time | Register - Promoter</title>
+    <title>Part Time | Register - Coordinator</title>
 
     <!-- Favicons -->
     <link href="~/SiteImages/favicon.jpg" rel="icon">
@@ -184,21 +184,28 @@
                             <div class="card-body">
 
                                 <div id="profilePageDiv" class="row">
+                                    <ul>
+                                        <li> Please fill all fields marked in a red star/රතු පැහැති තරුවක් දක්වා ඇති සියලු කොටස් අනිවාර්යවේ.<span class="red-star">★</span></li>
+                                    </ul>
+                                    <hr />
+                                </div>
+
+                                <div id="profilePageDiv" class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label>1. Full Name/සම්පුර්ණ නම:</label>
-                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" style="width: 80%">
+                                            <label>1. Full Name/සම්පුර්ණ නම:<span class="red-star">★</span></label>
+                                            <input id="fullname" type="text" class="form-control" placeholder="සම්පුර්ණ නම" maxlength="490" required style="width: 80%">
                                         </div>
                                         <div class="form-group">
-                                            <label>2. Short Name/කෙටි නම:</label>
+                                            <label>2. Short Name/කෙටි නම:<span class="red-star">★</span></label>
                                             <input id="shortname" type="text" class="form-control" placeholder="ඔබට ආමන්ත්‍රණය කළ යුතු නම" maxlength="490" style="width: 80%">
                                         </div>
                                         <div class="form-group">
-                                            <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:</label>
+                                            <label>3. NIC Number/ජාතික හැදුනුම්පත් අංකය:<span class="red-star">★</span></label>
                                             <input id="nicno" type="text" class="form-control" placeholder="ජාතික හැදුනුම්පත් අංකය" data-inputmask='"mask": "999999999999V"' data-mask style="width: 50%">
                                         </div>
 
-                                        <label for="photos">4. Photos/ඡායාරූප:</label>
+                                        <label for="photos">4. Photos/ඡායාරූප:<span class="red-star">★</span></label>
                                         <ul>
                                             <li>ඔබගේ මුහුණ පැහැදිලිව හඳුනාගත හැකි, ඔබගේ සැබෑ පැහැය / පෙනුම වෙනස් නොකළ (unedit) ඡායාරූප පමණක් ඇතුලත් කිරීමට වග බලා ගත යුතුය.</li>
                                             <li>Full Photo (සම්පූර්ණ උස පෙනෙන) 1ක් ද ඇතුලත් කරන්න.</li>
@@ -252,7 +259,7 @@
                                         <br />
 
                                         <div class="form-group">
-                                            <label>5. Mobile Numbers/දුරකථන අංක:</label>
+                                            <label>5. Mobile Numbers/දුරකථන අංක:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>ඔබව සම්බන්ධ කරගත හැකි ප්‍රධාන අංකය.</li>
                                                 <li>Whatsapp, Viber බාවිතා වන්නේ නම් අංකය ඉදිරියේ අදාල කොටුද සලකුණු කරන්න.</li>
@@ -308,35 +315,35 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label>6. Date Of Birth/උපන් දිනය:</label>
-                                                <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>6. Date Of Birth/උපන් දිනය:<span class="red-star">★</span></label>
+                                            <input id="dob" type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask style="width: 50%">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>7. Age/වයස:<span class="red-star">★</span></label>
+                                            <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>8. Gender/ස්ත්‍රී පුරුෂ බව:<span class="red-star">★</span></label>
+                                            <div class="form-check">
+                                                <input type='radio' id='genderM' value='yes' name="gender" />
+                                                <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
+                                                <input type="radio" id="genderF" value="yes" name="gender" />
+                                                <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
                                             </div>
-
-                                            <div class="form-group">
-                                                <label>7. Age/වයස:</label>
-                                                <input id="age" type="text" class="form-control" placeholder="වයස" data-inputmask='"mask": "99"' data-mask style="width: 50%">
-                                            </div>
-
-
-                                            <div class="form-group">
-                                                <label>8. Gender/ස්ත්‍රී පුරුෂ බව:</label>
-                                                <div class="form-check">
-                                                    <input type='radio' id='genderM' value='yes' name="gender" />
-                                                    <span style="width:100px;display:inline-block;">Male/පුරුෂ</span>
-                                                    <input type="radio" id="genderF" value="yes" name="gender" />
-                                                    <span style="width:100px;display:inline-block;">Female/ස්ත්‍රී</span>
-                                                </div>
-                                            </div>
-
                                         </div>
 
                                     </div>
 
-                                    <div class="col-md-6">  
+                                    <div class="col-md-6">
 
                                         <div class="form-group">
-                                            <label>9. Current City/දැනට පදිංචිය:</label>
+                                            <label>9. Current City/දැනට පදිංචිය:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
                                             </ul>
@@ -353,7 +360,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>10. Home Town/ස්ථිර පදිංචිය:</label>
+                                            <label>10. Home Town/ස්ථිර පදිංචිය:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>ඔබේ නගරය මෙහි නොමැති නම්, දැක්වෙන නගර අතරින් ඔබේ නගරයට ආසන්නම නගරය තෝරන්න.</li>
                                             </ul>
@@ -370,7 +377,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>11. T-shirt size: </label>
+                                            <label>11. T-shirt size:<span class="red-star">★</span></label>
                                             <div class="form-check">
                                                 <input type='radio' id='tsizeS' value='yes' name="tsize" />
                                                 <span style="width:40px;display:inline-block;">S</span>
@@ -384,7 +391,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>12. I am:</label>
+                                            <label>12. I am:<span class="red-star">★</span></label>
                                             <div class="form-check">
 
                                                 <div id="student1">
@@ -438,7 +445,7 @@
                                                     <ul>
                                                         <li>
                                                             <select id="freelancerdetailsdrp" style="height: 32px;width: 70%;">
-                                                                <option>-Select-</option>
+                                                                <option></option>
                                                                 <option>Graphic/Video designer</option>
                                                                 <option>Book keeping or Accounting</option>
                                                                 <option>Logo designer</option>
@@ -460,7 +467,7 @@
                                                     <ul>
                                                         <li>
                                                             <select id="professionaldetailsdrp" style="height: 32px;width: 70%;">
-                                                                <option>-Select-</option>
+                                                                <option></option>
                                                                 <option>Lawyer</option>
                                                                 <option>Compere</option>
                                                                 <option>Actor/Actress</option>
@@ -484,31 +491,31 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                            <label>13. English Speaking/ඉංග්‍රීසි හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                             <div class="form-check">
-                                                <input type='radio' id='englishA' value='yes' name="tsize" />
+                                                <input type='radio' id='englishA' value='yes' name="english" />
                                                 <span style="width:100px;display:inline-block;">Fluent</span>
-                                                <input type="radio" id="englishB" value="yes" name="tsize" />
+                                                <input type="radio" id="englishB" value="yes" name="english" />
                                                 <span style="width:100px;display:inline-block;">Normal</span>
-                                                <input type='radio' id='englishC' value='yes' name="tsize" />
+                                                <input type='radio' id='englishC' value='yes' name="english" />
                                                 <span style="width:100px;display:inline-block;">Can`t</span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:</label>
+                                            <label>14. Tamil Speaking/දෙමළ හොඳින් හසුරවයි නම් Fluent යොදන්න:<span class="red-star">★</span></label>
                                             <div class="form-check">
-                                                <input type='radio' id='tamilA' value='yes' name="tsize" />
+                                                <input type='radio' id='tamilA' value='yes' name="tmail" />
                                                 <span style="width:100px;display:inline-block;">Fluent</span>
-                                                <input type="radio" id="tamilB" value="yes" name="tsize" />
+                                                <input type="radio" id="tamilB" value="yes" name="tmail" />
                                                 <span style="width:100px;display:inline-block;">Normal</span>
-                                                <input type='radio' id='tamilC' value='yes' name="tsize" />
+                                                <input type='radio' id='tamilC' value='yes' name="tmail" />
                                                 <span style="width:100px;display:inline-block;">Can`t</span>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:</label>
+                                            <label>15. Sales Promotion Experience/අලවි ප්‍රවර්ධකයෙක් ලෙස අත්දැකීම්:<span class="red-star">★</span></label>
                                             <div class="form-check">
 
                                                 <div id="exprienceYes">
@@ -516,7 +523,7 @@
                                                     <label class="form-check-label">No exprience/අත්දැකීම් නැත</label>
                                                 </div>
                                                 <div id="exprienceYes">
-                                                    <input value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
+                                                    <input id="experienceYes" value="2" type="radio" onclick="experiencehandleClick(2);" name="exprienceYes">
                                                     <label class="form-check-label">Have experience/අත්දැකීම් ඇත</label>
                                                 </div>
 
@@ -561,23 +568,23 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:</label>
+                                            <label>16. Previous advertising firm of employments/කලින් වැඩ කරන ලද ආයතන සහ සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්:<span class="red-star">★</span></label>
                                             <div class="form-group">
                                                 <label>Company/ආයතන</label>
-                                                <input id="company" type="text" class="form-control" placeholder="ආයතන" style="width: 100%">
+                                                <input id="company" type="text" class="form-control" placeholder="ආයතන" maxlength="490" style="width: 80%">
                                             </div>
                                             <div class="form-group">
                                                 <label>Supervisors/සම්බන්ධ කරගත් පුද්ගලයින්ගේ නම්</label>
-                                                <input id="peoplenames" type="text" class="form-control" placeholder="නම්" maxlength="490" style="width: 100%">
+                                                <input id="peoplenames" type="text" class="form-control" placeholder="නම්" maxlength="490" style="width: 80%">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>17. Bank Details/බැංකු තොරතුරු:</label>
+                                            <label>17. Bank Details/බැංකු තොරතුරු:<span class="red-star">★</span></label>
                                             <ul>
                                                 <li>
                                                     <label>Account holder`s name/ගිණුම් හිමියාගේ නම</label>
-                                                    <input id="accountholder" type="text" class="form-control" placeholder="නම" maxlength="490"  style="width: 60%">
+                                                    <input id="accountholder" type="text" class="form-control" placeholder="නම" maxlength="490" style="width: 60%">
                                                 </li>
                                                 <li>
                                                     <label>Account number/ගිණුම් අංකය</label>
@@ -596,14 +603,14 @@
 
                                     </div>
 
-                                    <hr /> 
+                                    <hr />
 
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label>කොන්දේසි සහ එකඟතාවයන්</label>
                                             <ol>
                                                 <li>
-                                                    භාරගත් කාර්යය පැහැර හැරීම, අසත්‍ය තොරතුරු ලබා දීම, පොරොන්දු පරිදි කටයුතු නොකිරීම තුලින් parttime.lk ආයතනයේ මාගේ ගිණුම (Profile) තාවකාලිකව හෝ සදාකාලිකව තහනම් (Restrict / Suspend ) වන බව දනිමි.
+                                                    සම්බන්ධීකාරවරයකු ලෙස මා හට පැවරී ඇති සියලු වගකීම් ඉටු කිරීමට මාගේ උපරිම දායකත්වය ලබා දෙන අතර, මෙම වගකීම් පැහැර හැරීමෙන් parttime.lk හි මාගේ ගිනුම තාවකාලිකව හෝ සදාකාලිකව තහනම් වන බව මා හොදින් දන්නා අතර ආයතනය විසින් ගනු ලබන ඕනෑම නීතිමය පියවරකට සහය දීමට එකග වෙමි.
                                                 </li>
                                                 <li style="list-style-type: none;">
                                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#agremeentModel">Read full agreement</button>
@@ -616,7 +623,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <div class="form-check">
-                                                    <input id="submit" class="form-check-input" type="checkbox">
+                                                    @*<input id="submit" class="form-check-input" type="checkbox">*@
                                                     <label class="form-check-label">I would like to participate/මම සහභාගී වීමට කැමැත්තෙමි </label>
                                                     <button id="sumbitprofile" type="submit" disabled onclick="submitFunction()" class="btn btn-info">Save</button>
                                                     <button type="button" class="btn btn-warning">Cancel</button>
@@ -650,7 +657,7 @@
                                     <li>
                                         parttime.lk හි සම්බන්ධීකාරවරයකු ලෙස ලියාපදිංචි වන මම ආයතනයේ ගෞරවයද මාගේ ගෞරවයද රැකෙන ලෙස අවන්කව හා වගකීමෙන් යුතුව සේවා සපයනු ලබන අතර,
                                         - මා හා සේවයේ නියුතු වන අර්ධකාලීන සේවකයන් හට උපරිම විස්වාසයෙන් සේවා සපයන අතර සපයනු ලබන සේවා සදහා ඉහල හා සාධාරණ වැටුපක් ලබා දීමට මා බැදී සිටින්නෙමි.
-                                        කිසිදු හේතුවක් නිසාවෙන් සිතා මතා වැටුප් පැහැර හැරීමක් සිදු නොකරන අතර අර්ධ කාලීන සේවකයන් හටා ලබා දුන් පොරොන්දු ඒ ලෙස ඉටුකිරීමට සෑම විටම වගකීමෙන් යුතුව කටයුතු කරන්නෙමි.
+                                        කිසිදු හේතුවක් නිසාවෙන් සිතා මතා වැටුප් පැහැර හැරීමක් සිදු නොකරන අතර අර්ධ කාලීන සේවකයන් හට ලබා දුන් පොරොන්දු ඒ ලෙස ඉටුකිරීමට සෑම විටම වගකීමෙන් යුතුව කටයුතු කරන්නෙමි.
                                     </li>
 
                                     <li>
@@ -710,7 +717,6 @@
                 </div>
             </div>
 
-            <!-- Modal Fail -->
             <div class="modal fade" id="failModel" role="dialog">
                 <div class="modal-dialog">
 
@@ -722,11 +728,34 @@
                         </div>
                         <div class="modal-body">
                             <div class="alert alert-danger">
-                                <strong>Success!</strong> Changes not saved!.
+                                <strong>ERROR!</strong> Changes not saved!.
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Modal Validate -->
+            <div class="modal fade" id="validateModel" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-warning">
+                                <label>Enter secret code/රහස් අංකය</label>
+                                <input id="secretCode" type="text" class="form-control" placeholder="රහස් අංකය" maxlength="10" style="width: 100%">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Enter</button>
                         </div>
                     </div>
 
@@ -789,7 +818,7 @@
     <!-- PAGE SCRIPTS -->
     @*<script src="~/TemplateAssets/DashBord/dist/js/pages/dashboard2.js"></script>*@
 
-    @Scripts.Render("~/Scripts/Js/coordinator.js")
+    @Scripts.Render("~/Scripts/Js/coordinator.js?v=20200605")
 
 </body>
 </html>

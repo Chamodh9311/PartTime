@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace PartTimeV1.Requests
 {
@@ -19,6 +16,7 @@ namespace PartTimeV1.Requests
         public bool Mobile1Whatsapp { get; set; }
         public bool Mobile1Viber { get; set; }
         public string Mobile2 { get; set; }
+
         public bool Mobile2Whatsapp { get; set; }
         public bool Mobile2Viber { get; set; }
         public string Mobile3 { get; set; }
@@ -26,6 +24,8 @@ namespace PartTimeV1.Requests
         public bool Mobile3Viber { get; set; }
         public string DOB { get; set; }
         public string Age { get; set; }
+
+
         public bool GenderMale { get; set; }
         public bool GenderFemale { get; set; }
         public string CurrentDistrict { get; set; }
@@ -45,6 +45,12 @@ namespace PartTimeV1.Requests
         public string Branch { get; set; }
         public string Designation { get; set; }
         public bool FullTimePromoter { get; set; }
+        public bool IsFreelancer { get; set; }
+        public string Freelancer { get; set; }
+        public string FreelancerOther { get; set; }
+        public bool IsSelfemployed { get; set; }
+        public string Selfemployed { get; set; }
+        public string SelfemployedOther { get; set; }
         public bool PartTimePromoter { get; set; }
         public bool EnglishA { get; set; }
         public bool EnglishB { get; set; }
@@ -52,8 +58,26 @@ namespace PartTimeV1.Requests
         public bool TamilA { get; set; }
         public bool TamilB { get; set; }
         public bool TamilC { get; set; }
-        public string SalesExperience { get; set; }
+        public bool SalesExperienceNo { get; set; }
+        public bool SalesExperienceYes { get; set; }
+        public string SalesExperienceYears { get; set; }
         public List<string> Brands { get; set; }
+        public string BrandsOther { get; set; }
         public List<string> OtherExperience { get; set; }
+        public string OtherExperienceOther { get; set; }
+        public bool Facebook { get; set; }
+        public bool Instagram { get; set; }
+        public bool PartTimelkStaff { get; set; }
+        public string PartTimelkStafName { get; set; }
+        public bool Cordinator { get; set; }
+        public string CordinatorName { get; set; }
+        public bool Friend { get; set; }
+        public bool Google { get; set; }
+
+
+        public string AccountHolder { get; set; }
+        public string AccountNumber { get; set; }
+        public string Bank { get; set; }
+        public string BankBranch { get; set; }
     }
 }

@@ -27,9 +27,10 @@ namespace PartTimeV1.Data
             Property(t => t.Mobile3).HasMaxLength(20).IsOptional();
             Property(t => t.Mobile3Whatsapp);
             Property(t => t.Mobile3Viber);
-
             Property(t => t.DOB);
             Property(t => t.Age).HasMaxLength(10).IsRequired();
+
+
             Property(t => t.GenderMale);
             Property(t => t.GenderFemale);
             Property(t => t.CurrentDistrict).HasMaxLength(200);
@@ -49,6 +50,12 @@ namespace PartTimeV1.Data
             Property(t => t.Branch).HasMaxLength(200).IsOptional();
             Property(t => t.Designation).HasMaxLength(200).IsOptional();
             Property(t => t.FullTimePromoter);
+            Property(t => t.IsFreelancer);
+            Property(t => t.Freelancer).HasMaxLength(200).IsOptional();
+            Property(t => t.FreelancerOther).HasMaxLength(500).IsOptional();
+            Property(t => t.IsSelfemployed);
+            Property(t => t.Selfemployed).HasMaxLength(200).IsOptional();
+            Property(t => t.SelfemployedOther).HasMaxLength(200).IsOptional();
             Property(t => t.PartTimePromoter);
             Property(t => t.EnglishA);
             Property(t => t.EnglishB);
@@ -56,15 +63,36 @@ namespace PartTimeV1.Data
             Property(t => t.TamilA);
             Property(t => t.TamilB);
             Property(t => t.TamilC);
-            Property(t => t.SalesExperience).HasMaxLength(10).IsOptional();
-            Property(t => t.Brands).IsOptional();
-            Property(t => t.OtherExperience).IsOptional();
+            Property(t => t.SalesExperienceNo);
+            Property(t => t.SalesExperienceYes);
+            Property(t => t.SalesExperienceYears).HasMaxLength(10).IsOptional();
+            Property(t => t.Brands).HasMaxLength(200).IsOptional();
+            Property(t => t.BrandsOther).HasMaxLength(500).IsOptional();
+            Property(t => t.OtherExperience).HasMaxLength(200).IsOptional();
+            Property(t => t.OtherExperienceOther).HasMaxLength(500).IsOptional();
+            Property(t => t.Facebook);
+            Property(t => t.Instagram);
+            Property(t => t.PartTimelkStaff);
+            Property(t => t.PartTimelkStafName).HasMaxLength(200).IsOptional();
+            Property(t => t.Cordinator);
+            Property(t => t.CordinatorName).HasMaxLength(200).IsOptional(); 
+            Property(t => t.Friend);
+            Property(t => t.Google);
 
-            Property(t => t.Approved);
-            Property(t => t.Deleted);
-            Property(t => t.Banned);
-            Property(t => t.CreateOn);
-            Property(t => t.Version);
+
+            Property(t => t.AccountHolder).HasMaxLength(500).IsRequired();
+            Property(t => t.AccountNumber).HasMaxLength(20).IsRequired();
+            Property(t => t.Bank).HasMaxLength(200).IsRequired();
+            Property(t => t.BankBranch).HasMaxLength(200).IsRequired();
+
+
+            Property(t => t.UserId).HasMaxLength(200).IsRequired();
+            Property(t => t.Role).HasMaxLength(20).IsRequired();
+            Property(t => t.Approved).IsRequired();
+            Property(t => t.Deleted).IsRequired();
+            Property(t => t.Banned).IsRequired();
+            Property(t => t.CreateOn).IsRequired();
+            Property(t => t.Version).IsRequired();
         }
     }
 }
