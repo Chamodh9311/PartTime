@@ -15,6 +15,10 @@ namespace PartTimeV1.Data
         public string Comments { get; set; }
         public string Time { get; set; }
         public string Payment { get; set; }
+        public string Mobile { get; set; }
+        public string Location { get; set; }
+        public string Gender { get; set; }
+        public int NumberOfDays { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }

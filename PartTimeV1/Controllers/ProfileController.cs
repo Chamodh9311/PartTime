@@ -1,8 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace PartTimeV1.Controllers
@@ -12,20 +8,17 @@ namespace PartTimeV1.Controllers
     {
         public ActionResult Index()
         {
-            var userProfile = this.manager.PromoterProfileRepository.SelectUserProfile(User.Identity.GetUserId());
+            var coordinatorProfile  = this.manager.CoordinatorProfileRepository.SelectCoordinatorProfile(User.Identity.GetUserId());
+            var promoterProfile = this.manager.PromoterProfileRepository.SelectUserProfile(User.Identity.GetUserId());
 
-            if (userProfile != null)
+            if (coordinatorProfile != null)
             {
-                var coordinatorProfile = this.manager.CoordinatorProfileRepository.SelectCoordinatorProfile(User.Identity.GetUserId());
-
-                if (coordinatorProfile != null)
-                {
-                    return RedirectToAction("Profile");
-                }
-
                 return RedirectToAction("Profile");
             }
-
+            else if (promoterProfile != null)
+            {
+                return RedirectToAction("Profile");
+            }
             else
             {
                 return RedirectToAction("Promoter");
@@ -42,7 +35,7 @@ namespace PartTimeV1.Controllers
             return View();
         }
 
-        public ActionResult Profile()
+        public new ActionResult Profile()
         {
             return View();
         }

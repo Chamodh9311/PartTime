@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PartTimeV1.Requests
+﻿namespace PartTimeV1.Requests
 {
     public class SchedulerRequest
     {
@@ -14,6 +12,9 @@ namespace PartTimeV1.Requests
         public string Comments { get; set; }
         public string Time { get; set; }
         public string Payment { get; set; }
+        public string Location { get; set; }
+        public string Mobile { get; set; }
+        public string Gender { get; set; }
         //public string ApprovedId { get; set; }
         //public bool Approved { get; set; }
         //public bool Deleted { get; set; }
